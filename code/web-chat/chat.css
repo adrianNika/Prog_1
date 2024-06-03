@@ -79,13 +79,13 @@ body
     margin-right: 10px;
     display: flex;
     flex-direction: column;
-    height: 600px;
+    height: 500px;
 }
 
 .chat 
 {
     padding: 10px;
-    height: 500px;
+    height: 400px;
     width: 500px;
     margin-left: 20px;
     margin-right: 20px;

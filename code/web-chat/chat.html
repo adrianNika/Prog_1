@@ -3,14 +3,14 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Enregistrement et Chat</title>
+        <title>chat</title>
         <link rel="stylesheet" href="chat.css" />   
     </head>
     <body>
         <div class="nav-barre">
             <h3><span id="usernameDisplay"></span></h3>
             <div class="profile">
-                <img src="https://bcw-media.s3.ap-northeast-1.amazonaws.com/yce_ai_anime_topbanner_mb_01_a51ba67c67.jpg" alt="Profil">
+                <img src="https://a.storyblok.com/f/178900/960x540/7a0633d2a2/blue-exorcist.jpg" alt="Profil">
             </div>
         </div>
 
@@ -47,10 +47,12 @@
 
             const users = [];
 
-            chatForm.addEventListener('submit', function(event) {
+            chatForm.addEventListener('submit', function(event) 
+            {
                 event.preventDefault();
                 const message = messageInput.value.trim();
-                if (message) {
+                if (message) 
+                {
                     sendMessage(message);
                     messageInput.value = '';
                 }
@@ -63,14 +65,17 @@
                 }
             }
 
-            function sendMessageJoinChat(message) {
+            function sendMessageJoinChat(message) 
+            {
                 // Envoi du message à tous les utilisateurs connectés (simulé ici)
-                for (const user of users) {
+                for (const user of users) 
+                {
                     displayMessageJoinChat(user, message, true);
                 }
             }
 
-            function displayMessage(sender, message) {
+            function displayMessage(sender, message) 
+            {
                 const messageElement = document.createElement('p');
                 messageElement.textContent = `${sender}: ${message}`;
                 chatBox.appendChild(messageElement);
@@ -78,7 +83,8 @@
                 chatBox.scrollTop = chatBox.scrollHeight;
             }
 
-            function displayMessageJoinChat(sender, message, isnotif = false) {
+            function displayMessageJoinChat(sender, message, isnotif = false) 
+            {
                 const messageElement = document.createElement('p');
                 messageElement.textContent = `${message}`;
                 if (isnotif) 
@@ -91,24 +97,26 @@
             }
 
             // Fonction pour mettre à jour la liste des utilisateurs
-            function updateUserList() {
+            function updateUserList() 
+            {
                 userList.innerHTML = '';
-                for (const user of users) {
+                for (const user of users) 
+                {
                     const listItem = document.createElement('li');
                     listItem.textContent = user;
                     userList.appendChild(listItem);
                 }
             }
 
-            // Enregistrement simulé de l'utilisateur
-            const username = prompt('Entrez votre nom d\'utilisateur:');
-            if (username) 
+            let username = '';
+            while (!username) 
             {
-                usernameDisplay.textContent = username;
-                users.push(username);
-                updateUserList();
-                sendMessageJoinChat(`${username} a rejoint le chat.`);
+                username = prompt('Entrez votre nom d\'utilisateur:');
             }
+            usernameDisplay.textContent = username;
+            users.push(username);
+            updateUserList();
+            sendMessageJoinChat(`${username} a rejoint le chat.`, true);
         </script>
     </body>
 </html>
