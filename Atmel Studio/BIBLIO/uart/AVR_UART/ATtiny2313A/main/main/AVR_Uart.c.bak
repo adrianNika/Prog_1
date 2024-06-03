@@ -1,0 +1,169 @@
+/*
+ * AVR_Uart.c
+ *
+ * Auteur :		David Perrin
+ * Date :		15.02.2021
+ * Version :	V0
+ *
+ * Description : 
+ *
+ *		Librairie AVR_Uart.c
+ *		Le fichier est à commenter/dé-commenter selon les configurations désirées
+ *		
+ *		Cette librairie est compatible avec les micro-contrôleurs suivants : 
+ *			- ATMEGA8 et ATMEGA8L
+ *			- ATMEGA48A/88A/168A/328A et PA 
+ *			- ATTiny2313A/PA
+*/
+#define F_CPU 16000000UL		// Fréquence du CPU 
+#include "AVR_Uart.h"
+
+// Global variables - Buffers 
+// Buffer size can be changed in header file 
+// Do not exceed 254 
+static uint8_t RX_Buffer[UART_RX_BUFFER_SIZE];
+static uint8_t TX_Buffer[UART_TX_BUFFER_SIZE];
+
+// Global Variables - Head's & Tails (circular buffer pointer) 
+// See explanation under receive & send ISR
+static volatile uint8_t RX_Head;	
+static volatile uint8_t RX_Tail;
+static volatile uint8_t TX_Head;
+static volatile uint8_t	TX_Tail;
+
+
+/************************************************************************/
+/* UART_Init Function                                                   */
+/*																		*/
+/*																		*/
+/************************************************************************/
+void UART_Init(void)
+{
+	switch(UART_MODE)
+	{
+		// 8N1 Is The default UART mode ! 
+		case UART_8N1:
+		default:	
+			// Only U2X is interresting in USART A register
+			USART_CR_A &= ~(U2X_VAL << 1);	// Clear old value of U2X
+			USART_CR_A |= (U2X_VAL << 1);	// Set new value of U2X
+			
+			// Interrupt and modes to be enable (DUPLEX)
+			USART_CR_B = ((1 << RXC_INT_EN) |		// RX interrupt	 
+						  (1 << UDR_EMPTY_INT_EN) | // UDR interrupt
+						  (1 << RX_ENABLE) |		// RX Enable
+						  (1 << TX_ENABLE) |);		// TX Enable	
+			
+			// 8 bit mode (already default, just to confirm) 
+			USART_CR_C &= ~((1 << CHAR_SIZE1) | (1 << CHAR_SIZE0));
+			USART_CR_C &= ~((1 << CHAR_SIZE1) | (1 << CHAR_SIZE0));
+			
+			// Baudrate set-up (see header file) 
+			BIT_RATE_REGISTER_H = (uint8_t)(VAL_UBRR >> 8);
+			BIT_RATE_REGISTER_L = (uint8_t)(VAL_UBRR);
+			
+			// Reset position of Tails & Heads
+			RX_Tail = 0;
+			RX_Head = 0;
+			TX_Tail = 0;
+			TX_Head = 0;
+								  	
+		break;
+	}
+}
+
+// --- UDR empty interrupt ---
+// when this interrupt occurs, UDR is ready to receive new DATA to send
+// --> it's time to shorten distance between tail and head ! 
+//  
+
+ISR(USART0_UDRE_vect)
+{
+	uint8_t TmpTXTail;	// Temporary value of tail
+	
+	if(TX_Tail != TX_Head)	// All data transmitted ? 
+	{
+		TmpTXTail = TX_Tail + 1;			// Increase buffer index (new value)
+		
+		TmpTXTail %= UART_TX_BUFFER_SIZE;	// restarting when reaching buffer size	
+		
+		TX_Tail = TmpTXTail;				// Saving New Tail position
+		
+		UDR_REG = TX_Buffer[TX_Tail];		// Send Value
+	}
+	else
+	{
+		// disable interrupt when transmit OK  
+		USART_CR_B &= ~(1 << UDR_EMPTY_INT_EN);
+	}
+}
+
+
+// --- RXC interrupt ---
+// when this interrupt occurs, New data has been received in UDR
+// --> To be inserted in circular buffer ! 
+//
+ISR(USART0_RX_vect)
+{
+	uint8_t data;		// Temporary (empty UDR)
+	uint8_t tmpRXHead;	// Temporary (Computations) 
+	
+	data = UDR_REG;
+	
+	tmpRXHead = RX_Head + 1;			// Increase position of tmp head 
+	tmpRXHead %= UART_RX_BUFFER_SIZE;	// modulo --> auto restart to 0 if 
+	RX_Head = tmpRXHead ;				// Save New position
+	
+	if (tmpRXHead == RX_Tail)
+	{
+		// ERROR --> Buffer is full ! 
+	}
+	// Still saving with ERROR ? TODO --> TESTS
+	RX_Buffer[tmpRXHead] = data;		// Save data in buffer
+}
+
+
+
+void UART_PutChar(uint8_t data)
+{
+	uint8_t tmpTxHead;
+	
+	tmpTxHead = TX_Head +1; 
+	tmpTxHead %= UART_TX_BUFFER_SIZE;
+	
+	if (tmpTxHead == TX_Tail)
+	{
+		// Error --> TX buffer full (can no handle more data to send) 
+	}
+	else
+	{
+		// Put data in circular buffer 
+		TX_Buffer[tmpTxHead] = data;	
+		
+		// Save new head value
+		TX_Head	= tmpTxHead;
+		
+		// Activate interrupt to transmit
+		USART_CR_B |= (1 << UDR_EMPTY_INT_EN);
+	}
+}
+
+uint8_t Uart_ReadChar(void)
+{
+	uint8_t data; 
+	uint8_t tmpRxTail;
+	
+	if(RX_Tail == RX_Head)
+	{
+		// Error, no new data !
+	}
+	else
+	{
+		tmpRxTail = RX_Tail + 1;
+		tmpRxTail %= UART_RX_BUFFER_SIZE;
+		
+		data = RX_Buffer[tmpRxTail];
+		RX_Tail = tmpRxTail;		
+	}
+	return data;
+}

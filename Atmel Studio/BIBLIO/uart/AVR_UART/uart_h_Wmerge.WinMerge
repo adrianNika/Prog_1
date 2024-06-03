@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<paths>
+		<left>C:\Users\AppMan\Documents\GitHub\Projets\biblio_soft\UART\AVR_UART\ATtiny2313A\main\main\AVR_Uart.h</left>
+		<middle>C:\Users\AppMan\Documents\GitHub\Projets\biblio_soft\UART\AVR_UART\AVR_Uart.h</middle>
+		<right>C:\Users\AppMan\Documents\GitHub\Projets\biblio_soft\UART\AVR_UART\ATMEGA328p\main\main\AVR_Uart.h</right>
+		<filter>*.*</filter>
+		<subfolders>1</subfolders>
+		<left-readonly>0</left-readonly>
+		<middle-readonly>0</middle-readonly>
+		<right-readonly>0</right-readonly>
+	</paths>
+</project>

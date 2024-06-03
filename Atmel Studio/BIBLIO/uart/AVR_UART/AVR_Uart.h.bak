@@ -1,0 +1,193 @@
+/*
+ * AVR_Uart.h
+ *
+ * Auteur :		David Perrin
+ * Date :		15.02.2021
+ * Version :	V0
+ *
+ * Description : 
+ *		Fichier de définition de la librairie AVR_Uart.c
+ *
+ *		Le fichier est à commenter/dé-commenter selon les configurations désirées
+ *		
+ *		Cette librairie est compatible avec les micro-contrôleurs suivants : 
+ *
+ *			- ATMEGA48A/88A/168A/328A et PA 
+ *			- ATTiny2313A/PA
+*/ 
+
+// Avoid "double - include issues"
+#ifndef AVR_UART_H		
+#define AVR_UART_H
+
+// AVOID no F_CPU
+#ifndef F_CPU
+#define F_CPU 8000000UL
+	#warning "F_CPU NOT DEFINED -> DEFINED at 8M in AVR_UART.H"
+#endif
+
+// Utilities includes
+#include <stdint-gcc.h>			// TO DO : Verify AVR4 & WinAVR compatibility
+
+#include <avr/io.h>				// Device should be selected to use this.
+								// Automaticaly done by environment (ATmelStudio 7)
+								//  Otherwise, you have to define the good one manually 
+								// by writing #define >>>AVR NAME OF MCU<<< (see io.h)
+								// Define must be placed before include
+
+#include <avr/interrupt.h>		// Using Interrupt ISR recognition and "SEI/CLI"
+
+// User Defines
+// Buffer size for RX & TX in 8byte unsigned (uint8_t) (circular buffers)
+#define UART_TX_BUFFER_SIZE 40		
+#define UART_RX_BUFFER_SIZE 40
+
+// Baudrate definitions 
+// 
+// Baudrate, F_CPU & U2x determines UBRRH/UBRRL (16 bit value) values to use. 
+//
+// IF U2xn = 0 --> UBRR = (F_CPU / (8 * Baudrate)) -1
+// IF U2xn = 1 --> UBRR = (F_CPU / (16 * Baudrate)) -1
+// 
+// This table shows UBRR value for common Baudrates @F_CPU = 1MHz, 8MHz, 16MHz
+// (see datasheet for more info) : 
+// 
+//				 _________1MHz______||______8MHz________||______16MHz		||
+//  baudrate	|| U2Xn=0	|U2xN=1	|| U2Xn=0	|U2xN=1	|| U2X = 0	|U2xN=1	||
+//	  2400		||	  25	|	51	||	 207	|  416	||	 416	|  832	||
+//	  4800		||	  12	|	25	||	 103	|  207	||	 207	|  416	||
+//	  9600		||	   6*	|	12	||	  51	|  103	||	 103	|  207 	||		
+//  14'400		||	   3*	|	8*	||	  34*	|   68*	||	  68*	|  138	||	
+//  19'200		||	   2*	|	6*	||	  25	|  	51	||	  51	|  103	||
+//  28'800		||	   1*	|	3*	||	  16*	|   34*	||	  34*	|	68*	|| !!
+//  38'400		||	   1*	|	2*	||	  12	|   25	||	  25	|	51	||
+//  57'600		||	   0*	|	1*	||	   8*	|   16*	||	  16*	|	34*	|| !! 
+//	76'800		||	   -	|	1*	||	   6*	|   12	||	  12	|	25	||
+// 115'200		||	   -	|	0*	||	   3*	|    8*	||	   8*	|	16*	|| !!
+// 230'400		||	   -	|	-	||	   1*	|	 3*	||	   3*	|	 8*	|| !!
+// 250'000		||	   -	|	-	||	   1	|	 3	||	   3	|	 7	||
+// 500'000		||	   -	|	-	||	   0	|	 1 	||	   1 	|	 3	||
+// 1M			||	   -	|	-	||	   -	|	 0	||	   0	|	 1	||		
+//
+// --> * = error > 0,5% - avoid using those baudrates with your Xtal
+// --> !! = do not use (for perfect baudrate match, use a 14.7456MHz XTAL). 
+
+#define U2X_VAL		0x01	// [0/1] double speed : 1= enable, 0= disable
+							//						(see table)
+
+#define	VAL_UBRR	25		// [dec] 4'800 bauds with 1 MHz F_CPU and U2xN = 1 
+#define	VAL_UBRR	12		// [dec] 9'600 bauds with 1 MHz F_CPU and U2xN = 1
+
+//#define	VAL_UBRR 103	// [dec] 4'800 bauds with 8 MHz F_CPU and U2xN = 0 
+//#define	VAL_UBRR 51		// [dec] 9'600 bauds with 8 MHz F_CPU and U2xN = 0
+//#define	VAL_UBRR 25		// [dec] 19'200 bauds with 8 MHz F_CPU and U2xN = 0
+//#define	VAL_UBRR 12		// [dec] 38'400 bauds with 8 MHz F_CPU and U2xN = 0
+
+//#define	VAL_UBRR 207	// [dec] 4'800 bauds with 16 MHz F_CPU and U2xN = 0
+//#define	VAL_UBRR 103	// [dec] 9'600 bauds with 16 MHz F_CPU and U2xN = 0
+//#define	VAL_UBRR 51		// [dec] 19'200 bauds with 16 MHz F_CPU and U2xN = 0
+//#define	VAL_UBRR 25		// [dec] 38'400 bauds with 16 MHz F_CPU and U2xN = 0
+
+// ---- REGISTER NAME DEFINITION ----
+// Names a re-defined for portability with different MCU ! 
+// Defines for names of registers (UCRSA, UCRSB, UCRSC) 
+// Comment/uncomment following MCU you use ! 
+// -- ATMEGA48A/88A/168A/328A et PA Definitions -- 
+// - UCRSA
+#define USART_CR_A			UCSR0A
+#define RX_CMPLT_FLAG		RXC0	// = 1 when data received in UDR
+#define TX_CMPLT_FLAG		TXC0	// = 1 when data sent from Shift register
+#define UDR_EMPTY_FLAG		UDRE0	// = 1 when UDR is ready to receive new dat
+#define FRAME_ERROR_FLAG	FE0		// = 1 when a frame error see datasheet p.201	
+#define DATA_OVERRUN_FLAG	DOR0	// = 1 when start detected and UDR not ready
+#define PARITY_ERROR_FLAG	UPE0	// = 1 when polarity error (odd/even)
+#define DOUBLE_SPEED_U2X	U2X0	// = 1 to double frequency of USART
+#define MULTI_MCU_EN		MPCM0	// = 1 to activate Multi MCU mode 
+
+// - UCRSB
+#define USART_CR_B			UCSR0B	
+#define RXC_INT_EN			RXCIE0	// = 1 to activate RX interrupts
+#define TXC_INT_EN			TXCIE0	// = 1 to activate TX interrupts
+#define UDR_EMPTY_INT_EN	UDRIE0	// = 1 to activate UDR empty Interrupts
+#define RX_ENABLE			RXEN0	// = 1 to activate RX 
+#define TX_ENABLE			TXEN0	// = 1 to activate TX
+#define CHAR_SIZE_2			UCSZ02	// = Char size bit 2 (see table on datasheet)
+#define RX_BIT_8			RXB80	// = 9th bit when 9 bit mode
+#define TX_BIT_8			TXB80	// = 9th bit when 9 bit mode 
+
+// - UCRSC
+#define USART_CR_C			UCSR0C	
+#define USART_MODE_SEL1		UMSEL01	// mode select bit 1
+#define USART_MODE_SEL0		UMSEL00	// mode select bit 0 --> DS p.202
+#define USART_PARITY_MODE1	UPM01	// parity bit 1
+#define USART_PARITY_MODE0	UPM00	// parity bit 0 --> DS p. 203
+#define USART_STOP_B_SEL	USBS0	// = 0 for 1 stop bit, =1 for 2 stop bits	
+#define CHAR_SIZE1			UCSZ01	// Char size bit 1
+#define CHAR_SIZE0			UCSZ00	// CHAR size bit 0 --> See DS p.203
+#define CLOCK_POL			UCPOL0	// clock polarity (Synchronous mode only)
+
+// - UBBR
+#define BIT_RATE_REGISTER_H	UBRR0H	//	8 MSB of 16 bit's UBRR0
+#define BIT_RATE_REGISTER_L	UBRR0L	//	8 LSB of 16 bit's UBRR0
+
+// - UDR
+#define UDR_REG	UDR0	// UDR - data register
+
+// -- ATTINY2313/A Definitions --  
+/*
+// - UCRSA
+#define USART_CR_A			UCSRA
+#define RX_CMPLT_FLAG		RXC		
+#define TX_CMPLT_FLAG		TXC
+#define UDR_EMPTY_FLAG		UDRE
+#define FRAME_ERROR_FLAG	FE
+#define DATA_OVERRUN_FLAG	DOR
+#define PARITY_ERROR_FLAG	UPE
+#define DOUBLE_SPEED_U2X	U2X
+#define MULTI_MCU_EN		MPCM
+
+// - UCRSB
+#define USART_CR_B			UCSR0B
+#define RXC_INT_EN			RXCIE
+#define TXC_INT_EN			TXCIE
+#define UDR_EMPTY_INT_EN	UDRIE
+#define RX_ENABLE			RXEN
+#define TX_ENABLE			TXEN
+#define CHAR_SIZE_2			UCSZ2
+#define RX_BIT_8			RXB8
+#define TX_BIT_8			TXB8
+
+// - UCRSC
+#define USART_CR_C			UCSRC
+#define USART_MODE_SEL1		UMSEL1
+#define USART_MODE_SEL0		UMSEL0
+#define USART_PARITY_MODE1	UPM1
+#define USART_PARITY_MODE0	UPM0
+#define USART_STOP_B_SEL	USBS
+#define CHAR_SIZE1			UCSZ1
+#define CHAR_SIZE0			UCSZ0
+#define CLOCK_POL			UCPOL
+
+// - UBRR
+#define BIT_RATE_REGISTER_H	UBRRH
+#define BIT_RATE_REGISTER_L	UBRRL
+
+// - UDR
+#define UDR_REG	UDR0	// UDR - data register
+
+*/ 
+
+// UART MODES
+
+#define UART_8N1	0x00
+#define UART_MODE	MODE_8N1
+
+// User Types
+
+
+// User Prototypes
+void UART_Init(void);
+
+
+#endif
+
