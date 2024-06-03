@@ -1,0 +1,14 @@
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\2_avec_POO\projet_pizza_v1\projet_pizza_v1\obj\Debug\net8.0\projet_pizza_v1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\2_avec_POO\projet_pizza_v1\projet_pizza_v1\obj\Debug\net8.0\projet_pizza_v1.AssemblyInfoInputs.cache
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\2_avec_POO\projet_pizza_v1\projet_pizza_v1\obj\Debug\net8.0\projet_pizza_v1.AssemblyInfo.cs
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\2_avec_POO\projet_pizza_v1\projet_pizza_v1\obj\Debug\net8.0\projet_pizza_v1.csproj.CoreCompileInputs.cache
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\2_avec_POO\projet_pizza_v1\projet_pizza_v1\bin\Debug\net8.0\projet_pizza_v1.exe
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\2_avec_POO\projet_pizza_v1\projet_pizza_v1\bin\Debug\net8.0\projet_pizza_v1.deps.json
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\2_avec_POO\projet_pizza_v1\projet_pizza_v1\bin\Debug\net8.0\projet_pizza_v1.runtimeconfig.json
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\2_avec_POO\projet_pizza_v1\projet_pizza_v1\bin\Debug\net8.0\projet_pizza_v1.dll
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\2_avec_POO\projet_pizza_v1\projet_pizza_v1\bin\Debug\net8.0\projet_pizza_v1.pdb
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\2_avec_POO\projet_pizza_v1\projet_pizza_v1\obj\Debug\net8.0\projet_pizza_v1.dll
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\2_avec_POO\projet_pizza_v1\projet_pizza_v1\obj\Debug\net8.0\refint\projet_pizza_v1.dll
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\2_avec_POO\projet_pizza_v1\projet_pizza_v1\obj\Debug\net8.0\projet_pizza_v1.pdb
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\2_avec_POO\projet_pizza_v1\projet_pizza_v1\obj\Debug\net8.0\projet_pizza_v1.genruntimeconfig.cache
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\2_avec_POO\projet_pizza_v1\projet_pizza_v1\obj\Debug\net8.0\ref\projet_pizza_v1.dll

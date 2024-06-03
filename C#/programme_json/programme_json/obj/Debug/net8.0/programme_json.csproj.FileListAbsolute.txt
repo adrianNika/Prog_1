@@ -1,0 +1,17 @@
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\1_sans_POO\programme_json\programme_json\bin\Debug\net8.0\programme_json.exe
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\1_sans_POO\programme_json\programme_json\bin\Debug\net8.0\programme_json.deps.json
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\1_sans_POO\programme_json\programme_json\bin\Debug\net8.0\programme_json.runtimeconfig.json
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\1_sans_POO\programme_json\programme_json\bin\Debug\net8.0\programme_json.dll
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\1_sans_POO\programme_json\programme_json\bin\Debug\net8.0\programme_json.pdb
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\1_sans_POO\programme_json\programme_json\obj\Debug\net8.0\programme_json.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\1_sans_POO\programme_json\programme_json\obj\Debug\net8.0\programme_json.AssemblyInfoInputs.cache
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\1_sans_POO\programme_json\programme_json\obj\Debug\net8.0\programme_json.AssemblyInfo.cs
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\1_sans_POO\programme_json\programme_json\obj\Debug\net8.0\programme_json.csproj.CoreCompileInputs.cache
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\1_sans_POO\programme_json\programme_json\obj\Debug\net8.0\programme_json.dll
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\1_sans_POO\programme_json\programme_json\obj\Debug\net8.0\refint\programme_json.dll
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\1_sans_POO\programme_json\programme_json\obj\Debug\net8.0\programme_json.pdb
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\1_sans_POO\programme_json\programme_json\obj\Debug\net8.0\programme_json.genruntimeconfig.cache
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\1_sans_POO\programme_json\programme_json\obj\Debug\net8.0\ref\programme_json.dll
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\1_sans_POO\programme_json\programme_json\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\1_sans_POO\programme_json\programme_json\obj\Debug\net8.0\programme_json.csproj.AssemblyReference.cache
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\1_sans_POO\programme_json\programme_json\obj\Debug\net8.0\programm.0768F918.Up2Date

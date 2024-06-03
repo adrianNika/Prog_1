@@ -1,0 +1,14 @@
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\Test_compteur\Test_compteur\bin\Debug\net8.0\Test_compteur.exe
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\Test_compteur\Test_compteur\bin\Debug\net8.0\Test_compteur.deps.json
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\Test_compteur\Test_compteur\bin\Debug\net8.0\Test_compteur.runtimeconfig.json
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\Test_compteur\Test_compteur\bin\Debug\net8.0\Test_compteur.dll
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\Test_compteur\Test_compteur\bin\Debug\net8.0\Test_compteur.pdb
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\Test_compteur\Test_compteur\obj\Debug\net8.0\Test_compteur.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\Test_compteur\Test_compteur\obj\Debug\net8.0\Test_compteur.AssemblyInfoInputs.cache
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\Test_compteur\Test_compteur\obj\Debug\net8.0\Test_compteur.AssemblyInfo.cs
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\Test_compteur\Test_compteur\obj\Debug\net8.0\Test_compteur.csproj.CoreCompileInputs.cache
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\Test_compteur\Test_compteur\obj\Debug\net8.0\Test_compteur.dll
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\Test_compteur\Test_compteur\obj\Debug\net8.0\refint\Test_compteur.dll
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\Test_compteur\Test_compteur\obj\Debug\net8.0\Test_compteur.pdb
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\Test_compteur\Test_compteur\obj\Debug\net8.0\Test_compteur.genruntimeconfig.cache
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\Test_compteur\Test_compteur\obj\Debug\net8.0\ref\Test_compteur.dll

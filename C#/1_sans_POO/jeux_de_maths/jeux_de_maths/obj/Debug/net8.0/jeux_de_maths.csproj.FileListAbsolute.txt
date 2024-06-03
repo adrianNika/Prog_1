@@ -1,0 +1,14 @@
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\jeux_de_maths\jeux_de_maths\obj\Debug\net8.0\jeux_de_maths.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\jeux_de_maths\jeux_de_maths\obj\Debug\net8.0\jeux_de_maths.AssemblyInfoInputs.cache
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\jeux_de_maths\jeux_de_maths\obj\Debug\net8.0\jeux_de_maths.AssemblyInfo.cs
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\jeux_de_maths\jeux_de_maths\obj\Debug\net8.0\jeux_de_maths.csproj.CoreCompileInputs.cache
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\jeux_de_maths\jeux_de_maths\bin\Debug\net8.0\jeux_de_maths.exe
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\jeux_de_maths\jeux_de_maths\bin\Debug\net8.0\jeux_de_maths.deps.json
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\jeux_de_maths\jeux_de_maths\bin\Debug\net8.0\jeux_de_maths.runtimeconfig.json
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\jeux_de_maths\jeux_de_maths\bin\Debug\net8.0\jeux_de_maths.dll
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\jeux_de_maths\jeux_de_maths\bin\Debug\net8.0\jeux_de_maths.pdb
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\jeux_de_maths\jeux_de_maths\obj\Debug\net8.0\jeux_de_maths.dll
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\jeux_de_maths\jeux_de_maths\obj\Debug\net8.0\refint\jeux_de_maths.dll
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\jeux_de_maths\jeux_de_maths\obj\Debug\net8.0\jeux_de_maths.pdb
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\jeux_de_maths\jeux_de_maths\obj\Debug\net8.0\jeux_de_maths.genruntimeconfig.cache
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\jeux_de_maths\jeux_de_maths\obj\Debug\net8.0\ref\jeux_de_maths.dll

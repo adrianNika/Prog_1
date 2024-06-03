@@ -1,0 +1,14 @@
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\ProgrammeDateTime\ProgrammeDateTime\bin\Debug\net8.0\ProgrammeDateTime.exe
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\ProgrammeDateTime\ProgrammeDateTime\bin\Debug\net8.0\ProgrammeDateTime.deps.json
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\ProgrammeDateTime\ProgrammeDateTime\bin\Debug\net8.0\ProgrammeDateTime.runtimeconfig.json
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\ProgrammeDateTime\ProgrammeDateTime\bin\Debug\net8.0\ProgrammeDateTime.dll
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\ProgrammeDateTime\ProgrammeDateTime\bin\Debug\net8.0\ProgrammeDateTime.pdb
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\ProgrammeDateTime\ProgrammeDateTime\obj\Debug\net8.0\ProgrammeDateTime.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\ProgrammeDateTime\ProgrammeDateTime\obj\Debug\net8.0\ProgrammeDateTime.AssemblyInfoInputs.cache
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\ProgrammeDateTime\ProgrammeDateTime\obj\Debug\net8.0\ProgrammeDateTime.AssemblyInfo.cs
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\ProgrammeDateTime\ProgrammeDateTime\obj\Debug\net8.0\ProgrammeDateTime.csproj.CoreCompileInputs.cache
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\ProgrammeDateTime\ProgrammeDateTime\obj\Debug\net8.0\ProgrammeDateTime.dll
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\ProgrammeDateTime\ProgrammeDateTime\obj\Debug\net8.0\refint\ProgrammeDateTime.dll
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\ProgrammeDateTime\ProgrammeDateTime\obj\Debug\net8.0\ProgrammeDateTime.pdb
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\ProgrammeDateTime\ProgrammeDateTime\obj\Debug\net8.0\ProgrammeDateTime.genruntimeconfig.cache
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\ProgrammeDateTime\ProgrammeDateTime\obj\Debug\net8.0\ref\ProgrammeDateTime.dll

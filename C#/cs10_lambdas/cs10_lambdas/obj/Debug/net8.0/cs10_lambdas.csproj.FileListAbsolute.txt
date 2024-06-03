@@ -1,0 +1,14 @@
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\cs10_lambdas\cs10_lambdas\bin\Debug\net8.0\cs10_lambdas.exe
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\cs10_lambdas\cs10_lambdas\bin\Debug\net8.0\cs10_lambdas.deps.json
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\cs10_lambdas\cs10_lambdas\bin\Debug\net8.0\cs10_lambdas.runtimeconfig.json
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\cs10_lambdas\cs10_lambdas\bin\Debug\net8.0\cs10_lambdas.dll
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\cs10_lambdas\cs10_lambdas\bin\Debug\net8.0\cs10_lambdas.pdb
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\cs10_lambdas\cs10_lambdas\obj\Debug\net8.0\cs10_lambdas.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\cs10_lambdas\cs10_lambdas\obj\Debug\net8.0\cs10_lambdas.AssemblyInfoInputs.cache
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\cs10_lambdas\cs10_lambdas\obj\Debug\net8.0\cs10_lambdas.AssemblyInfo.cs
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\cs10_lambdas\cs10_lambdas\obj\Debug\net8.0\cs10_lambdas.csproj.CoreCompileInputs.cache
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\cs10_lambdas\cs10_lambdas\obj\Debug\net8.0\cs10_lambdas.dll
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\cs10_lambdas\cs10_lambdas\obj\Debug\net8.0\refint\cs10_lambdas.dll
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\cs10_lambdas\cs10_lambdas\obj\Debug\net8.0\cs10_lambdas.pdb
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\cs10_lambdas\cs10_lambdas\obj\Debug\net8.0\cs10_lambdas.genruntimeconfig.cache
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\cs10_lambdas\cs10_lambdas\obj\Debug\net8.0\ref\cs10_lambdas.dll

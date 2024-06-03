@@ -1,0 +1,72 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\adria\\Desktop\\Projet_GIT\\Prog\\C\u002B\u002B\\POO\\Duree\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{48F631CB-44A4-4324-8AB3-CBE8A8B895A5}|Duree\\Duree.vcxproj|C:\\Users\\adria\\Desktop\\Projet_GIT\\Prog\\C\u002B\u002B\\POO\\Duree\\Duree\\Duree.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{48F631CB-44A4-4324-8AB3-CBE8A8B895A5}|Duree\\Duree.vcxproj|solutionrelative:Duree\\Duree.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48F631CB-44A4-4324-8AB3-CBE8A8B895A5}|Duree\\Duree.vcxproj|C:\\Users\\adria\\Desktop\\Projet_GIT\\Prog\\C\u002B\u002B\\POO\\Duree\\Duree\\Duree.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{48F631CB-44A4-4324-8AB3-CBE8A8B895A5}|Duree\\Duree.vcxproj|solutionrelative:Duree\\Duree.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48F631CB-44A4-4324-8AB3-CBE8A8B895A5}|Duree\\Duree.vcxproj|C:\\Users\\adria\\Desktop\\Projet_GIT\\Prog\\C\u002B\u002B\\POO\\Duree\\Duree\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{48F631CB-44A4-4324-8AB3-CBE8A8B895A5}|Duree\\Duree.vcxproj|solutionrelative:Duree\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "main.cpp",
+              "DocumentMoniker": "C:\\Users\\adria\\Desktop\\Projet_GIT\\Prog\\C\u002B\u002B\\POO\\Duree\\Duree\\main.cpp",
+              "RelativeDocumentMoniker": "Duree\\main.cpp",
+              "ToolTip": "C:\\Users\\adria\\Desktop\\Projet_GIT\\Prog\\C\u002B\u002B\\POO\\Duree\\Duree\\main.cpp",
+              "RelativeToolTip": "Duree\\main.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-03-25T13:40:53.98Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Duree.cpp",
+              "DocumentMoniker": "C:\\Users\\adria\\Desktop\\Projet_GIT\\Prog\\C\u002B\u002B\\POO\\Duree\\Duree\\Duree.cpp",
+              "RelativeDocumentMoniker": "Duree\\Duree.cpp",
+              "ToolTip": "C:\\Users\\adria\\Desktop\\Projet_GIT\\Prog\\C\u002B\u002B\\POO\\Duree\\Duree\\Duree.cpp",
+              "RelativeToolTip": "Duree\\Duree.cpp",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABIAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-03-25T15:04:45.327Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Duree.hpp",
+              "DocumentMoniker": "C:\\Users\\adria\\Desktop\\Projet_GIT\\Prog\\C\u002B\u002B\\POO\\Duree\\Duree\\Duree.hpp",
+              "RelativeDocumentMoniker": "Duree\\Duree.hpp",
+              "ToolTip": "C:\\Users\\adria\\Desktop\\Projet_GIT\\Prog\\C\u002B\u002B\\POO\\Duree\\Duree\\Duree.hpp",
+              "RelativeToolTip": "Duree\\Duree.hpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-03-25T13:40:44.648Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

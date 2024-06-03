@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "iIMgjSAeLqCSiYran1B8sADXEzOVJ8WoGCnbfS9fPCL/qlfFbglzdE092q6Xt3zomnE9fRntx2ezcv+hOBwPJg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\adria\\Desktop\\Projet_GIT\\Prog\\C#\\programme_json\\programme_json\\programme_json.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\adria\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

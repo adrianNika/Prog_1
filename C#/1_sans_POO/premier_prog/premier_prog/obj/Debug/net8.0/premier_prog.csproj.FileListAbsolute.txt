@@ -1,0 +1,14 @@
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\premier_prog\premier_prog\bin\Debug\net8.0\premier_prog.exe
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\premier_prog\premier_prog\bin\Debug\net8.0\premier_prog.deps.json
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\premier_prog\premier_prog\bin\Debug\net8.0\premier_prog.runtimeconfig.json
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\premier_prog\premier_prog\bin\Debug\net8.0\premier_prog.dll
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\premier_prog\premier_prog\bin\Debug\net8.0\premier_prog.pdb
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\premier_prog\premier_prog\obj\Debug\net8.0\premier_prog.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\premier_prog\premier_prog\obj\Debug\net8.0\premier_prog.AssemblyInfoInputs.cache
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\premier_prog\premier_prog\obj\Debug\net8.0\premier_prog.AssemblyInfo.cs
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\premier_prog\premier_prog\obj\Debug\net8.0\premier_prog.csproj.CoreCompileInputs.cache
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\premier_prog\premier_prog\obj\Debug\net8.0\premier_prog.dll
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\premier_prog\premier_prog\obj\Debug\net8.0\refint\premier_prog.dll
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\premier_prog\premier_prog\obj\Debug\net8.0\premier_prog.pdb
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\premier_prog\premier_prog\obj\Debug\net8.0\premier_prog.genruntimeconfig.cache
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\premier_prog\premier_prog\obj\Debug\net8.0\ref\premier_prog.dll

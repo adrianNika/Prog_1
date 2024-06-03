@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\adria\\Desktop\\Projet_GIT\\Prog\\C\u002B\u002B\\POO\\POO_Mini_RPG\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7E7DDBEE-D4F4-4C57-B891-FCD3568FC00B}|POO_Mini_RPG\\POO_Mini_RPG.vcxproj|C:\\Users\\adria\\Desktop\\Projet_GIT\\Prog\\C\u002B\u002B\\POO\\POO_Mini_RPG\\POO_Mini_RPG\\Arme.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7E7DDBEE-D4F4-4C57-B891-FCD3568FC00B}|POO_Mini_RPG\\POO_Mini_RPG.vcxproj|solutionrelative:POO_Mini_RPG\\Arme.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E7DDBEE-D4F4-4C57-B891-FCD3568FC00B}|POO_Mini_RPG\\POO_Mini_RPG.vcxproj|C:\\Users\\adria\\Desktop\\Projet_GIT\\Prog\\C\u002B\u002B\\POO\\POO_Mini_RPG\\POO_Mini_RPG\\Personnage.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7E7DDBEE-D4F4-4C57-B891-FCD3568FC00B}|POO_Mini_RPG\\POO_Mini_RPG.vcxproj|solutionrelative:POO_Mini_RPG\\Personnage.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E7DDBEE-D4F4-4C57-B891-FCD3568FC00B}|POO_Mini_RPG\\POO_Mini_RPG.vcxproj|C:\\Users\\adria\\Desktop\\Projet_GIT\\Prog\\C\u002B\u002B\\POO\\POO_Mini_RPG\\POO_Mini_RPG\\POO_Mini_RPG.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7E7DDBEE-D4F4-4C57-B891-FCD3568FC00B}|POO_Mini_RPG\\POO_Mini_RPG.vcxproj|solutionrelative:POO_Mini_RPG\\POO_Mini_RPG.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E7DDBEE-D4F4-4C57-B891-FCD3568FC00B}|POO_Mini_RPG\\POO_Mini_RPG.vcxproj|C:\\Users\\adria\\Desktop\\Projet_GIT\\Prog\\C\u002B\u002B\\POO\\POO_Mini_RPG\\POO_Mini_RPG\\Arme.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7E7DDBEE-D4F4-4C57-B891-FCD3568FC00B}|POO_Mini_RPG\\POO_Mini_RPG.vcxproj|solutionrelative:POO_Mini_RPG\\Arme.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E7DDBEE-D4F4-4C57-B891-FCD3568FC00B}|POO_Mini_RPG\\POO_Mini_RPG.vcxproj|C:\\Users\\adria\\Desktop\\Projet_GIT\\Prog\\C\u002B\u002B\\POO\\POO_Mini_RPG\\POO_Mini_RPG\\Personnage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7E7DDBEE-D4F4-4C57-B891-FCD3568FC00B}|POO_Mini_RPG\\POO_Mini_RPG.vcxproj|solutionrelative:POO_Mini_RPG\\Personnage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "POO_Mini_RPG.cpp",
+              "DocumentMoniker": "C:\\Users\\adria\\Desktop\\Projet_GIT\\Prog\\C\u002B\u002B\\POO\\POO_Mini_RPG\\POO_Mini_RPG\\POO_Mini_RPG.cpp",
+              "RelativeDocumentMoniker": "POO_Mini_RPG\\POO_Mini_RPG.cpp",
+              "ToolTip": "C:\\Users\\adria\\Desktop\\Projet_GIT\\Prog\\C\u002B\u002B\\POO\\POO_Mini_RPG\\POO_Mini_RPG\\POO_Mini_RPG.cpp",
+              "RelativeToolTip": "POO_Mini_RPG\\POO_Mini_RPG.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-03-25T10:28:29.249Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Personnage.cpp",
+              "DocumentMoniker": "C:\\Users\\adria\\Desktop\\Projet_GIT\\Prog\\C\u002B\u002B\\POO\\POO_Mini_RPG\\POO_Mini_RPG\\Personnage.cpp",
+              "RelativeDocumentMoniker": "POO_Mini_RPG\\Personnage.cpp",
+              "ToolTip": "C:\\Users\\adria\\Desktop\\Projet_GIT\\Prog\\C\u002B\u002B\\POO\\POO_Mini_RPG\\POO_Mini_RPG\\Personnage.cpp",
+              "RelativeToolTip": "POO_Mini_RPG\\Personnage.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAF4AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-03-25T10:42:57.91Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Personnage.hpp",
+              "DocumentMoniker": "C:\\Users\\adria\\Desktop\\Projet_GIT\\Prog\\C\u002B\u002B\\POO\\POO_Mini_RPG\\POO_Mini_RPG\\Personnage.hpp",
+              "RelativeDocumentMoniker": "POO_Mini_RPG\\Personnage.hpp",
+              "ToolTip": "C:\\Users\\adria\\Desktop\\Projet_GIT\\Prog\\C\u002B\u002B\\POO\\POO_Mini_RPG\\POO_Mini_RPG\\Personnage.hpp",
+              "RelativeToolTip": "POO_Mini_RPG\\Personnage.hpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-03-25T10:43:11.578Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Arme.cpp",
+              "DocumentMoniker": "C:\\Users\\adria\\Desktop\\Projet_GIT\\Prog\\C\u002B\u002B\\POO\\POO_Mini_RPG\\POO_Mini_RPG\\Arme.cpp",
+              "RelativeDocumentMoniker": "POO_Mini_RPG\\Arme.cpp",
+              "ToolTip": "C:\\Users\\adria\\Desktop\\Projet_GIT\\Prog\\C\u002B\u002B\\POO\\POO_Mini_RPG\\POO_Mini_RPG\\Arme.cpp",
+              "RelativeToolTip": "POO_Mini_RPG\\Arme.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-03-25T12:31:44.059Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Arme.hpp",
+              "DocumentMoniker": "C:\\Users\\adria\\Desktop\\Projet_GIT\\Prog\\C\u002B\u002B\\POO\\POO_Mini_RPG\\POO_Mini_RPG\\Arme.hpp",
+              "RelativeDocumentMoniker": "POO_Mini_RPG\\Arme.hpp",
+              "ToolTip": "C:\\Users\\adria\\Desktop\\Projet_GIT\\Prog\\C\u002B\u002B\\POO\\POO_Mini_RPG\\POO_Mini_RPG\\Arme.hpp",
+              "RelativeToolTip": "POO_Mini_RPG\\Arme.hpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-03-25T12:32:00.784Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

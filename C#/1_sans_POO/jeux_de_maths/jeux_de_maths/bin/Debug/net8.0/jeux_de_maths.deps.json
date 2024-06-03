@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "jeux_de_maths/1.0.0": {
+        "runtime": {
+          "jeux_de_maths.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "jeux_de_maths/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

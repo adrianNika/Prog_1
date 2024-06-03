@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Enregistrement et Chat</title>
+        <link rel="stylesheet" href="chat.css" />   
+    </head>
+    <body>
+        <div class="nav-barre">
+            <h3><span id="usernameDisplay"></span></h3>
+            <div class="profile">
+                <img src="https://bcw-media.s3.ap-northeast-1.amazonaws.com/yce_ai_anime_topbanner_mb_01_a51ba67c67.jpg" alt="Profil">
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="user-container">
+                <h2>Personnes sur le chat</h2>
+                <div class="user-list">
+                    <ul id="userList"></ul>
+                </div>
+            </div>
+        
+            <div class="chat-container">
+                <div class="chat" id="chatBox"></div>
+        
+                <div class="chat-send">
+                    <form id="chatForm">
+                        <input type="text" id="messageInput" placeholder="Votre message" required>
+                        <input type="submit" value="Envoyer">
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+        
+        </footer>
+
+        <script>
+            const chatForm = document.getElementById('chatForm');
+            const messageInput = document.getElementById('messageInput');
+            const chatBox = document.getElementById('chatBox');
+            const userList = document.getElementById('userList');
+            const usernameDisplay = document.getElementById('usernameDisplay');
+
+            const users = [];
+
+            chatForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const message = messageInput.value.trim();
+                if (message) {
+                    sendMessage(message);
+                    messageInput.value = '';
+                }
+            });
+
+            function sendMessage(message) {
+                // Envoi du message à tous les utilisateurs connectés (simulé ici)
+                for (const user of users) {
+                    displayMessage(user, message);
+                }
+            }
+
+            function sendMessageJoinChat(message) {
+                // Envoi du message à tous les utilisateurs connectés (simulé ici)
+                for (const user of users) {
+                    displayMessageJoinChat(user, message, true);
+                }
+            }
+
+            function displayMessage(sender, message) {
+                const messageElement = document.createElement('p');
+                messageElement.textContent = `${sender}: ${message}`;
+                chatBox.appendChild(messageElement);
+                // Fait défiler vers le bas pour afficher les nouveaux messages
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }
+
+            function displayMessageJoinChat(sender, message, isnotif = false) {
+                const messageElement = document.createElement('p');
+                messageElement.textContent = `${message}`;
+                if (isnotif) 
+                {
+                    messageElement.classList.add('notification');
+                }
+                chatBox.appendChild(messageElement);
+                // Fait défiler vers le bas pour afficher les nouveaux messages
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }
+
+            // Fonction pour mettre à jour la liste des utilisateurs
+            function updateUserList() {
+                userList.innerHTML = '';
+                for (const user of users) {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = user;
+                    userList.appendChild(listItem);
+                }
+            }
+
+            // Enregistrement simulé de l'utilisateur
+            const username = prompt('Entrez votre nom d\'utilisateur:');
+            if (username) 
+            {
+                usernameDisplay.textContent = username;
+                users.push(username);
+                updateUserList();
+                sendMessageJoinChat(`${username} a rejoint le chat.`);
+            }
+        </script>
+    </body>
+</html>

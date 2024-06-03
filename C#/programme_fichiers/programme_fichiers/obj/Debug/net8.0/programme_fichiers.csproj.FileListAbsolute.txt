@@ -1,0 +1,14 @@
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\1_sans_POO\programme_fichiers\programme_fichiers\bin\Debug\net8.0\programme_fichiers.exe
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\1_sans_POO\programme_fichiers\programme_fichiers\bin\Debug\net8.0\programme_fichiers.deps.json
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\1_sans_POO\programme_fichiers\programme_fichiers\bin\Debug\net8.0\programme_fichiers.runtimeconfig.json
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\1_sans_POO\programme_fichiers\programme_fichiers\bin\Debug\net8.0\programme_fichiers.dll
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\1_sans_POO\programme_fichiers\programme_fichiers\bin\Debug\net8.0\programme_fichiers.pdb
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\1_sans_POO\programme_fichiers\programme_fichiers\obj\Debug\net8.0\programme_fichiers.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\1_sans_POO\programme_fichiers\programme_fichiers\obj\Debug\net8.0\programme_fichiers.AssemblyInfoInputs.cache
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\1_sans_POO\programme_fichiers\programme_fichiers\obj\Debug\net8.0\programme_fichiers.AssemblyInfo.cs
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\1_sans_POO\programme_fichiers\programme_fichiers\obj\Debug\net8.0\programme_fichiers.csproj.CoreCompileInputs.cache
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\1_sans_POO\programme_fichiers\programme_fichiers\obj\Debug\net8.0\programme_fichiers.dll
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\1_sans_POO\programme_fichiers\programme_fichiers\obj\Debug\net8.0\refint\programme_fichiers.dll
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\1_sans_POO\programme_fichiers\programme_fichiers\obj\Debug\net8.0\programme_fichiers.pdb
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\1_sans_POO\programme_fichiers\programme_fichiers\obj\Debug\net8.0\programme_fichiers.genruntimeconfig.cache
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\1_sans_POO\programme_fichiers\programme_fichiers\obj\Debug\net8.0\ref\programme_fichiers.dll

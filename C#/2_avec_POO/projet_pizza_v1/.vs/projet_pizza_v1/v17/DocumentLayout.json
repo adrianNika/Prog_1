@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\adria\\Desktop\\Projet_GIT\\Prog\\C#\\2_avec_POO\\projet_pizza_v1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{84E88A5A-2CD6-46DD-98B4-F36214D9E7FF}|projet_pizza_v1\\projet_pizza_v1.csproj|c:\\users\\adria\\desktop\\projet_git\\prog\\c#\\2_avec_poo\\projet_pizza_v1\\projet_pizza_v1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{84E88A5A-2CD6-46DD-98B4-F36214D9E7FF}|projet_pizza_v1\\projet_pizza_v1.csproj|solutionrelative:projet_pizza_v1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{84E88A5A-2CD6-46DD-98B4-F36214D9E7FF}|projet_pizza_v1\\projet_pizza_v1.csproj|c:\\users\\adria\\desktop\\projet_git\\prog\\c#\\2_avec_poo\\projet_pizza_v1\\projet_pizza_v1\\outils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{84E88A5A-2CD6-46DD-98B4-F36214D9E7FF}|projet_pizza_v1\\projet_pizza_v1.csproj|solutionrelative:projet_pizza_v1\\outils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\adria\\Desktop\\Projet_GIT\\Prog\\C#\\2_avec_POO\\projet_pizza_v1\\projet_pizza_v1\\Program.cs",
+              "RelativeDocumentMoniker": "projet_pizza_v1\\Program.cs",
+              "ToolTip": "C:\\Users\\adria\\Desktop\\Projet_GIT\\Prog\\C#\\2_avec_POO\\projet_pizza_v1\\projet_pizza_v1\\Program.cs",
+              "RelativeToolTip": "projet_pizza_v1\\Program.cs",
+              "ViewState": "AQIAAKAAAAAAAAAAAAAkwMMAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-12T14:25:40.268Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "outils.cs",
+              "DocumentMoniker": "C:\\Users\\adria\\Desktop\\Projet_GIT\\Prog\\C#\\2_avec_POO\\projet_pizza_v1\\projet_pizza_v1\\outils.cs",
+              "RelativeDocumentMoniker": "projet_pizza_v1\\outils.cs",
+              "ToolTip": "C:\\Users\\adria\\Desktop\\Projet_GIT\\Prog\\C#\\2_avec_POO\\projet_pizza_v1\\projet_pizza_v1\\outils.cs",
+              "RelativeToolTip": "projet_pizza_v1\\outils.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-16T06:24:30.964Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\nombre_magique\nombre_magique\bin\Debug\net8.0\nombre_magique.exe
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\nombre_magique\nombre_magique\bin\Debug\net8.0\nombre_magique.deps.json
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\nombre_magique\nombre_magique\bin\Debug\net8.0\nombre_magique.runtimeconfig.json
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\nombre_magique\nombre_magique\bin\Debug\net8.0\nombre_magique.dll
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\nombre_magique\nombre_magique\bin\Debug\net8.0\nombre_magique.pdb
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\nombre_magique\nombre_magique\obj\Debug\net8.0\nombre_magique.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\nombre_magique\nombre_magique\obj\Debug\net8.0\nombre_magique.AssemblyInfoInputs.cache
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\nombre_magique\nombre_magique\obj\Debug\net8.0\nombre_magique.AssemblyInfo.cs
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\nombre_magique\nombre_magique\obj\Debug\net8.0\nombre_magique.csproj.CoreCompileInputs.cache
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\nombre_magique\nombre_magique\obj\Debug\net8.0\nombre_magique.dll
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\nombre_magique\nombre_magique\obj\Debug\net8.0\refint\nombre_magique.dll
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\nombre_magique\nombre_magique\obj\Debug\net8.0\nombre_magique.pdb
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\nombre_magique\nombre_magique\obj\Debug\net8.0\nombre_magique.genruntimeconfig.cache
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\nombre_magique\nombre_magique\obj\Debug\net8.0\ref\nombre_magique.dll

@@ -1,0 +1,14 @@
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\cs10_structs\cs10_structs\bin\Debug\net8.0\cs10_structs.exe
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\cs10_structs\cs10_structs\bin\Debug\net8.0\cs10_structs.deps.json
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\cs10_structs\cs10_structs\bin\Debug\net8.0\cs10_structs.runtimeconfig.json
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\cs10_structs\cs10_structs\bin\Debug\net8.0\cs10_structs.dll
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\cs10_structs\cs10_structs\bin\Debug\net8.0\cs10_structs.pdb
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\cs10_structs\cs10_structs\obj\Debug\net8.0\cs10_structs.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\cs10_structs\cs10_structs\obj\Debug\net8.0\cs10_structs.AssemblyInfoInputs.cache
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\cs10_structs\cs10_structs\obj\Debug\net8.0\cs10_structs.AssemblyInfo.cs
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\cs10_structs\cs10_structs\obj\Debug\net8.0\cs10_structs.csproj.CoreCompileInputs.cache
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\cs10_structs\cs10_structs\obj\Debug\net8.0\cs10_structs.dll
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\cs10_structs\cs10_structs\obj\Debug\net8.0\refint\cs10_structs.dll
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\cs10_structs\cs10_structs\obj\Debug\net8.0\cs10_structs.pdb
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\cs10_structs\cs10_structs\obj\Debug\net8.0\cs10_structs.genruntimeconfig.cache
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\cs10_structs\cs10_structs\obj\Debug\net8.0\ref\cs10_structs.dll

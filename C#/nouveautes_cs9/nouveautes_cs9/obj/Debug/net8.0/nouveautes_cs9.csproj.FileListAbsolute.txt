@@ -1,0 +1,14 @@
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\nouveautes_cs9\nouveautes_cs9\bin\Debug\net8.0\nouveautes_cs9.exe
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\nouveautes_cs9\nouveautes_cs9\bin\Debug\net8.0\nouveautes_cs9.deps.json
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\nouveautes_cs9\nouveautes_cs9\bin\Debug\net8.0\nouveautes_cs9.runtimeconfig.json
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\nouveautes_cs9\nouveautes_cs9\bin\Debug\net8.0\nouveautes_cs9.dll
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\nouveautes_cs9\nouveautes_cs9\bin\Debug\net8.0\nouveautes_cs9.pdb
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\nouveautes_cs9\nouveautes_cs9\obj\Debug\net8.0\nouveautes_cs9.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\nouveautes_cs9\nouveautes_cs9\obj\Debug\net8.0\nouveautes_cs9.AssemblyInfoInputs.cache
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\nouveautes_cs9\nouveautes_cs9\obj\Debug\net8.0\nouveautes_cs9.AssemblyInfo.cs
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\nouveautes_cs9\nouveautes_cs9\obj\Debug\net8.0\nouveautes_cs9.csproj.CoreCompileInputs.cache
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\nouveautes_cs9\nouveautes_cs9\obj\Debug\net8.0\nouveautes_cs9.dll
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\nouveautes_cs9\nouveautes_cs9\obj\Debug\net8.0\refint\nouveautes_cs9.dll
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\nouveautes_cs9\nouveautes_cs9\obj\Debug\net8.0\nouveautes_cs9.pdb
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\nouveautes_cs9\nouveautes_cs9\obj\Debug\net8.0\nouveautes_cs9.genruntimeconfig.cache
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\nouveautes_cs9\nouveautes_cs9\obj\Debug\net8.0\ref\nouveautes_cs9.dll

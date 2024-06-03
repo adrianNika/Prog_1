@@ -1,0 +1,17 @@
+C:\Users\adria\OneDrive\Bureau\code\projet_pizza_v2_5\projet_pizza\bin\Debug\net8.0\projet_pizza.exe
+C:\Users\adria\OneDrive\Bureau\code\projet_pizza_v2_5\projet_pizza\bin\Debug\net8.0\projet_pizza.deps.json
+C:\Users\adria\OneDrive\Bureau\code\projet_pizza_v2_5\projet_pizza\bin\Debug\net8.0\projet_pizza.runtimeconfig.json
+C:\Users\adria\OneDrive\Bureau\code\projet_pizza_v2_5\projet_pizza\bin\Debug\net8.0\projet_pizza.dll
+C:\Users\adria\OneDrive\Bureau\code\projet_pizza_v2_5\projet_pizza\bin\Debug\net8.0\projet_pizza.pdb
+C:\Users\adria\OneDrive\Bureau\code\projet_pizza_v2_5\projet_pizza\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\adria\OneDrive\Bureau\code\projet_pizza_v2_5\projet_pizza\obj\Debug\net8.0\projet_pizza.csproj.AssemblyReference.cache
+C:\Users\adria\OneDrive\Bureau\code\projet_pizza_v2_5\projet_pizza\obj\Debug\net8.0\projet_pizza.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\adria\OneDrive\Bureau\code\projet_pizza_v2_5\projet_pizza\obj\Debug\net8.0\projet_pizza.AssemblyInfoInputs.cache
+C:\Users\adria\OneDrive\Bureau\code\projet_pizza_v2_5\projet_pizza\obj\Debug\net8.0\projet_pizza.AssemblyInfo.cs
+C:\Users\adria\OneDrive\Bureau\code\projet_pizza_v2_5\projet_pizza\obj\Debug\net8.0\projet_pizza.csproj.CoreCompileInputs.cache
+C:\Users\adria\OneDrive\Bureau\code\projet_pizza_v2_5\projet_pizza\obj\Debug\net8.0\projet_p.5172EF56.Up2Date
+C:\Users\adria\OneDrive\Bureau\code\projet_pizza_v2_5\projet_pizza\obj\Debug\net8.0\projet_pizza.dll
+C:\Users\adria\OneDrive\Bureau\code\projet_pizza_v2_5\projet_pizza\obj\Debug\net8.0\refint\projet_pizza.dll
+C:\Users\adria\OneDrive\Bureau\code\projet_pizza_v2_5\projet_pizza\obj\Debug\net8.0\projet_pizza.pdb
+C:\Users\adria\OneDrive\Bureau\code\projet_pizza_v2_5\projet_pizza\obj\Debug\net8.0\projet_pizza.genruntimeconfig.cache
+C:\Users\adria\OneDrive\Bureau\code\projet_pizza_v2_5\projet_pizza\obj\Debug\net8.0\ref\projet_pizza.dll

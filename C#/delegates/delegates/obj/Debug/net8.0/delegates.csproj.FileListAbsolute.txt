@@ -1,0 +1,14 @@
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\delegates\delegates\bin\Debug\net8.0\delegates.exe
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\delegates\delegates\bin\Debug\net8.0\delegates.deps.json
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\delegates\delegates\bin\Debug\net8.0\delegates.runtimeconfig.json
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\delegates\delegates\bin\Debug\net8.0\delegates.dll
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\delegates\delegates\bin\Debug\net8.0\delegates.pdb
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\delegates\delegates\obj\Debug\net8.0\delegates.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\delegates\delegates\obj\Debug\net8.0\delegates.AssemblyInfoInputs.cache
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\delegates\delegates\obj\Debug\net8.0\delegates.AssemblyInfo.cs
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\delegates\delegates\obj\Debug\net8.0\delegates.csproj.CoreCompileInputs.cache
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\delegates\delegates\obj\Debug\net8.0\delegates.dll
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\delegates\delegates\obj\Debug\net8.0\refint\delegates.dll
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\delegates\delegates\obj\Debug\net8.0\delegates.pdb
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\delegates\delegates\obj\Debug\net8.0\delegates.genruntimeconfig.cache
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\delegates\delegates\obj\Debug\net8.0\ref\delegates.dll

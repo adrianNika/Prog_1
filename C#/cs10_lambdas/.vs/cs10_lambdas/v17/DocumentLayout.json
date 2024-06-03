@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\adria\\Desktop\\Projet_GIT\\Prog\\C#\\cs10_lambdas\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{12FA54DF-853E-42A4-A0DC-9739010CAC9D}|cs10_lambdas\\cs10_lambdas.csproj|c:\\users\\adria\\desktop\\projet_git\\prog\\c#\\cs10_lambdas\\cs10_lambdas\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12FA54DF-853E-42A4-A0DC-9739010CAC9D}|cs10_lambdas\\cs10_lambdas.csproj|solutionrelative:cs10_lambdas\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\adria\\Desktop\\Projet_GIT\\Prog\\C#\\cs10_lambdas\\cs10_lambdas\\Program.cs",
+              "RelativeDocumentMoniker": "cs10_lambdas\\Program.cs",
+              "ToolTip": "C:\\Users\\adria\\Desktop\\Projet_GIT\\Prog\\C#\\cs10_lambdas\\cs10_lambdas\\Program.cs",
+              "RelativeToolTip": "cs10_lambdas\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-01T08:54:52.495Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

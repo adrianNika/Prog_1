@@ -1,0 +1,17 @@
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\cs10_global_using\cs10_global_using\bin\Debug\net8.0\cs10_global_using.exe
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\cs10_global_using\cs10_global_using\bin\Debug\net8.0\cs10_global_using.deps.json
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\cs10_global_using\cs10_global_using\bin\Debug\net8.0\cs10_global_using.runtimeconfig.json
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\cs10_global_using\cs10_global_using\bin\Debug\net8.0\cs10_global_using.dll
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\cs10_global_using\cs10_global_using\bin\Debug\net8.0\cs10_global_using.pdb
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\cs10_global_using\cs10_global_using\obj\Debug\net8.0\cs10_global_using.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\cs10_global_using\cs10_global_using\obj\Debug\net8.0\cs10_global_using.AssemblyInfoInputs.cache
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\cs10_global_using\cs10_global_using\obj\Debug\net8.0\cs10_global_using.AssemblyInfo.cs
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\cs10_global_using\cs10_global_using\obj\Debug\net8.0\cs10_global_using.csproj.CoreCompileInputs.cache
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\cs10_global_using\cs10_global_using\obj\Debug\net8.0\cs10_global_using.dll
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\cs10_global_using\cs10_global_using\obj\Debug\net8.0\refint\cs10_global_using.dll
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\cs10_global_using\cs10_global_using\obj\Debug\net8.0\cs10_global_using.pdb
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\cs10_global_using\cs10_global_using\obj\Debug\net8.0\cs10_global_using.genruntimeconfig.cache
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\cs10_global_using\cs10_global_using\obj\Debug\net8.0\ref\cs10_global_using.dll
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\cs10_global_using\cs10_global_using\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\cs10_global_using\cs10_global_using\obj\Debug\net8.0\cs10_global_using.csproj.AssemblyReference.cache
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\cs10_global_using\cs10_global_using\obj\Debug\net8.0\cs10_glo.DEF7F77C.Up2Date

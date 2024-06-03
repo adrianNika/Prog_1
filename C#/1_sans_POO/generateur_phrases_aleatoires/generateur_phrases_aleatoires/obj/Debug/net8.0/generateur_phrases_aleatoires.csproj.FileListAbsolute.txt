@@ -1,0 +1,14 @@
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\generateur_phrases_aleatoires\generateur_phrases_aleatoires\bin\Debug\net8.0\generateur_phrases_aleatoires.exe
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\generateur_phrases_aleatoires\generateur_phrases_aleatoires\bin\Debug\net8.0\generateur_phrases_aleatoires.deps.json
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\generateur_phrases_aleatoires\generateur_phrases_aleatoires\bin\Debug\net8.0\generateur_phrases_aleatoires.runtimeconfig.json
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\generateur_phrases_aleatoires\generateur_phrases_aleatoires\bin\Debug\net8.0\generateur_phrases_aleatoires.dll
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\generateur_phrases_aleatoires\generateur_phrases_aleatoires\bin\Debug\net8.0\generateur_phrases_aleatoires.pdb
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\generateur_phrases_aleatoires\generateur_phrases_aleatoires\obj\Debug\net8.0\generateur_phrases_aleatoires.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\generateur_phrases_aleatoires\generateur_phrases_aleatoires\obj\Debug\net8.0\generateur_phrases_aleatoires.AssemblyInfoInputs.cache
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\generateur_phrases_aleatoires\generateur_phrases_aleatoires\obj\Debug\net8.0\generateur_phrases_aleatoires.AssemblyInfo.cs
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\generateur_phrases_aleatoires\generateur_phrases_aleatoires\obj\Debug\net8.0\generateur_phrases_aleatoires.csproj.CoreCompileInputs.cache
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\generateur_phrases_aleatoires\generateur_phrases_aleatoires\obj\Debug\net8.0\generateur_phrases_aleatoires.dll
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\generateur_phrases_aleatoires\generateur_phrases_aleatoires\obj\Debug\net8.0\refint\generateur_phrases_aleatoires.dll
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\generateur_phrases_aleatoires\generateur_phrases_aleatoires\obj\Debug\net8.0\generateur_phrases_aleatoires.pdb
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\generateur_phrases_aleatoires\generateur_phrases_aleatoires\obj\Debug\net8.0\generateur_phrases_aleatoires.genruntimeconfig.cache
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\generateur_phrases_aleatoires\generateur_phrases_aleatoires\obj\Debug\net8.0\ref\generateur_phrases_aleatoires.dll

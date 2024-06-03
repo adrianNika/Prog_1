@@ -1,0 +1,14 @@
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\AsyncDelegate\AsyncDelegate\bin\Debug\net8.0\AsyncDelegate.exe
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\AsyncDelegate\AsyncDelegate\bin\Debug\net8.0\AsyncDelegate.deps.json
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\AsyncDelegate\AsyncDelegate\bin\Debug\net8.0\AsyncDelegate.runtimeconfig.json
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\AsyncDelegate\AsyncDelegate\bin\Debug\net8.0\AsyncDelegate.dll
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\AsyncDelegate\AsyncDelegate\bin\Debug\net8.0\AsyncDelegate.pdb
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\AsyncDelegate\AsyncDelegate\obj\Debug\net8.0\AsyncDelegate.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\AsyncDelegate\AsyncDelegate\obj\Debug\net8.0\AsyncDelegate.AssemblyInfoInputs.cache
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\AsyncDelegate\AsyncDelegate\obj\Debug\net8.0\AsyncDelegate.AssemblyInfo.cs
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\AsyncDelegate\AsyncDelegate\obj\Debug\net8.0\AsyncDelegate.csproj.CoreCompileInputs.cache
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\AsyncDelegate\AsyncDelegate\obj\Debug\net8.0\AsyncDelegate.dll
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\AsyncDelegate\AsyncDelegate\obj\Debug\net8.0\refint\AsyncDelegate.dll
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\AsyncDelegate\AsyncDelegate\obj\Debug\net8.0\AsyncDelegate.pdb
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\AsyncDelegate\AsyncDelegate\obj\Debug\net8.0\AsyncDelegate.genruntimeconfig.cache
+C:\Users\adria\Desktop\Projet_GIT\Prog\C#\AsyncDelegate\AsyncDelegate\obj\Debug\net8.0\ref\AsyncDelegate.dll

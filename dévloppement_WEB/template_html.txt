@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <!--Voici la Tête-->
+    <head>
+        <title>Mon titre</title>
+        <meta charset="UTF-8">
+    </head>
+    <!--Voici le corp-->
+    <body> 
+            
+    </body>
+
+</html>

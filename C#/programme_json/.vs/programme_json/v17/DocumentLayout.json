@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\adria\\Desktop\\Projet_GIT\\Prog\\C#\\programme_json\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C72212C7-DEB7-4125-A924-1D4E6A52C0BA}|programme_json\\programme_json.csproj|c:\\users\\adria\\desktop\\projet_git\\prog\\c#\\programme_json\\programme_json\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C72212C7-DEB7-4125-A924-1D4E6A52C0BA}|programme_json\\programme_json.csproj|solutionrelative:programme_json\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\adria\\Desktop\\Projet_GIT\\Prog\\C#\\programme_json\\programme_json\\Program.cs",
+              "RelativeDocumentMoniker": "programme_json\\Program.cs",
+              "ToolTip": "C:\\Users\\adria\\Desktop\\Projet_GIT\\Prog\\C#\\programme_json\\programme_json\\Program.cs",
+              "RelativeToolTip": "programme_json\\Program.cs",
+              "ViewState": "AQIAADIAAAAAAAAAAAAuwEgAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-18T08:25:32.536Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
