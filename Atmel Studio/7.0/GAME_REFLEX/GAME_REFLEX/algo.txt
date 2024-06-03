@@ -1,0 +1,78 @@
+Algo créeation jeux réflex 
+
+Le but de ce programme est de crée une jeux basé sur le reflex avec
+ce qu'ont a appris.
+	
+	- WDT
+	- TIMER
+		- input capture
+	- EEPROM intern
+	- Interuption
+	- I2C
+		- biblio LCD
+	- GPPIO
+	
+Algo BREF :
+	
+	RELFEX GAME : rendu final
+		
+	1. 	Sur le LCD s'affiche :
+			"REFLEX GAME DUC"
+			"MAKE A PULSE :)"
+		
+	2.	L'utilisateur fait une pulse avec un BP, au front descendant du 
+		BP ce qui est écrit sur le LCD s'efface
+		
+	3.	Maintenant sur le LCD s'affiche :
+			THE GAME START !
+			Best score : xxxx
+			
+		Ceci s'affiche pendant 2 secondes
+		
+	4.	Puis sur le LCD s'affiche
+			Actual score : xxxx
+			Best score : xxxx
+			
+		En même temps les leds font :
+		O
+		OO
+		OOO
+		*temps aléatoire*
+		*les leds s'éteignent*
+		
+	5.	A ce moment-là, l'utilisateur doit le plus vite possible déclancher le 
+		BP
+		
+	6.	Le score serra déterminé comme ceci:
+		
+		   _____
+		  |		|			=> LED
+		__|		|___
+		
+					____
+				   |	|		=> BP
+		___________|	|___
+		
+				 <->
+				  t
+				  
+		Le temps en miliseconde déterminera le score 
+		par exemple 436ms = 436 de score
+		
+	7.	Gestion Winner / Looser		
+		-	si l'utilisateur à fait un meilleur score que le best score, sur le
+			LCD s'affiche :
+			"WINNER"
+			" SCORE : xxxx"
+			
+		-	si l'utilisateur à fait un moins bon score que le best score, sur 
+			le LCD s'affiche :
+			"LOOSER"
+			"SCORE : xxxx"
+			
+		Ceci s'affiche jusqu'à ce que l'utilisateur appui sur le BP, au front 
+		descendant, le jeu restart (recommence au point 3)
+		
+	
+Algo détailler :
+

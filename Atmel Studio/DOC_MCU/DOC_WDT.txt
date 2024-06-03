@@ -1,0 +1,65 @@
+﻿WDT (Watch dog timer) timer de chien de garde
+
+	registre WDTCSR :
+	
+		prescaler :
+		
+			WDPn
+			3 2 1 0
+			-------
+			0 0 0 0 	2K (2048)cycles 		16ms
+			0 0 0 1 	4K (4096)cycles 		32ms
+			0 0 1 0 	8K (8192)cycles 		64ms
+			0 0 1 1 	16K(16384)cycles 		125ms
+			0 1 0 0 	32K(32768)cycles 		250ms
+			0 1 0 1 	64K(65536)cycles 		00ms
+			0 1 1 0 	128K(131072)cycles 		1.0s
+			0 1 1 1 	256K(262144)cycles 		2.0s
+			1 0 0 0 	512K(524288)cycles 		4.0s
+			1 0 0 1 	1024K(1048576)cycles	8.0s
+		
+		
+		Watchdog Timer Config. :
+		
+			2 -> WDTON (activer par 1 ou 0 par les fuse dans device programming)
+			1 -> WDE
+			0 -> WDIE
+			
+			2 1 0
+			-----
+			1 0 0 	Stopped None
+			1 0 1 	Interrupt Mode Interrupt
+			1 1 0 	System Reset Mode Reset
+			1 1 1 	Interrupt and System Reset
+					Mode Interrupt, then go to System Reset Mode
+			0 x x 	System Reset Mode Reset
+		
+		Pour activer le watch dog en reset il faut activer le WDCE
+		est le mettre a 0 quand ont séléctionne le prescaleir 
+		
+		Exemple mode reset : 
+		
+			WDTCSR |= (1 << WDCE);
+			WDTCSR = ((1 << WDE) | (1 << WDP2) | (1 << WDP1) | (1 << WDP0));							 
+		
+		Exemple mode reset et interuption: 
+		
+			WDIE -> active interuption
+			WDTCSR |= (1 << WDCE);
+			WDTCSR = ((1 << WDE) | (1 << WDIE) | (1 << WDP2) |
+			(1 << WDP1) | (1 << WDP0));
+
+
+	faire comme SA :
+			
+			#include <avr/wdt.h>
+			void init_WDT(void)
+			{
+				wdt_reset();
+				WDTCSR |= (1 << WDCE) | (1 << WDE);
+				WDTCSR = ((1 << WDIE) | (1 << WDE) | (1 << WDP3) | (1 << WDP0));
+			}
+			
+			Mettre des wdt_reset(); au endroit pour eviter le reset du Soft
+
+			

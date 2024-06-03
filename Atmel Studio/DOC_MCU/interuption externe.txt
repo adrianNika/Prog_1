@@ -1,0 +1,66 @@
+﻿Interuptiin extenre
+
+que se soit en entree uu en sortie les interuption se font quand les pin 
+INTn et PCINTn son activer via les registres
+
+utilisatin ave INTn :
+
+	registre EICRA: réglage avec ISCn0, ISCn1
+	
+				ISC01   ISC00
+				  0 	  0 	interuption par niveau bas INT0
+				  0 	  1 	interuption par n'importe quelle snes du front INT0
+				  1 	  0 	interuption par front descendant INT0
+				  1 	  1 	interuption par front montant INT0
+				  
+				ISC11   ISC10
+				  0 	  0 	interuption par niveau bas INT1
+				  0 	  1 	interuption par n'importe quelle snes du front INT1
+				  1 	  0 	interuption par front descendant INT1
+				  1 	  1 	interuption par front montant INT1
+	
+	
+	registre EIMSK : sélectionne quelle INTn vas étre détecter pour une interuption.
+	registre EIFR : permet de mettre le flag interuption a 0.
+	
+	exemple interuption :
+							ISR(INTn_vect)
+							{
+								/**/
+							}
+							
+							EICRA |= (1 << ISC10);
+							EIMSK |= (1 << INT1);
+
+							
+utilisation avec PCINTn :
+
+	registre PCMSKn : controle de surveillance des interuption sur broche PCINTn
+					  
+					  exemple : PCMSK2 |= (1 << PCINT18);
+					  
+						PCMSK0 : PCINT [7:0] PORT B
+						PCMSK1 : PCINT [14:8] PORT C
+						PCMSK2 : PCINT [23:16] PORT D
+					  
+	
+	registre PCICR	: activation interuption extern PCINT
+	
+					  exemple : PCICR |= (1 << PCIE0);
+					  
+						PCIE0 : PCINT [7:0] PCMSK0
+						PCIE1 : PCINT [14:8] PCMSK1
+						PCIE2 : PCINT [23:16] PCMSK2
+						
+	
+					exemple interuption :
+					
+							ISR(PCINTn_vect)
+							{
+								/**/
+							}
+							
+							la valeur de PCINTn_vect donc "n" -> PCIEn
+							ex : PCIE0 -> PCINT0_vect
+								 PCIE1 -> PCINT1_vect
+								 PCIE2 -> PCINT2_vect

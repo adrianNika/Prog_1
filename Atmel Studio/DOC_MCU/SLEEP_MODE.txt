@@ -1,0 +1,43 @@
+Mode attente et arrét  ("sleep mode")
+	
+	le mode attente mais a l'arret l'unité centrale mais tout les périférique
+	interne sont fonctionelle.
+	pour le réveiller en mode attente il y a toute les intéruptions et le 
+	timer chien de garde
+	
+	
+	Le mode arrêt et plus direct ce mode coupe meme l'horloge interne donc 
+	beaucoup  de périférique interne ne sont pas disponible.
+	les seule moyen de le réveiller est toujour le timer chien de garde et
+	les interuption INT0 et/ou INT1.
+	
+	les différent mode du registre SMCR :
+	
+		SM2  SM1  SM0
+		 0	  0	   0 	Attende (idle)
+		 0	  0	   1	Réduction de brui pour conversion A/D (adc noise réduction)
+		 0	  1	   0	Arrêt (power down)
+		 0	  1	   1	Economie d'énergie (power slave)
+		 1	  0	   0	Réservé
+		 1	  0	   1	Réservé
+		 1	  1	   0	Veille (standby)
+		 1	  1	   1	Veille étendue (extended standby)
+		 
+		 
+		 SE : active les mode de sommeil 
+			  Mettre a 1 que au moment ou on compt faire un sommeil.
+			  Mettre a 0 lorseque l'instructin n'est plus requise
+			  
+		
+		libraire AVR/Sleep.h :
+		
+			set_sleep_mode(mode);
+				
+				mode : 	#define SLEEP_MODE_IDLE (0x00<<1)
+						#define SLEEP_MODE_ADC (0x01<<1)
+						#define SLEEP_MODE_PWR_DOWN (0x02<<1)
+						#define SLEEP_MODE_PWR_SAVE (0x03<<1)
+						#define SLEEP_MODE_STANDBY (0x06<<1)
+						#define SLEEP_MODE_EXT_STANDBY (0x07<<1)
+						
+			

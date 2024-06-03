@@ -1,0 +1,1094 @@
+
+TEST-2-Duellator.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         0000001c  00800100  00000580  00000614  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000580  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000036  0080011c  0080011c  00000630  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  00000630  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000660  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 000000c0  00000000  00000000  0000069c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   000016dc  00000000  00000000  0000075c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00000ab0  00000000  00000000  00001e38  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   000008da  00000000  00000000  000028e8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  000001c4  00000000  00000000  000031c4  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    0000077f  00000000  00000000  00003388  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    000007da  00000000  00000000  00003b07  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 000000d8  00000000  00000000  000042e1  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	19 c0       	rjmp	.+50     	; 0x34 <__ctors_end>
+   2:	33 c0       	rjmp	.+102    	; 0x6a <__bad_interrupt>
+   4:	32 c0       	rjmp	.+100    	; 0x6a <__bad_interrupt>
+   6:	31 c0       	rjmp	.+98     	; 0x6a <__bad_interrupt>
+   8:	30 c0       	rjmp	.+96     	; 0x6a <__bad_interrupt>
+   a:	2f c0       	rjmp	.+94     	; 0x6a <__bad_interrupt>
+   c:	2e c0       	rjmp	.+92     	; 0x6a <__bad_interrupt>
+   e:	2d c0       	rjmp	.+90     	; 0x6a <__bad_interrupt>
+  10:	2c c0       	rjmp	.+88     	; 0x6a <__bad_interrupt>
+  12:	2b c0       	rjmp	.+86     	; 0x6a <__bad_interrupt>
+  14:	2a c0       	rjmp	.+84     	; 0x6a <__bad_interrupt>
+  16:	29 c0       	rjmp	.+82     	; 0x6a <__bad_interrupt>
+  18:	28 c0       	rjmp	.+80     	; 0x6a <__bad_interrupt>
+  1a:	27 c0       	rjmp	.+78     	; 0x6a <__bad_interrupt>
+  1c:	26 c0       	rjmp	.+76     	; 0x6a <__bad_interrupt>
+  1e:	25 c0       	rjmp	.+74     	; 0x6a <__bad_interrupt>
+  20:	24 c0       	rjmp	.+72     	; 0x6a <__bad_interrupt>
+  22:	23 c0       	rjmp	.+70     	; 0x6a <__bad_interrupt>
+  24:	22 c0       	rjmp	.+68     	; 0x6a <__bad_interrupt>
+  26:	21 c0       	rjmp	.+66     	; 0x6a <__bad_interrupt>
+  28:	20 c0       	rjmp	.+64     	; 0x6a <__bad_interrupt>
+  2a:	1f c0       	rjmp	.+62     	; 0x6a <__bad_interrupt>
+  2c:	1e c0       	rjmp	.+60     	; 0x6a <__bad_interrupt>
+  2e:	1d c0       	rjmp	.+58     	; 0x6a <__bad_interrupt>
+  30:	fc c1       	rjmp	.+1016   	; 0x42a <__vector_24>
+  32:	1b c0       	rjmp	.+54     	; 0x6a <__bad_interrupt>
+
+00000034 <__ctors_end>:
+  34:	11 24       	eor	r1, r1
+  36:	1f be       	out	0x3f, r1	; 63
+  38:	cf ef       	ldi	r28, 0xFF	; 255
+  3a:	d4 e0       	ldi	r29, 0x04	; 4
+  3c:	de bf       	out	0x3e, r29	; 62
+  3e:	cd bf       	out	0x3d, r28	; 61
+
+00000040 <__do_copy_data>:
+  40:	11 e0       	ldi	r17, 0x01	; 1
+  42:	a0 e0       	ldi	r26, 0x00	; 0
+  44:	b1 e0       	ldi	r27, 0x01	; 1
+  46:	e0 e8       	ldi	r30, 0x80	; 128
+  48:	f5 e0       	ldi	r31, 0x05	; 5
+  4a:	02 c0       	rjmp	.+4      	; 0x50 <__do_copy_data+0x10>
+  4c:	05 90       	lpm	r0, Z+
+  4e:	0d 92       	st	X+, r0
+  50:	ac 31       	cpi	r26, 0x1C	; 28
+  52:	b1 07       	cpc	r27, r17
+  54:	d9 f7       	brne	.-10     	; 0x4c <__do_copy_data+0xc>
+
+00000056 <__do_clear_bss>:
+  56:	21 e0       	ldi	r18, 0x01	; 1
+  58:	ac e1       	ldi	r26, 0x1C	; 28
+  5a:	b1 e0       	ldi	r27, 0x01	; 1
+  5c:	01 c0       	rjmp	.+2      	; 0x60 <.do_clear_bss_start>
+
+0000005e <.do_clear_bss_loop>:
+  5e:	1d 92       	st	X+, r1
+
+00000060 <.do_clear_bss_start>:
+  60:	a2 35       	cpi	r26, 0x52	; 82
+  62:	b2 07       	cpc	r27, r18
+  64:	e1 f7       	brne	.-8      	; 0x5e <.do_clear_bss_loop>
+  66:	b2 d1       	rcall	.+868    	; 0x3cc <main>
+  68:	89 c2       	rjmp	.+1298   	; 0x57c <_exit>
+
+0000006a <__bad_interrupt>:
+  6a:	ca cf       	rjmp	.-108    	; 0x0 <__vectors>
+
+0000006c <LCD_Strobe_E>:
+}
+
+
+/*fait une pulse "E" pour l'evois des instruction ou caractére*/
+void LCD_Strobe_E(void)
+{
+  6c:	cf 93       	push	r28
+  6e:	df 93       	push	r29
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  70:	87 ee       	ldi	r24, 0xE7	; 231
+  72:	93 e0       	ldi	r25, 0x03	; 3
+  74:	01 97       	sbiw	r24, 0x01	; 1
+  76:	f1 f7       	brne	.-4      	; 0x74 <LCD_Strobe_E+0x8>
+  78:	00 c0       	rjmp	.+0      	; 0x7a <LCD_Strobe_E+0xe>
+  7a:	00 00       	nop
+	_delay_us(500);
+	lcdCtrl.PcfRegs.enableBit = 1;
+  7c:	80 91 4d 01 	lds	r24, 0x014D	; 0x80014d <lcdCtrl>
+  80:	84 60       	ori	r24, 0x04	; 4
+  82:	80 93 4d 01 	sts	0x014D, r24	; 0x80014d <lcdCtrl>
+	i2cLcd.S_MsgSplit.Message[0] = lcdCtrl.pcfByte;
+  86:	cf e4       	ldi	r28, 0x4F	; 79
+  88:	d1 e0       	ldi	r29, 0x01	; 1
+  8a:	89 83       	std	Y+1, r24	; 0x01
+	TWIMaster_SendMsg(i2cLcd.MsgBuffer, 2);
+  8c:	62 e0       	ldi	r22, 0x02	; 2
+  8e:	ce 01       	movw	r24, r28
+  90:	ad d1       	rcall	.+858    	; 0x3ec <TWIMaster_SendMsg>
+  92:	87 ee       	ldi	r24, 0xE7	; 231
+  94:	93 e0       	ldi	r25, 0x03	; 3
+  96:	01 97       	sbiw	r24, 0x01	; 1
+  98:	f1 f7       	brne	.-4      	; 0x96 <LCD_Strobe_E+0x2a>
+  9a:	00 c0       	rjmp	.+0      	; 0x9c <LCD_Strobe_E+0x30>
+  9c:	00 00       	nop
+	_delay_us(500);
+	lcdCtrl.PcfRegs.enableBit = 0;
+  9e:	80 91 4d 01 	lds	r24, 0x014D	; 0x80014d <lcdCtrl>
+  a2:	8b 7f       	andi	r24, 0xFB	; 251
+  a4:	80 93 4d 01 	sts	0x014D, r24	; 0x80014d <lcdCtrl>
+	i2cLcd.S_MsgSplit.Message[0] = lcdCtrl.pcfByte;
+  a8:	89 83       	std	Y+1, r24	; 0x01
+	TWIMaster_SendMsg(i2cLcd.MsgBuffer, 2);
+  aa:	62 e0       	ldi	r22, 0x02	; 2
+  ac:	ce 01       	movw	r24, r28
+  ae:	9e d1       	rcall	.+828    	; 0x3ec <TWIMaster_SendMsg>
+  b0:	87 ee       	ldi	r24, 0xE7	; 231
+  b2:	93 e0       	ldi	r25, 0x03	; 3
+  b4:	01 97       	sbiw	r24, 0x01	; 1
+  b6:	f1 f7       	brne	.-4      	; 0xb4 <LCD_Strobe_E+0x48>
+  b8:	00 c0       	rjmp	.+0      	; 0xba <LCD_Strobe_E+0x4e>
+  ba:	00 00       	nop
+	_delay_us(500);
+}
+  bc:	df 91       	pop	r29
+  be:	cf 91       	pop	r28
+  c0:	08 95       	ret
+
+000000c2 <LCD_Init>:
+		initialiser chaque data sur du 4 bits pour le lCD
+		strobe de Enable pour chaque instruction (datasheet)
+		
+*/
+uint8_t LCD_Init(uint8_t initLCD, uint8_t slaveAdrr)
+{
+  c2:	0f 93       	push	r16
+  c4:	1f 93       	push	r17
+  c6:	cf 93       	push	r28
+  c8:	df 93       	push	r29
+  ca:	cd b7       	in	r28, 0x3d	; 61
+  cc:	de b7       	in	r29, 0x3e	; 62
+  ce:	2e 97       	sbiw	r28, 0x0e	; 14
+  d0:	0f b6       	in	r0, 0x3f	; 63
+  d2:	f8 94       	cli
+  d4:	de bf       	out	0x3e, r29	; 62
+  d6:	0f be       	out	0x3f, r0	; 63
+  d8:	cd bf       	out	0x3d, r28	; 61
+	actual_Val_Char = 0;
+  da:	10 92 41 01 	sts	0x0141, r1	; 0x800141 <actual_Val_Char>
+	ctrlInit.byte = initLCD;
+  de:	80 93 4b 01 	sts	0x014B, r24	; 0x80014b <ctrlInit>
+	
+	if (ctrlInit.byte > 15)
+  e2:	80 31       	cpi	r24, 0x10	; 16
+  e4:	28 f0       	brcs	.+10     	; 0xf0 <LCD_Init+0x2e>
+	{
+		ErrorLCD |= ERROR_INIT;
+  e6:	80 91 42 01 	lds	r24, 0x0142	; 0x800142 <ErrorLCD>
+  ea:	81 60       	ori	r24, 0x01	; 1
+  ec:	80 93 42 01 	sts	0x0142, r24	; 0x800142 <ErrorLCD>
+	}
+	
+	if (ErrorLCD == 0)
+  f0:	80 91 42 01 	lds	r24, 0x0142	; 0x800142 <ErrorLCD>
+  f4:	81 11       	cpse	r24, r1
+  f6:	7e c0       	rjmp	.+252    	; 0x1f4 <LCD_Init+0x132>
+	{
+		lcdCtrl.PcfRegs.rsBit = 0;
+  f8:	80 91 4d 01 	lds	r24, 0x014D	; 0x80014d <lcdCtrl>
+  fc:	8e 7f       	andi	r24, 0xFE	; 254
+  fe:	80 93 4d 01 	sts	0x014D, r24	; 0x80014d <lcdCtrl>
+		
+		/*valeur union action init*/
+		/*pour le nombre de ligne*/
+		ctrlLine.S_Set_Line.nbLine = ctrlInit.S_LCDInit.nb_line;
+ 102:	90 91 4b 01 	lds	r25, 0x014B	; 0x80014b <ctrlInit>
+ 106:	93 fb       	bst	r25, 3
+ 108:	22 27       	eor	r18, r18
+ 10a:	20 f9       	bld	r18, 0
+ 10c:	80 91 4e 01 	lds	r24, 0x014E	; 0x80014e <ctrlLine>
+ 110:	20 fb       	bst	r18, 0
+ 112:	83 f9       	bld	r24, 3
+ 114:	80 93 4e 01 	sts	0x014E, r24	; 0x80014e <ctrlLine>
+		
+		/*pour le curseur*/
+		ctrlCursor.S_setCursor.blikingSet = ctrlInit.S_LCDInit.bliking_Set;
+ 118:	91 fb       	bst	r25, 1
+ 11a:	22 27       	eor	r18, r18
+ 11c:	20 f9       	bld	r18, 0
+ 11e:	80 91 4a 01 	lds	r24, 0x014A	; 0x80014a <ctrlCursor>
+ 122:	20 fb       	bst	r18, 0
+ 124:	80 f9       	bld	r24, 0
+		ctrlCursor.S_setCursor.cursorSet = ctrlInit.S_LCDInit.cursor_set;
+ 126:	92 fb       	bst	r25, 2
+ 128:	22 27       	eor	r18, r18
+ 12a:	20 f9       	bld	r18, 0
+ 12c:	20 fb       	bst	r18, 0
+ 12e:	81 f9       	bld	r24, 1
+		ctrlCursor.S_setCursor.displayOn = 1;
+		ctrlCursor.S_setCursor.isone = 1;
+ 130:	84 60       	ori	r24, 0x04	; 4
+ 132:	88 60       	ori	r24, 0x08	; 8
+ 134:	80 93 4a 01 	sts	0x014A, r24	; 0x80014a <ctrlCursor>
+		
+		ctrlDisplay.S_setDiplay.isZero1 = 0;
+ 138:	80 91 4c 01 	lds	r24, 0x014C	; 0x80014c <ctrlDisplay>
+		ctrlDisplay.S_setDiplay.cursorIncDec = ctrlInit.S_LCDInit.incDec_cursor;
+ 13c:	8e 7f       	andi	r24, 0xFE	; 254
+ 13e:	90 fb       	bst	r25, 0
+ 140:	81 f9       	bld	r24, 1
+		ctrlDisplay.S_setDiplay.isone = 1;
+		ctrlDisplay.S_setDiplay.isZero2 = 0;
+ 142:	84 60       	ori	r24, 0x04	; 4
+ 144:	87 7f       	andi	r24, 0xF7	; 247
+ 146:	80 93 4c 01 	sts	0x014C, r24	; 0x80014c <ctrlDisplay>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 14a:	2f ef       	ldi	r18, 0xFF	; 255
+ 14c:	80 e7       	ldi	r24, 0x70	; 112
+ 14e:	92 e0       	ldi	r25, 0x02	; 2
+ 150:	21 50       	subi	r18, 0x01	; 1
+ 152:	80 40       	sbci	r24, 0x00	; 0
+ 154:	90 40       	sbci	r25, 0x00	; 0
+ 156:	e1 f7       	brne	.-8      	; 0x150 <LCD_Init+0x8e>
+ 158:	00 c0       	rjmp	.+0      	; 0x15a <LCD_Init+0x98>
+ 15a:	00 00       	nop
+		
+		/* Start-up delay */
+		_delay_ms(100);
+		
+		/* Initialize with adress */
+		i2cLcd.S_MsgSplit.SlaveAdress = slaveAdrr;
+ 15c:	ef e4       	ldi	r30, 0x4F	; 79
+ 15e:	f1 e0       	ldi	r31, 0x01	; 1
+ 160:	66 0f       	add	r22, r22
+ 162:	80 81       	ld	r24, Z
+ 164:	81 70       	andi	r24, 0x01	; 1
+		i2cLcd.S_MsgSplit.ReadWriteBit = TWI_WRITE;
+ 166:	68 2b       	or	r22, r24
+ 168:	6e 7f       	andi	r22, 0xFE	; 254
+ 16a:	60 83       	st	Z, r22
+		
+		/* Initialize with LCD data*/
+		lcdCtrl.PcfRegs.rsBit = 0;
+ 16c:	80 91 4d 01 	lds	r24, 0x014D	; 0x80014d <lcdCtrl>
+		lcdCtrl.PcfRegs.rwBit = 0;
+		lcdCtrl.PcfRegs.enableBit = 0;
+		lcdCtrl.PcfRegs.backlight = 1;
+ 170:	88 7f       	andi	r24, 0xF8	; 248
+ 172:	88 60       	ori	r24, 0x08	; 8
+		lcdCtrl.PcfRegs.data = 0;
+ 174:	8f 70       	andi	r24, 0x0F	; 15
+ 176:	80 93 4d 01 	sts	0x014D, r24	; 0x80014d <lcdCtrl>
+		
+		/*all data init*/
+		uint8_t buffer_Data[] = {	0x03,
+ 17a:	83 e0       	ldi	r24, 0x03	; 3
+ 17c:	89 83       	std	Y+1, r24	; 0x01
+ 17e:	8a 83       	std	Y+2, r24	; 0x02
+ 180:	8b 83       	std	Y+3, r24	; 0x03
+ 182:	82 e0       	ldi	r24, 0x02	; 2
+ 184:	8c 83       	std	Y+4, r24	; 0x04
+ 186:	8d 83       	std	Y+5, r24	; 0x05
+									0x03,
+									0x03,
+									0x02,
+									0x02,
+									ctrlLine.byte,
+ 188:	80 91 4e 01 	lds	r24, 0x014E	; 0x80014e <ctrlLine>
+		lcdCtrl.PcfRegs.enableBit = 0;
+		lcdCtrl.PcfRegs.backlight = 1;
+		lcdCtrl.PcfRegs.data = 0;
+		
+		/*all data init*/
+		uint8_t buffer_Data[] = {	0x03,
+ 18c:	8e 83       	std	Y+6, r24	; 0x06
+ 18e:	1f 82       	std	Y+7, r1	; 0x07
+ 190:	88 e0       	ldi	r24, 0x08	; 8
+ 192:	88 87       	std	Y+8, r24	; 0x08
+ 194:	19 86       	std	Y+9, r1	; 0x09
+ 196:	81 e0       	ldi	r24, 0x01	; 1
+ 198:	8a 87       	std	Y+10, r24	; 0x0a
+ 19a:	1b 86       	std	Y+11, r1	; 0x0b
+									0x00,
+									0x08,
+									0x00,
+									0x01,
+									0x00,
+									ctrlDisplay.byte,
+ 19c:	80 91 4c 01 	lds	r24, 0x014C	; 0x80014c <ctrlDisplay>
+		lcdCtrl.PcfRegs.enableBit = 0;
+		lcdCtrl.PcfRegs.backlight = 1;
+		lcdCtrl.PcfRegs.data = 0;
+		
+		/*all data init*/
+		uint8_t buffer_Data[] = {	0x03,
+ 1a0:	8c 87       	std	Y+12, r24	; 0x0c
+ 1a2:	1d 86       	std	Y+13, r1	; 0x0d
+									0x00,
+									0x01,
+									0x00,
+									ctrlDisplay.byte,
+									0x00,
+									ctrlCursor.byte};
+ 1a4:	80 91 4a 01 	lds	r24, 0x014A	; 0x80014a <ctrlCursor>
+		lcdCtrl.PcfRegs.enableBit = 0;
+		lcdCtrl.PcfRegs.backlight = 1;
+		lcdCtrl.PcfRegs.data = 0;
+		
+		/*all data init*/
+		uint8_t buffer_Data[] = {	0x03,
+ 1a8:	8e 87       	std	Y+14, r24	; 0x0e
+									ctrlDisplay.byte,
+									0x00,
+									ctrlCursor.byte};
+		
+		/*send all data init*/
+		for (int i = 0; i < 14; i++)
+ 1aa:	00 e0       	ldi	r16, 0x00	; 0
+ 1ac:	10 e0       	ldi	r17, 0x00	; 0
+ 1ae:	1f c0       	rjmp	.+62     	; 0x1ee <LCD_Init+0x12c>
+		{	
+			lcdCtrl.PcfRegs.data = buffer_Data[i];
+ 1b0:	e1 e0       	ldi	r30, 0x01	; 1
+ 1b2:	f0 e0       	ldi	r31, 0x00	; 0
+ 1b4:	ec 0f       	add	r30, r28
+ 1b6:	fd 1f       	adc	r31, r29
+ 1b8:	e0 0f       	add	r30, r16
+ 1ba:	f1 1f       	adc	r31, r17
+ 1bc:	80 81       	ld	r24, Z
+ 1be:	98 2f       	mov	r25, r24
+ 1c0:	92 95       	swap	r25
+ 1c2:	90 7f       	andi	r25, 0xF0	; 240
+ 1c4:	80 91 4d 01 	lds	r24, 0x014D	; 0x80014d <lcdCtrl>
+ 1c8:	8f 70       	andi	r24, 0x0F	; 15
+ 1ca:	89 2b       	or	r24, r25
+ 1cc:	80 93 4d 01 	sts	0x014D, r24	; 0x80014d <lcdCtrl>
+			i2cLcd.S_MsgSplit.Message[0] = lcdCtrl.pcfByte;
+ 1d0:	80 93 50 01 	sts	0x0150, r24	; 0x800150 <i2cLcd+0x1>
+			TWIMaster_SendMsg(i2cLcd.MsgBuffer, 2);
+ 1d4:	62 e0       	ldi	r22, 0x02	; 2
+ 1d6:	8f e4       	ldi	r24, 0x4F	; 79
+ 1d8:	91 e0       	ldi	r25, 0x01	; 1
+ 1da:	08 d1       	rcall	.+528    	; 0x3ec <TWIMaster_SendMsg>
+ 1dc:	8f e1       	ldi	r24, 0x1F	; 31
+ 1de:	9e e4       	ldi	r25, 0x4E	; 78
+ 1e0:	01 97       	sbiw	r24, 0x01	; 1
+ 1e2:	f1 f7       	brne	.-4      	; 0x1e0 <LCD_Init+0x11e>
+ 1e4:	00 c0       	rjmp	.+0      	; 0x1e6 <LCD_Init+0x124>
+ 1e6:	00 00       	nop
+			_delay_ms(10);
+			LCD_Strobe_E();
+ 1e8:	41 df       	rcall	.-382    	; 0x6c <LCD_Strobe_E>
+									ctrlDisplay.byte,
+									0x00,
+									ctrlCursor.byte};
+		
+		/*send all data init*/
+		for (int i = 0; i < 14; i++)
+ 1ea:	0f 5f       	subi	r16, 0xFF	; 255
+ 1ec:	1f 4f       	sbci	r17, 0xFF	; 255
+ 1ee:	0e 30       	cpi	r16, 0x0E	; 14
+ 1f0:	11 05       	cpc	r17, r1
+ 1f2:	f4 f2       	brlt	.-68     	; 0x1b0 <LCD_Init+0xee>
+			LCD_Strobe_E();
+		}
+	}
+	
+	return ErrorLCD;
+}
+ 1f4:	80 91 42 01 	lds	r24, 0x0142	; 0x800142 <ErrorLCD>
+ 1f8:	2e 96       	adiw	r28, 0x0e	; 14
+ 1fa:	0f b6       	in	r0, 0x3f	; 63
+ 1fc:	f8 94       	cli
+ 1fe:	de bf       	out	0x3e, r29	; 62
+ 200:	0f be       	out	0x3f, r0	; 63
+ 202:	cd bf       	out	0x3d, r28	; 61
+ 204:	df 91       	pop	r29
+ 206:	cf 91       	pop	r28
+ 208:	1f 91       	pop	r17
+ 20a:	0f 91       	pop	r16
+ 20c:	08 95       	ret
+
+0000020e <LCD_SendInstruction>:
+		le rs bit a 1 ou 0 pour les instruction et les caractéres.
+		
+		evois des 4 bits et strobe de E pour chaque envois (demande datasheet)
+*/
+void LCD_SendInstruction(char value, uint8_t type)
+{
+ 20e:	0f 93       	push	r16
+ 210:	1f 93       	push	r17
+ 212:	cf 93       	push	r28
+	uint8_t high_Value = 0;
+	uint8_t low_Value = 0;
+	
+	/*isoler nible de point fort*/
+	high_Value = (uint8_t)value >> 4;
+ 214:	98 2f       	mov	r25, r24
+ 216:	92 95       	swap	r25
+ 218:	9f 70       	andi	r25, 0x0F	; 15
+	
+	/*avoir que le nible de poids faible ex: 0x41 - 0x40 = 0x01*/
+	low_Value = (uint8_t)value - (high_Value << 4);
+ 21a:	c8 2f       	mov	r28, r24
+ 21c:	20 e1       	ldi	r18, 0x10	; 16
+ 21e:	92 9f       	mul	r25, r18
+ 220:	c0 19       	sub	r28, r0
+ 222:	11 24       	eor	r1, r1
+	
+	/*type pour pour instruction ou caractere*/
+	if (type == 1)
+ 224:	61 30       	cpi	r22, 0x01	; 1
+ 226:	31 f4       	brne	.+12     	; 0x234 <LCD_SendInstruction+0x26>
+	{
+		lcdCtrl.PcfRegs.rsBit = 1;
+ 228:	80 91 4d 01 	lds	r24, 0x014D	; 0x80014d <lcdCtrl>
+ 22c:	81 60       	ori	r24, 0x01	; 1
+ 22e:	80 93 4d 01 	sts	0x014D, r24	; 0x80014d <lcdCtrl>
+ 232:	05 c0       	rjmp	.+10     	; 0x23e <LCD_SendInstruction+0x30>
+	}
+	else
+	{
+		lcdCtrl.PcfRegs.rsBit = 0;
+ 234:	80 91 4d 01 	lds	r24, 0x014D	; 0x80014d <lcdCtrl>
+ 238:	8e 7f       	andi	r24, 0xFE	; 254
+ 23a:	80 93 4d 01 	sts	0x014D, r24	; 0x80014d <lcdCtrl>
+	
+	
+	/*traitement pour l'initialisation en 4 bits*/
+	
+	/*traitement nible fort*/
+	lcdCtrl.PcfRegs.data = high_Value;
+ 23e:	92 95       	swap	r25
+ 240:	90 7f       	andi	r25, 0xF0	; 240
+ 242:	80 91 4d 01 	lds	r24, 0x014D	; 0x80014d <lcdCtrl>
+ 246:	8f 70       	andi	r24, 0x0F	; 15
+ 248:	89 2b       	or	r24, r25
+ 24a:	80 93 4d 01 	sts	0x014D, r24	; 0x80014d <lcdCtrl>
+	i2cLcd.S_MsgSplit.Message[0] = lcdCtrl.pcfByte;
+ 24e:	0f e4       	ldi	r16, 0x4F	; 79
+ 250:	11 e0       	ldi	r17, 0x01	; 1
+ 252:	f8 01       	movw	r30, r16
+ 254:	81 83       	std	Z+1, r24	; 0x01
+	TWIMaster_SendMsg(i2cLcd.MsgBuffer, 2);
+ 256:	62 e0       	ldi	r22, 0x02	; 2
+ 258:	c8 01       	movw	r24, r16
+ 25a:	c8 d0       	rcall	.+400    	; 0x3ec <TWIMaster_SendMsg>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 25c:	f5 e8       	ldi	r31, 0x85	; 133
+ 25e:	fa 95       	dec	r31
+ 260:	f1 f7       	brne	.-4      	; 0x25e <LCD_SendInstruction+0x50>
+ 262:	00 00       	nop
+	_delay_us(50);
+	LCD_Strobe_E();
+ 264:	03 df       	rcall	.-506    	; 0x6c <LCD_Strobe_E>
+	
+	/*traitement nible fiable*/
+	lcdCtrl.PcfRegs.data = low_Value;
+ 266:	8c 2f       	mov	r24, r28
+ 268:	82 95       	swap	r24
+ 26a:	80 7f       	andi	r24, 0xF0	; 240
+ 26c:	90 91 4d 01 	lds	r25, 0x014D	; 0x80014d <lcdCtrl>
+ 270:	9f 70       	andi	r25, 0x0F	; 15
+ 272:	89 2b       	or	r24, r25
+ 274:	80 93 4d 01 	sts	0x014D, r24	; 0x80014d <lcdCtrl>
+	i2cLcd.S_MsgSplit.Message[0] = lcdCtrl.pcfByte;
+ 278:	f8 01       	movw	r30, r16
+ 27a:	81 83       	std	Z+1, r24	; 0x01
+	TWIMaster_SendMsg(i2cLcd.MsgBuffer, 2);
+ 27c:	62 e0       	ldi	r22, 0x02	; 2
+ 27e:	c8 01       	movw	r24, r16
+ 280:	b5 d0       	rcall	.+362    	; 0x3ec <TWIMaster_SendMsg>
+ 282:	f5 e8       	ldi	r31, 0x85	; 133
+ 284:	fa 95       	dec	r31
+ 286:	f1 f7       	brne	.-4      	; 0x284 <LCD_SendInstruction+0x76>
+ 288:	00 00       	nop
+	_delay_us(50);
+	LCD_Strobe_E();
+ 28a:	f0 de       	rcall	.-544    	; 0x6c <LCD_Strobe_E>
+}
+ 28c:	cf 91       	pop	r28
+ 28e:	1f 91       	pop	r17
+ 290:	0f 91       	pop	r16
+ 292:	08 95       	ret
+
+00000294 <LCD_setCursor>:
+	/*
+		si valeur de line trop grand --> error
+		si valeur trop grand Max caractere --> error
+	*/
+	
+	if (lin > 1)
+ 294:	82 30       	cpi	r24, 0x02	; 2
+ 296:	28 f0       	brcs	.+10     	; 0x2a2 <LCD_setCursor+0xe>
+	{
+		ErrorLCD |= ERROR_CURSOR;
+ 298:	90 91 42 01 	lds	r25, 0x0142	; 0x800142 <ErrorLCD>
+ 29c:	92 60       	ori	r25, 0x02	; 2
+ 29e:	90 93 42 01 	sts	0x0142, r25	; 0x800142 <ErrorLCD>
+	}
+	if (col < 0 || lin > 15)
+ 2a2:	80 31       	cpi	r24, 0x10	; 16
+ 2a4:	28 f0       	brcs	.+10     	; 0x2b0 <LCD_setCursor+0x1c>
+	{
+		ErrorLCD |= ERROR_CURSOR;
+ 2a6:	90 91 42 01 	lds	r25, 0x0142	; 0x800142 <ErrorLCD>
+ 2aa:	92 60       	ori	r25, 0x02	; 2
+ 2ac:	90 93 42 01 	sts	0x0142, r25	; 0x800142 <ErrorLCD>
+	}
+	
+	if (ErrorLCD == 0)
+ 2b0:	90 91 42 01 	lds	r25, 0x0142	; 0x800142 <ErrorLCD>
+ 2b4:	91 11       	cpse	r25, r1
+ 2b6:	16 c0       	rjmp	.+44     	; 0x2e4 <LCD_setCursor+0x50>
+	{
+		valueCol = col;
+ 2b8:	60 93 1d 01 	sts	0x011D, r22	; 0x80011d <valueCol>
+		valueLin = lin;
+		actual_Val_Line = lin;
+	
+		/*pour afficher sur la ligne du bas l'adresse commence par 0x4X*/
+		if (valueLin == 1)
+ 2bc:	81 30       	cpi	r24, 0x01	; 1
+ 2be:	31 f4       	brne	.+12     	; 0x2cc <LCD_setCursor+0x38>
+		{
+			/*0x04 pour utilisation de l'union et l'envois en 4bits*/
+			valueLin = 0x40;
+ 2c0:	80 e4       	ldi	r24, 0x40	; 64
+ 2c2:	80 93 1c 01 	sts	0x011C, r24	; 0x80011c <__data_end>
+			actual_Val_Char = col;
+ 2c6:	60 93 41 01 	sts	0x0141, r22	; 0x800141 <actual_Val_Char>
+ 2ca:	04 c0       	rjmp	.+8      	; 0x2d4 <LCD_setCursor+0x40>
+		}
+		else
+		{
+			valueLin = 0x00;
+ 2cc:	10 92 1c 01 	sts	0x011C, r1	; 0x80011c <__data_end>
+			actual_Val_Char = col;
+ 2d0:	60 93 41 01 	sts	0x0141, r22	; 0x800141 <actual_Val_Char>
+					2		-  -  -   1   0   0   x   x   x   x 
+		1 = l'adresse a voir dans la datasheet obligatoir
+		2 = la partie de l'adresse corespondant a la ligne 2 de l'écran
+		le DB7  a 1 et important pour set le cursor a l'endroit voulu 
+		+ 0x08 (-> DB7) pour avoir l'aresse complet*/
+		LCD_SendInstruction((0x80 + valueLin) + valueCol, 0);
+ 2d4:	90 91 1c 01 	lds	r25, 0x011C	; 0x80011c <__data_end>
+ 2d8:	80 91 1d 01 	lds	r24, 0x011D	; 0x80011d <valueCol>
+ 2dc:	89 0f       	add	r24, r25
+ 2de:	60 e0       	ldi	r22, 0x00	; 0
+ 2e0:	80 58       	subi	r24, 0x80	; 128
+ 2e2:	95 df       	rcall	.-214    	; 0x20e <LCD_SendInstruction>
+	}
+	
+	return ErrorLCD;
+}
+ 2e4:	80 91 42 01 	lds	r24, 0x0142	; 0x800142 <ErrorLCD>
+ 2e8:	08 95       	ret
+
+000002ea <LCD_PutChar>:
+			
+			après la boucle un delais de 500ms pour la fluiditer et la 
+			lisibilité du text avec le décallage.	  	
+*/
+uint8_t LCD_PutChar(char C)
+{		
+ 2ea:	cf 93       	push	r28
+	{
+		buffer_SIZE = 16;
+	} 
+	else
+	{
+		buffer_SIZE = 32;
+ 2ec:	90 e2       	ldi	r25, 0x20	; 32
+ 2ee:	90 93 43 01 	sts	0x0143, r25	; 0x800143 <buffer_SIZE>
+	}
+	
+	
+	/*error max lengh char*/
+	if (actual_Val_Char > buffer_SIZE && SCROLL_MODE == 0)
+ 2f2:	90 91 41 01 	lds	r25, 0x0141	; 0x800141 <actual_Val_Char>
+ 2f6:	91 32       	cpi	r25, 0x21	; 33
+ 2f8:	28 f0       	brcs	.+10     	; 0x304 <LCD_PutChar+0x1a>
+	{
+		ErrorLCD |= ERROR_HIGH_LENGH_CHAR;
+ 2fa:	20 91 42 01 	lds	r18, 0x0142	; 0x800142 <ErrorLCD>
+ 2fe:	24 60       	ori	r18, 0x04	; 4
+ 300:	20 93 42 01 	sts	0x0142, r18	; 0x800142 <ErrorLCD>
+	}
+	
+	if (ErrorLCD == 0)
+ 304:	20 91 42 01 	lds	r18, 0x0142	; 0x800142 <ErrorLCD>
+ 308:	21 11       	cpse	r18, r1
+ 30a:	2c c0       	rjmp	.+88     	; 0x364 <LCD_PutChar+0x7a>
+	{
+		/*si l'affichage pas remplie*/
+		if (actual_Val_Char < buffer_SIZE)
+ 30c:	90 32       	cpi	r25, 0x20	; 32
+ 30e:	50 f5       	brcc	.+84     	; 0x364 <LCD_PutChar+0x7a>
+ 310:	c8 2f       	mov	r28, r24
+		{
+			/*ligne suivante si la premiere est remplie*/
+			if (actual_Val_Char == MAXCHAR_LINE_1_LINE && DISPLAY_MODE == 1)
+ 312:	90 31       	cpi	r25, 0x10	; 16
+ 314:	19 f4       	brne	.+6      	; 0x31c <LCD_PutChar+0x32>
+			{
+				LCD_setCursor(1,0);
+ 316:	60 e0       	ldi	r22, 0x00	; 0
+ 318:	81 e0       	ldi	r24, 0x01	; 1
+ 31a:	bc df       	rcall	.-136    	; 0x294 <LCD_setCursor>
+				#endif
+			}
+			
+			/*ajoute la nouvel valeur dans le circular buffer a la 
+			position head_Index*/
+			buffer_str[str_buffer_head] = C;
+ 31c:	90 91 20 01 	lds	r25, 0x0120	; 0x800120 <str_buffer_head>
+ 320:	89 2f       	mov	r24, r25
+ 322:	90 e0       	ldi	r25, 0x00	; 0
+ 324:	fc 01       	movw	r30, r24
+ 326:	ef 5d       	subi	r30, 0xDF	; 223
+ 328:	fe 4f       	sbci	r31, 0xFE	; 254
+ 32a:	c0 83       	st	Z, r28
+			str_buffer_head = (str_buffer_head + 1) % buffer_SIZE;
+ 32c:	01 96       	adiw	r24, 0x01	; 1
+ 32e:	20 91 43 01 	lds	r18, 0x0143	; 0x800143 <buffer_SIZE>
+ 332:	30 e0       	ldi	r19, 0x00	; 0
+ 334:	b9 01       	movw	r22, r18
+ 336:	fb d0       	rcall	.+502    	; 0x52e <__divmodhi4>
+ 338:	80 93 20 01 	sts	0x0120, r24	; 0x800120 <str_buffer_head>
+			
+			/*isole char par char a la valeur tail_Index a envoyer*/
+			data = buffer_str[str_buffer_tail];
+ 33c:	80 91 1f 01 	lds	r24, 0x011F	; 0x80011f <str_buffer_tail>
+ 340:	90 e0       	ldi	r25, 0x00	; 0
+ 342:	fc 01       	movw	r30, r24
+ 344:	ef 5d       	subi	r30, 0xDF	; 223
+ 346:	fe 4f       	sbci	r31, 0xFE	; 254
+ 348:	40 81       	ld	r20, Z
+			str_buffer_tail = (str_buffer_tail + 1) % buffer_SIZE;
+ 34a:	01 96       	adiw	r24, 0x01	; 1
+ 34c:	b9 01       	movw	r22, r18
+ 34e:	ef d0       	rcall	.+478    	; 0x52e <__divmodhi4>
+ 350:	80 93 1f 01 	sts	0x011F, r24	; 0x80011f <str_buffer_tail>
+			
+			/*affiche le char isoler*/
+			LCD_SendInstruction(data,1);
+ 354:	61 e0       	ldi	r22, 0x01	; 1
+ 356:	84 2f       	mov	r24, r20
+ 358:	5a df       	rcall	.-332    	; 0x20e <LCD_SendInstruction>
+
+			actual_Val_Char++;
+ 35a:	80 91 41 01 	lds	r24, 0x0141	; 0x800141 <actual_Val_Char>
+ 35e:	8f 5f       	subi	r24, 0xFF	; 255
+ 360:	80 93 41 01 	sts	0x0141, r24	; 0x800141 <actual_Val_Char>
+			}
+		}
+	}
+	
+	return ErrorLCD;
+}
+ 364:	80 91 42 01 	lds	r24, 0x0142	; 0x800142 <ErrorLCD>
+ 368:	cf 91       	pop	r28
+ 36a:	08 95       	ret
+
+0000036c <LCD_PutString>:
+	si pas d'erreur envois des caractere à la fonction LCD_PutChar
+	
+	l'erreur est pris en comppte que si le défilement n'est pas activer 
+*/
+uint8_t LCD_PutString(char *string)
+{		
+ 36c:	0f 93       	push	r16
+ 36e:	1f 93       	push	r17
+ 370:	cf 93       	push	r28
+ 372:	df 93       	push	r29
+	/*savoir le nombre de char*/
+	strLength = strlen((const char *) string);
+ 374:	fc 01       	movw	r30, r24
+ 376:	01 90       	ld	r0, Z+
+ 378:	00 20       	and	r0, r0
+ 37a:	e9 f7       	brne	.-6      	; 0x376 <LCD_PutString+0xa>
+ 37c:	31 97       	sbiw	r30, 0x01	; 1
+ 37e:	e8 1b       	sub	r30, r24
+ 380:	f9 0b       	sbc	r31, r25
+ 382:	e0 93 1e 01 	sts	0x011E, r30	; 0x80011e <strLength>
+	{
+		if (strLength > MAXCHAR_LINE_1_LINE && DISPLAY_MODE == 0)
+		{
+			ErrorLCD |= ERROR_HIGH_LENGH_CHAR;
+		}
+		if (strLength > MAXCHAR_LINE_2_LINE && DISPLAY_MODE == 1)
+ 386:	e1 32       	cpi	r30, 0x21	; 33
+ 388:	28 f0       	brcs	.+10     	; 0x394 <LCD_PutString+0x28>
+		{
+			ErrorLCD |= ERROR_HIGH_LENGH_CHAR;
+ 38a:	20 91 42 01 	lds	r18, 0x0142	; 0x800142 <ErrorLCD>
+ 38e:	24 60       	ori	r18, 0x04	; 4
+ 390:	20 93 42 01 	sts	0x0142, r18	; 0x800142 <ErrorLCD>
+		}
+	}
+	
+	/*si pas d'erreur traite char by char*/
+	if (ErrorLCD == 0)
+ 394:	20 91 42 01 	lds	r18, 0x0142	; 0x800142 <ErrorLCD>
+ 398:	22 23       	and	r18, r18
+ 39a:	41 f0       	breq	.+16     	; 0x3ac <LCD_PutString+0x40>
+ 39c:	10 c0       	rjmp	.+32     	; 0x3be <LCD_PutString+0x52>
+	{
+		for (int i = 0; i < strLength; i++)
+		{	
+			LCD_PutChar(string[i]);
+ 39e:	f8 01       	movw	r30, r16
+ 3a0:	ec 0f       	add	r30, r28
+ 3a2:	fd 1f       	adc	r31, r29
+ 3a4:	80 81       	ld	r24, Z
+ 3a6:	a1 df       	rcall	.-190    	; 0x2ea <LCD_PutChar>
+	}
+	
+	/*si pas d'erreur traite char by char*/
+	if (ErrorLCD == 0)
+	{
+		for (int i = 0; i < strLength; i++)
+ 3a8:	21 96       	adiw	r28, 0x01	; 1
+ 3aa:	03 c0       	rjmp	.+6      	; 0x3b2 <LCD_PutString+0x46>
+ 3ac:	8c 01       	movw	r16, r24
+ 3ae:	c0 e0       	ldi	r28, 0x00	; 0
+ 3b0:	d0 e0       	ldi	r29, 0x00	; 0
+ 3b2:	20 91 1e 01 	lds	r18, 0x011E	; 0x80011e <strLength>
+ 3b6:	30 e0       	ldi	r19, 0x00	; 0
+ 3b8:	c2 17       	cp	r28, r18
+ 3ba:	d3 07       	cpc	r29, r19
+ 3bc:	84 f3       	brlt	.-32     	; 0x39e <LCD_PutString+0x32>
+			LCD_PutChar(string[i]);
+		}
+	}
+	
+	return ErrorLCD;	
+}
+ 3be:	80 91 42 01 	lds	r24, 0x0142	; 0x800142 <ErrorLCD>
+ 3c2:	df 91       	pop	r29
+ 3c4:	cf 91       	pop	r28
+ 3c6:	1f 91       	pop	r17
+ 3c8:	0f 91       	pop	r16
+ 3ca:	08 95       	ret
+
+000003cc <main>:
+#include "global.h"
+
+
+int main(void)
+{
+	LCD_Init(0x0F,0x25);
+ 3cc:	65 e2       	ldi	r22, 0x25	; 37
+ 3ce:	8f e0       	ldi	r24, 0x0F	; 15
+ 3d0:	78 de       	rcall	.-784    	; 0xc2 <LCD_Init>
+	/* Replace with your application code */
+	
+	LCD_setCursor(0,0);
+ 3d2:	60 e0       	ldi	r22, 0x00	; 0
+ 3d4:	80 e0       	ldi	r24, 0x00	; 0
+ 3d6:	5e df       	rcall	.-324    	; 0x294 <LCD_setCursor>
+	LCD_PutString("Welcome BOA");
+ 3d8:	80 e0       	ldi	r24, 0x00	; 0
+ 3da:	91 e0       	ldi	r25, 0x01	; 1
+ 3dc:	c7 df       	rcall	.-114    	; 0x36c <LCD_PutString>
+	LCD_setCursor(1,0);
+ 3de:	60 e0       	ldi	r22, 0x00	; 0
+ 3e0:	81 e0       	ldi	r24, 0x01	; 1
+ 3e2:	58 df       	rcall	.-336    	; 0x294 <LCD_setCursor>
+	LCD_PutString("From Atmega88PA");
+ 3e4:	8c e0       	ldi	r24, 0x0C	; 12
+ 3e6:	91 e0       	ldi	r25, 0x01	; 1
+ 3e8:	c1 df       	rcall	.-126    	; 0x36c <LCD_PutString>
+ 3ea:	ff cf       	rjmp	.-2      	; 0x3ea <main+0x1e>
+
+000003ec <TWIMaster_SendMsg>:
+}
+
+U_TWI_Status TWI_GetTransmitStatus (void)
+{
+	return TWI_StatusTxRx;
+}
+ 3ec:	fc 01       	movw	r30, r24
+ 3ee:	60 93 46 01 	sts	0x0146, r22	; 0x800146 <TWI_MsgSize>
+ 3f2:	80 81       	ld	r24, Z
+ 3f4:	80 93 47 01 	sts	0x0147, r24	; 0x800147 <TWI_BufferTxRx>
+ 3f8:	80 81       	ld	r24, Z
+ 3fa:	80 ff       	sbrs	r24, 0
+ 3fc:	0d c0       	rjmp	.+26     	; 0x418 <__DATA_REGION_LENGTH__+0x18>
+ 3fe:	0f c0       	rjmp	.+30     	; 0x41e <__DATA_REGION_LENGTH__+0x1e>
+ 400:	29 2f       	mov	r18, r25
+ 402:	30 e0       	ldi	r19, 0x00	; 0
+ 404:	df 01       	movw	r26, r30
+ 406:	a2 0f       	add	r26, r18
+ 408:	b3 1f       	adc	r27, r19
+ 40a:	8c 91       	ld	r24, X
+ 40c:	d9 01       	movw	r26, r18
+ 40e:	a9 5b       	subi	r26, 0xB9	; 185
+ 410:	be 4f       	sbci	r27, 0xFE	; 254
+ 412:	8c 93       	st	X, r24
+ 414:	9f 5f       	subi	r25, 0xFF	; 255
+ 416:	01 c0       	rjmp	.+2      	; 0x41a <__DATA_REGION_LENGTH__+0x1a>
+ 418:	91 e0       	ldi	r25, 0x01	; 1
+ 41a:	96 17       	cp	r25, r22
+ 41c:	88 f3       	brcs	.-30     	; 0x400 <__DATA_REGION_LENGTH__>
+ 41e:	10 92 45 01 	sts	0x0145, r1	; 0x800145 <TWI_StatusTxRx>
+ 422:	85 ea       	ldi	r24, 0xA5	; 165
+ 424:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7fe0bc>
+ 428:	08 95       	ret
+
+0000042a <__vector_24>:
+*	l'interruption envoie les données qui s'y trouvent. 
+*
+*/
+
+ISR(TWI_vect)
+{
+ 42a:	1f 92       	push	r1
+ 42c:	0f 92       	push	r0
+ 42e:	0f b6       	in	r0, 0x3f	; 63
+ 430:	0f 92       	push	r0
+ 432:	11 24       	eor	r1, r1
+ 434:	2f 93       	push	r18
+ 436:	3f 93       	push	r19
+ 438:	8f 93       	push	r24
+ 43a:	9f 93       	push	r25
+ 43c:	ef 93       	push	r30
+ 43e:	ff 93       	push	r31
+	static uint8_t MsgPtr = 0;		// Pointeur de message (Static = 
+								// valeur reste après l'interruption)
+								
+	switch (TWSR)
+ 440:	80 91 b9 00 	lds	r24, 0x00B9	; 0x8000b9 <__TEXT_REGION_LENGTH__+0x7fe0b9>
+ 444:	88 32       	cpi	r24, 0x28	; 40
+ 446:	a1 f0       	breq	.+40     	; 0x470 <__vector_24+0x46>
+ 448:	40 f4       	brcc	.+16     	; 0x45a <__vector_24+0x30>
+ 44a:	80 31       	cpi	r24, 0x10	; 16
+ 44c:	79 f0       	breq	.+30     	; 0x46c <__vector_24+0x42>
+ 44e:	88 31       	cpi	r24, 0x18	; 24
+ 450:	79 f0       	breq	.+30     	; 0x470 <__vector_24+0x46>
+ 452:	88 30       	cpi	r24, 0x08	; 8
+ 454:	09 f0       	breq	.+2      	; 0x458 <__vector_24+0x2e>
+ 456:	58 c0       	rjmp	.+176    	; 0x508 <__stack+0x9>
+ 458:	09 c0       	rjmp	.+18     	; 0x46c <__vector_24+0x42>
+ 45a:	80 35       	cpi	r24, 0x50	; 80
+ 45c:	31 f1       	breq	.+76     	; 0x4aa <__vector_24+0x80>
+ 45e:	88 35       	cpi	r24, 0x58	; 88
+ 460:	09 f4       	brne	.+2      	; 0x464 <__vector_24+0x3a>
+ 462:	41 c0       	rjmp	.+130    	; 0x4e6 <__vector_24+0xbc>
+ 464:	80 34       	cpi	r24, 0x40	; 64
+ 466:	09 f0       	breq	.+2      	; 0x46a <__vector_24+0x40>
+ 468:	4f c0       	rjmp	.+158    	; 0x508 <__stack+0x9>
+ 46a:	2b c0       	rjmp	.+86     	; 0x4c2 <__vector_24+0x98>
+	{
+		case TWI_START:							// Si une condition de start ou de Repeated start
+		case TWI_REP_START:						// a été envoyé, remet le pointeur à "0" et charge 
+		MsgPtr = 0;								// l'adresse 
+ 46c:	10 92 44 01 	sts	0x0144, r1	; 0x800144 <MsgPtr.1690>
+		case TWI_WR_ADR_ACK:					// Cette condition s'applique également si l'écriture
+		case TWI_WR_DATA_ACK:					// a été notifiée par un ACK 
+			if (MsgPtr < TWI_MsgSize)			// Si la totalité n'a pas été envoyée
+ 470:	e0 91 44 01 	lds	r30, 0x0144	; 0x800144 <MsgPtr.1690>
+ 474:	80 91 46 01 	lds	r24, 0x0146	; 0x800146 <TWI_MsgSize>
+ 478:	e8 17       	cp	r30, r24
+ 47a:	70 f4       	brcc	.+28     	; 0x498 <__vector_24+0x6e>
+			{
+				TWDR = TWI_BufferTxRx[MsgPtr++];
+ 47c:	81 e0       	ldi	r24, 0x01	; 1
+ 47e:	8e 0f       	add	r24, r30
+ 480:	80 93 44 01 	sts	0x0144, r24	; 0x800144 <MsgPtr.1690>
+ 484:	f0 e0       	ldi	r31, 0x00	; 0
+ 486:	e9 5b       	subi	r30, 0xB9	; 185
+ 488:	fe 4f       	sbci	r31, 0xFE	; 254
+ 48a:	80 81       	ld	r24, Z
+ 48c:	80 93 bb 00 	sts	0x00BB, r24	; 0x8000bb <__TEXT_REGION_LENGTH__+0x7fe0bb>
+				TWCR = (1<<TWEN)|                          // Active le périphérique TWI
+ 490:	85 e8       	ldi	r24, 0x85	; 133
+ 492:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7fe0bc>
+ 496:	40 c0       	rjmp	.+128    	; 0x518 <__stack+0x19>
+				(0<<TWEA)|(0<<TWSTA)|(0<<TWSTO)|           //
+				(0<<TWWC);                                 //
+			}
+			else								// Si la totalité du message a été envoyée								
+			{
+				TWI_StatusTxRx.S_StatusBit.TransmitOk = 0x01;	// Règle le bit de status (TX OK) 
+ 498:	80 91 45 01 	lds	r24, 0x0145	; 0x800145 <TWI_StatusTxRx>
+ 49c:	81 60       	ori	r24, 0x01	; 1
+ 49e:	80 93 45 01 	sts	0x0145, r24	; 0x800145 <TWI_StatusTxRx>
+				TWCR = (1<<TWEN)|									// Active le périphérique TWI
+ 4a2:	84 e9       	ldi	r24, 0x94	; 148
+ 4a4:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7fe0bc>
+ 4a8:	37 c0       	rjmp	.+110    	; 0x518 <__stack+0x19>
+				(0<<TWWC);											//
+			}
+		break;
+		
+    case TWI_RD_DATA_ACK:					// Si un byte a été reçu et ACK envoyé
+		TWI_BufferTxRx[MsgPtr++] = TWDR;
+ 4aa:	e0 91 44 01 	lds	r30, 0x0144	; 0x800144 <MsgPtr.1690>
+ 4ae:	81 e0       	ldi	r24, 0x01	; 1
+ 4b0:	8e 0f       	add	r24, r30
+ 4b2:	80 93 44 01 	sts	0x0144, r24	; 0x800144 <MsgPtr.1690>
+ 4b6:	f0 e0       	ldi	r31, 0x00	; 0
+ 4b8:	80 91 bb 00 	lds	r24, 0x00BB	; 0x8000bb <__TEXT_REGION_LENGTH__+0x7fe0bb>
+ 4bc:	e9 5b       	subi	r30, 0xB9	; 185
+ 4be:	fe 4f       	sbci	r31, 0xFE	; 254
+ 4c0:	80 83       	st	Z, r24
+		
+    case TWI_RD_ADR_ACK:					// L'adresse et la notification ont été reçu par le SLAVE
+    if (MsgPtr < (TWI_MsgSize-1) )          // Vérifie si il s'agit du dernier byte à lire 
+ 4c2:	20 91 44 01 	lds	r18, 0x0144	; 0x800144 <MsgPtr.1690>
+ 4c6:	30 e0       	ldi	r19, 0x00	; 0
+ 4c8:	80 91 46 01 	lds	r24, 0x0146	; 0x800146 <TWI_MsgSize>
+ 4cc:	90 e0       	ldi	r25, 0x00	; 0
+ 4ce:	01 97       	sbiw	r24, 0x01	; 1
+ 4d0:	28 17       	cp	r18, r24
+ 4d2:	39 07       	cpc	r19, r25
+ 4d4:	24 f4       	brge	.+8      	; 0x4de <__vector_24+0xb4>
+    {
+		// Si ce n'est pas le cas,
+	    TWCR = (1<<TWEN)|                   // Met à Jour le Registre TWCR 
+ 4d6:	85 ec       	ldi	r24, 0xC5	; 197
+ 4d8:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7fe0bc>
+ 4dc:	1d c0       	rjmp	.+58     	; 0x518 <__stack+0x19>
+	    (0<<TWWC);                          
+    }
+	else									     
+    {
+		// Si tout les bytes ont étés lus
+	    TWCR = (1<<TWEN)|                          // Met à jour le TWCR
+ 4de:	85 e8       	ldi	r24, 0x85	; 133
+ 4e0:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7fe0bc>
+ 4e4:	19 c0       	rjmp	.+50     	; 0x518 <__stack+0x19>
+	    (0<<TWWC);                                 //
+    }
+    break;
+	
+    case TWI_RD_DATA_NACK:								// Le dernier byte à été reçu (nack envoyé)
+		TWI_BufferTxRx[MsgPtr] = TWDR;					// Sauve les données
+ 4e6:	e0 91 44 01 	lds	r30, 0x0144	; 0x800144 <MsgPtr.1690>
+ 4ea:	f0 e0       	ldi	r31, 0x00	; 0
+ 4ec:	80 91 bb 00 	lds	r24, 0x00BB	; 0x8000bb <__TEXT_REGION_LENGTH__+0x7fe0bb>
+ 4f0:	e9 5b       	subi	r30, 0xB9	; 185
+ 4f2:	fe 4f       	sbci	r31, 0xFE	; 254
+ 4f4:	80 83       	st	Z, r24
+		TWI_StatusTxRx.S_StatusBit.TransmitOk = 0x01;	// Flag de communication terminée correctement
+ 4f6:	80 91 45 01 	lds	r24, 0x0145	; 0x800145 <TWI_StatusTxRx>
+ 4fa:	81 60       	ori	r24, 0x01	; 1
+ 4fc:	80 93 45 01 	sts	0x0145, r24	; 0x800145 <TWI_StatusTxRx>
+		 
+		TWCR = (1<<TWEN)|                          // Met à jour le registre de configuration TWI
+ 500:	84 e9       	ldi	r24, 0x94	; 148
+ 502:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7fe0bc>
+		(0<<TWIE)|(1<<TWINT)|                      // Désactive les interruptions et clear le Flag 
+		(0<<TWEA)|(0<<TWSTA)|(1<<TWSTO)|           // Envoie la condition de stop 
+		(0<<TWWC);                                 //
+    break;
+ 506:	08 c0       	rjmp	.+16     	; 0x518 <__stack+0x19>
+    case TWI_RD_ADR_NACK:		// Envoi de l'adresse + R, mais slave réponds avec NACK
+    case TWI_WR_DATA_NACK:		// Envoi d'un byte, mais slave réponds avec NACK 
+    case TWI_ERROR_BUS:			// Error sur le bus (Condition illegale (ex: Start-Stop)
+    default:
+		//TWI_state = TWSR;				// Sauve le registre de status et
+		TWI_StatusTxRx.S_StatusBit.TransmitOk = 0x00;	// Efface le FLag de validation
+ 508:	80 91 45 01 	lds	r24, 0x0145	; 0x800145 <TWI_StatusTxRx>
+ 50c:	8e 7f       	andi	r24, 0xFE	; 254
+ 50e:	80 93 45 01 	sts	0x0145, r24	; 0x800145 <TWI_StatusTxRx>
+    
+		// Reset TWI Interface
+		TWCR = (1<<TWEN)|					// Mise à jour du registre de CONF
+ 512:	84 e0       	ldi	r24, 0x04	; 4
+ 514:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7fe0bc>
+		(0<<TWIE)|(0<<TWINT)|				// Désactive les interruptions
+		(0<<TWEA)|(0<<TWSTA)|(0<<TWSTO)|	// Stoppe la communication en cours
+		(0<<TWWC);							//		
+	}
+}
+ 518:	ff 91       	pop	r31
+ 51a:	ef 91       	pop	r30
+ 51c:	9f 91       	pop	r25
+ 51e:	8f 91       	pop	r24
+ 520:	3f 91       	pop	r19
+ 522:	2f 91       	pop	r18
+ 524:	0f 90       	pop	r0
+ 526:	0f be       	out	0x3f, r0	; 63
+ 528:	0f 90       	pop	r0
+ 52a:	1f 90       	pop	r1
+ 52c:	18 95       	reti
+
+0000052e <__divmodhi4>:
+ 52e:	97 fb       	bst	r25, 7
+ 530:	07 2e       	mov	r0, r23
+ 532:	16 f4       	brtc	.+4      	; 0x538 <__divmodhi4+0xa>
+ 534:	00 94       	com	r0
+ 536:	06 d0       	rcall	.+12     	; 0x544 <__divmodhi4_neg1>
+ 538:	77 fd       	sbrc	r23, 7
+ 53a:	08 d0       	rcall	.+16     	; 0x54c <__divmodhi4_neg2>
+ 53c:	0b d0       	rcall	.+22     	; 0x554 <__udivmodhi4>
+ 53e:	07 fc       	sbrc	r0, 7
+ 540:	05 d0       	rcall	.+10     	; 0x54c <__divmodhi4_neg2>
+ 542:	3e f4       	brtc	.+14     	; 0x552 <__divmodhi4_exit>
+
+00000544 <__divmodhi4_neg1>:
+ 544:	90 95       	com	r25
+ 546:	81 95       	neg	r24
+ 548:	9f 4f       	sbci	r25, 0xFF	; 255
+ 54a:	08 95       	ret
+
+0000054c <__divmodhi4_neg2>:
+ 54c:	70 95       	com	r23
+ 54e:	61 95       	neg	r22
+ 550:	7f 4f       	sbci	r23, 0xFF	; 255
+
+00000552 <__divmodhi4_exit>:
+ 552:	08 95       	ret
+
+00000554 <__udivmodhi4>:
+ 554:	aa 1b       	sub	r26, r26
+ 556:	bb 1b       	sub	r27, r27
+ 558:	51 e1       	ldi	r21, 0x11	; 17
+ 55a:	07 c0       	rjmp	.+14     	; 0x56a <__udivmodhi4_ep>
+
+0000055c <__udivmodhi4_loop>:
+ 55c:	aa 1f       	adc	r26, r26
+ 55e:	bb 1f       	adc	r27, r27
+ 560:	a6 17       	cp	r26, r22
+ 562:	b7 07       	cpc	r27, r23
+ 564:	10 f0       	brcs	.+4      	; 0x56a <__udivmodhi4_ep>
+ 566:	a6 1b       	sub	r26, r22
+ 568:	b7 0b       	sbc	r27, r23
+
+0000056a <__udivmodhi4_ep>:
+ 56a:	88 1f       	adc	r24, r24
+ 56c:	99 1f       	adc	r25, r25
+ 56e:	5a 95       	dec	r21
+ 570:	a9 f7       	brne	.-22     	; 0x55c <__udivmodhi4_loop>
+ 572:	80 95       	com	r24
+ 574:	90 95       	com	r25
+ 576:	bc 01       	movw	r22, r24
+ 578:	cd 01       	movw	r24, r26
+ 57a:	08 95       	ret
+
+0000057c <_exit>:
+ 57c:	f8 94       	cli
+
+0000057e <__stop_program>:
+ 57e:	ff cf       	rjmp	.-2      	; 0x57e <__stop_program>

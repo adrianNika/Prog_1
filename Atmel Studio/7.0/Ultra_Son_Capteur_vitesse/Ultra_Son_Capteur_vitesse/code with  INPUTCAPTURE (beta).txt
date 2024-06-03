@@ -1,0 +1,207 @@
+/*
+ * Ultra_Son_Capteur_vitesse.c
+ *
+ * Created: 22.02.2024 10:50:06
+ * Author : adria
+ */ 
+
+#define F_CPU 16000000UL
+
+#include <avr/io.h>
+#include "AVR_Uart.h"
+//#include "TWI_Master.h"
+//#include "LCD_I2C.h"
+#include "AVR_LCD_1602_I2C.h"
+#include <stdio.h>
+//#include <avr/sleep.h>
+#include <avr/interrupt.h>
+#include <stdint-gcc.h>
+#include <util/delay.h>
+//#include <avr/eeprom.h>
+
+float vitesse_son = 340.29;
+float time_high_lvl = 0;
+float distance = 0;
+uint8_t flag = 1;
+char uartstr[16];
+
+/*global variable*/
+uint16_t morseValue = 0xFFFF;
+uint16_t morseValueBas = 0x0000;
+uint16_t morseValueHaut = 0x0000;
+
+uint16_t firstCapture = 0x0000;
+uint16_t SecondCapture = 0x0000;
+
+uint8_t computeNewTimeMorse = 0;
+uint8_t overFlowWhileMeasurement = 0;
+uint8_t compteur = 0;
+
+
+ISR (TIMER1_OVF_vect)
+{
+	compteur += 1;
+	
+	if (overFlowWhileMeasurement == 0)
+	{
+		if (firstCapture != 0x0000)
+		{
+			overFlowWhileMeasurement++;
+		}
+	}
+	else
+	{
+		/**/
+	}
+}
+
+ISR (TIMER1_CAPT_vect)
+{
+	cli();
+	
+	if (firstCapture == 0x0000)
+	{
+		firstCapture = ICR1;
+		
+		/*sprintf(uartstr, "%d     ", firstCapture);
+		Uart_PutString(uartstr);*/
+
+		if (morseValueHaut < 0xFFFF)
+		{
+			morseValueHaut = 0xFFFF;
+			OCR1A = 0xFFFF;
+		}
+	}
+	else
+	{
+		flag = 0;
+		SecondCapture = ICR1;
+		/*sprintf(uartstr, "%d;", SecondCapture);
+		Uart_PutString(uartstr);*/
+		computeNewTimeMorse = 1;
+	}
+	
+	TCCR1B ^= (1 << ICES1);
+	TIFR1 &= ~(1 << ICF1);
+	sei();
+}
+
+
+
+/*initialisation du timer*/
+void Init_Timer1 ()
+{
+	/*Setting timer 1 in CTC mode 4, OCR1A top, starting at 0xFFFF*/
+	/*no output OC1A for this application*/
+	/*(TCCR1B) activate ICP1 filtering, rising edge, prescaler at 1024*/
+	OCR1A = morseValue;
+	
+	TCCR1A = 0x00;
+	//TCCR1A |= (1 << COM1A0);
+	
+	TCCR1B = 0x00;
+	TCCR1B |= 0b11001000;
+	
+
+	/*activate two interupt (overFlow and capt)*/
+	TIMSK1 = 0x00;
+	TIMSK1 |= ((1 << TOIE1) | (1 << ICIE1));
+	
+	sei();
+}
+
+
+
+/* Function for start and stop Timer 1*/
+void Start_Timer1()
+{
+	TCCR1B |= ((1 << CS12) | (1 << CS10));
+}
+void Stop_Timer1()
+{
+	TCCR1B &= ~((1 << CS12) | (1 << CS10));
+}
+
+
+int main(void)
+{
+	/* Start-up delay */
+	_delay_ms(100);
+	
+	/* Structure for LCD Data */
+	S_LCD_DATA lcd = {  .i2c.S_MsgSplit.SlaveAdress = 0x27,
+						.i2c.S_MsgSplit.ReadWriteBit = TWI_WRITE,
+						.cursorX = 0x00,
+						.cursorY = 0x00,
+						.tableIndex = 0x00,
+						.appendMode = 0x01,
+						.error = 0x00,
+						.pcfdata.reg.backlight = 0x01};
+	
+	sei();
+	DDRB |= 0x02;
+	DDRC = 0x01;
+	DDRD = 0x02;
+	
+	Init_Timer1();
+	Start_Timer1();
+	
+	/* Initialize I2C + LCD */
+	TWIMaster_Init();
+	LCD_Init(&lcd);
+	
+	UART_Init();
+	
+    /* Replace with your application code */
+    while (1) 
+    {	
+		if (computeNewTimeMorse == 1)
+		{
+			cli();
+			
+			if (overFlowWhileMeasurement <= 1)
+			{
+				if (SecondCapture > firstCapture)
+				{
+					morseValueHaut = SecondCapture - firstCapture;
+					flag = 1;
+				}
+				else
+				{
+					morseValueHaut = (0xFFFF - firstCapture) + SecondCapture;
+					flag = 1;
+				}
+			}
+			
+			firstCapture = 0x0000;
+			computeNewTimeMorse = 0;
+			overFlowWhileMeasurement = 0;
+			
+			sei();
+		}
+		
+		if (flag == 1)
+		{
+			flag = 0;
+			
+			time_high_lvl = ((float)morseValueHaut * 64);
+			
+			distance = time_high_lvl * 0.017;
+			
+			/*sprintf(uartstr, "%.2f cm;", distance / 10);
+			Uart_PutString(uartstr);*/
+			
+			sprintf(uartstr, "%.2f cm", distance);
+			LCD_Clear(&lcd);
+			LCD_SetCursor(&lcd,0,0);
+			LCD_PutString(&lcd,uartstr);
+			
+			_delay_ms(200);
+			PORTC = 1;
+			_delay_us(10);
+			PORTC = 0;
+		}
+    }
+}
+
+	

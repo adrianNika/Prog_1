@@ -1,0 +1,764 @@
+
+Swiss_PI.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000000  00800100  00800100  00000502  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         0000048e  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          0000009c  00800100  00800100  00000502  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  00000502  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000534  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000160  00000000  00000000  00000570  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   00001616  00000000  00000000  000006d0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00000d1f  00000000  00000000  00001ce6  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   00000c8b  00000000  00000000  00002a05  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  000003bc  00000000  00000000  00003690  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    00000825  00000000  00000000  00003a4c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    00000bc0  00000000  00000000  00004271  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000168  00000000  00000000  00004e31  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 34 00 	jmp	0x68	; 0x68 <__ctors_end>
+   4:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+   8:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+   c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  10:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  14:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  18:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  1c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  20:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  24:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  28:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  2c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  30:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  34:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  38:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  3c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  40:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  44:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  48:	0c 94 a7 00 	jmp	0x14e	; 0x14e <__vector_18>
+  4c:	0c 94 6a 00 	jmp	0xd4	; 0xd4 <__vector_19>
+  50:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  54:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  58:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  5c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  60:	0c 94 c3 01 	jmp	0x386	; 0x386 <__vector_24>
+  64:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+
+00000068 <__ctors_end>:
+  68:	11 24       	eor	r1, r1
+  6a:	1f be       	out	0x3f, r1	; 63
+  6c:	cf ef       	ldi	r28, 0xFF	; 255
+  6e:	d8 e0       	ldi	r29, 0x08	; 8
+  70:	de bf       	out	0x3e, r29	; 62
+  72:	cd bf       	out	0x3d, r28	; 61
+
+00000074 <__do_copy_data>:
+  74:	11 e0       	ldi	r17, 0x01	; 1
+  76:	a0 e0       	ldi	r26, 0x00	; 0
+  78:	b1 e0       	ldi	r27, 0x01	; 1
+  7a:	ee e8       	ldi	r30, 0x8E	; 142
+  7c:	f4 e0       	ldi	r31, 0x04	; 4
+  7e:	02 c0       	rjmp	.+4      	; 0x84 <__do_copy_data+0x10>
+  80:	05 90       	lpm	r0, Z+
+  82:	0d 92       	st	X+, r0
+  84:	a0 30       	cpi	r26, 0x00	; 0
+  86:	b1 07       	cpc	r27, r17
+  88:	d9 f7       	brne	.-10     	; 0x80 <__do_copy_data+0xc>
+
+0000008a <__do_clear_bss>:
+  8a:	21 e0       	ldi	r18, 0x01	; 1
+  8c:	a0 e0       	ldi	r26, 0x00	; 0
+  8e:	b1 e0       	ldi	r27, 0x01	; 1
+  90:	01 c0       	rjmp	.+2      	; 0x94 <.do_clear_bss_start>
+
+00000092 <.do_clear_bss_loop>:
+  92:	1d 92       	st	X+, r1
+
+00000094 <.do_clear_bss_start>:
+  94:	ac 39       	cpi	r26, 0x9C	; 156
+  96:	b2 07       	cpc	r27, r18
+  98:	e1 f7       	brne	.-8      	; 0x92 <.do_clear_bss_loop>
+  9a:	0e 94 f1 00 	call	0x1e2	; 0x1e2 <main>
+  9e:	0c 94 45 02 	jmp	0x48a	; 0x48a <_exit>
+
+000000a2 <__bad_interrupt>:
+  a2:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000a6 <UART_Init>:
+	TX_Head = 0;
+	TX_Tail = 0; 
+	
+	// returning ErrorUart (no-cost operation) 
+	return ErrorUart;
+}
+  a6:	82 e0       	ldi	r24, 0x02	; 2
+  a8:	80 93 c0 00 	sts	0x00C0, r24	; 0x8000c0 <__TEXT_REGION_LENGTH__+0x7f80c0>
+  ac:	88 eb       	ldi	r24, 0xB8	; 184
+  ae:	80 93 c1 00 	sts	0x00C1, r24	; 0x8000c1 <__TEXT_REGION_LENGTH__+0x7f80c1>
+  b2:	86 e0       	ldi	r24, 0x06	; 6
+  b4:	80 93 c2 00 	sts	0x00C2, r24	; 0x8000c2 <__TEXT_REGION_LENGTH__+0x7f80c2>
+  b8:	10 92 c5 00 	sts	0x00C5, r1	; 0x8000c5 <__TEXT_REGION_LENGTH__+0x7f80c5>
+  bc:	8f ec       	ldi	r24, 0xCF	; 207
+  be:	80 93 c4 00 	sts	0x00C4, r24	; 0x8000c4 <__TEXT_REGION_LENGTH__+0x7f80c4>
+  c2:	10 92 04 01 	sts	0x0104, r1	; 0x800104 <RX_Tail>
+  c6:	10 92 05 01 	sts	0x0105, r1	; 0x800105 <RX_Head>
+  ca:	10 92 02 01 	sts	0x0102, r1	; 0x800102 <TX_Tail>
+  ce:	10 92 03 01 	sts	0x0103, r1	; 0x800103 <TX_Head>
+  d2:	08 95       	ret
+
+000000d4 <__vector_19>:
+  d4:	1f 92       	push	r1
+  d6:	0f 92       	push	r0
+  d8:	0f b6       	in	r0, 0x3f	; 63
+  da:	0f 92       	push	r0
+  dc:	11 24       	eor	r1, r1
+  de:	2f 93       	push	r18
+  e0:	8f 93       	push	r24
+  e2:	9f 93       	push	r25
+  e4:	ef 93       	push	r30
+  e6:	ff 93       	push	r31
+  e8:	90 91 02 01 	lds	r25, 0x0102	; 0x800102 <TX_Tail>
+  ec:	80 91 03 01 	lds	r24, 0x0103	; 0x800103 <TX_Head>
+  f0:	98 17       	cp	r25, r24
+  f2:	d9 f0       	breq	.+54     	; 0x12a <__vector_19+0x56>
+  f4:	90 91 02 01 	lds	r25, 0x0102	; 0x800102 <TX_Tail>
+  f8:	9f 5f       	subi	r25, 0xFF	; 255
+  fa:	89 2f       	mov	r24, r25
+  fc:	86 95       	lsr	r24
+  fe:	2b ee       	ldi	r18, 0xEB	; 235
+ 100:	82 9f       	mul	r24, r18
+ 102:	81 2d       	mov	r24, r1
+ 104:	11 24       	eor	r1, r1
+ 106:	82 95       	swap	r24
+ 108:	86 95       	lsr	r24
+ 10a:	87 70       	andi	r24, 0x07	; 7
+ 10c:	26 e4       	ldi	r18, 0x46	; 70
+ 10e:	82 9f       	mul	r24, r18
+ 110:	90 19       	sub	r25, r0
+ 112:	11 24       	eor	r1, r1
+ 114:	90 93 02 01 	sts	0x0102, r25	; 0x800102 <TX_Tail>
+ 118:	e0 91 02 01 	lds	r30, 0x0102	; 0x800102 <TX_Tail>
+ 11c:	f0 e0       	ldi	r31, 0x00	; 0
+ 11e:	ea 5f       	subi	r30, 0xFA	; 250
+ 120:	fe 4f       	sbci	r31, 0xFE	; 254
+ 122:	80 81       	ld	r24, Z
+ 124:	80 93 c6 00 	sts	0x00C6, r24	; 0x8000c6 <__TEXT_REGION_LENGTH__+0x7f80c6>
+ 128:	05 c0       	rjmp	.+10     	; 0x134 <__vector_19+0x60>
+ 12a:	e1 ec       	ldi	r30, 0xC1	; 193
+ 12c:	f0 e0       	ldi	r31, 0x00	; 0
+ 12e:	80 81       	ld	r24, Z
+ 130:	8f 7d       	andi	r24, 0xDF	; 223
+ 132:	80 83       	st	Z, r24
+ 134:	ff 91       	pop	r31
+ 136:	ef 91       	pop	r30
+ 138:	9f 91       	pop	r25
+ 13a:	8f 91       	pop	r24
+ 13c:	2f 91       	pop	r18
+ 13e:	0f 90       	pop	r0
+ 140:	0f be       	out	0x3f, r0	; 63
+ 142:	0f 90       	pop	r0
+ 144:	1f 90       	pop	r1
+ 146:	18 95       	reti
+
+00000148 <Uart_SetELOEndCharDetected>:
+ * @param  value Value of flag to be set
+ * @return void
+ */
+void Uart_SetELOEndCharDetected(uint8_t value)
+{
+	EloEndCharDetected = value;
+ 148:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__data_end>
+ 14c:	08 95       	ret
+
+0000014e <__vector_18>:
+ * When interrupt occures, the new data has to be stored in circular buffer.
+ * Head pointer increases, only if buffer is not full.
+ *
+*/
+ISR(USART_RX_vect)
+{
+ 14e:	1f 92       	push	r1
+ 150:	0f 92       	push	r0
+ 152:	0f b6       	in	r0, 0x3f	; 63
+ 154:	0f 92       	push	r0
+ 156:	11 24       	eor	r1, r1
+ 158:	2f 93       	push	r18
+ 15a:	3f 93       	push	r19
+ 15c:	4f 93       	push	r20
+ 15e:	5f 93       	push	r21
+ 160:	6f 93       	push	r22
+ 162:	7f 93       	push	r23
+ 164:	8f 93       	push	r24
+ 166:	9f 93       	push	r25
+ 168:	af 93       	push	r26
+ 16a:	bf 93       	push	r27
+ 16c:	ef 93       	push	r30
+ 16e:	ff 93       	push	r31
+	char data;			// Temporary (to empty UDR)
+	uint8_t tmpRXHead;	// Temporary (for computations) 
+	
+	data = UDR_REG;		// empty UDR in temporary variable 
+ 170:	20 91 c6 00 	lds	r18, 0x00C6	; 0x8000c6 <__TEXT_REGION_LENGTH__+0x7f80c6>
+						// this permits to receive another data (avoid loss)
+	
+	tmpRXHead = RX_Head + 1;			// Increase position of tmp head 
+ 174:	90 91 05 01 	lds	r25, 0x0105	; 0x800105 <RX_Head>
+ 178:	9f 5f       	subi	r25, 0xFF	; 255
+	tmpRXHead %= UART_RX_BUFFER_SIZE;	// cycling buffer position if max reached
+ 17a:	89 2f       	mov	r24, r25
+ 17c:	86 95       	lsr	r24
+ 17e:	eb ee       	ldi	r30, 0xEB	; 235
+ 180:	8e 9f       	mul	r24, r30
+ 182:	e1 2d       	mov	r30, r1
+ 184:	11 24       	eor	r1, r1
+ 186:	e2 95       	swap	r30
+ 188:	e6 95       	lsr	r30
+ 18a:	e7 70       	andi	r30, 0x07	; 7
+ 18c:	86 e4       	ldi	r24, 0x46	; 70
+ 18e:	e8 9f       	mul	r30, r24
+ 190:	90 19       	sub	r25, r0
+ 192:	11 24       	eor	r1, r1
+	
+	// Is RX_Buffer full ? 
+	if (tmpRXHead == RX_Tail)
+ 194:	80 91 04 01 	lds	r24, 0x0104	; 0x800104 <RX_Tail>
+ 198:	98 13       	cpse	r25, r24
+ 19a:	06 c0       	rjmp	.+12     	; 0x1a8 <__vector_18+0x5a>
+	{
+		// --> ERROR : RX Buffer is full 
+		ErrorUart |= UART_ERROR_RX_BUFFER_FULL; // Buffer is full, handle exeption ! 
+ 19c:	80 91 01 01 	lds	r24, 0x0101	; 0x800101 <ErrorUart>
+ 1a0:	82 60       	ori	r24, 0x02	; 2
+ 1a2:	80 93 01 01 	sts	0x0101, r24	; 0x800101 <ErrorUart>
+ 1a6:	0c c0       	rjmp	.+24     	; 0x1c0 <__vector_18+0x72>
+	}
+	else
+	{
+		RX_Head = tmpRXHead ;			// Save new pointer position
+ 1a8:	90 93 05 01 	sts	0x0105, r25	; 0x800105 <RX_Head>
+		RX_Buffer[tmpRXHead] = data;	// Save data in buffer
+ 1ac:	e9 2f       	mov	r30, r25
+ 1ae:	f0 e0       	ldi	r31, 0x00	; 0
+ 1b0:	e4 5b       	subi	r30, 0xB4	; 180
+ 1b2:	fe 4f       	sbci	r31, 0xFE	; 254
+ 1b4:	20 83       	st	Z, r18
+		
+		// ELO Protocole handling
+		if (data == '*')
+ 1b6:	2a 32       	cpi	r18, 0x2A	; 42
+ 1b8:	19 f4       	brne	.+6      	; 0x1c0 <__vector_18+0x72>
+		{
+			Uart_SetELOEndCharDetected(0x01);
+ 1ba:	81 e0       	ldi	r24, 0x01	; 1
+ 1bc:	0e 94 a4 00 	call	0x148	; 0x148 <Uart_SetELOEndCharDetected>
+		}
+	}
+}
+ 1c0:	ff 91       	pop	r31
+ 1c2:	ef 91       	pop	r30
+ 1c4:	bf 91       	pop	r27
+ 1c6:	af 91       	pop	r26
+ 1c8:	9f 91       	pop	r25
+ 1ca:	8f 91       	pop	r24
+ 1cc:	7f 91       	pop	r23
+ 1ce:	6f 91       	pop	r22
+ 1d0:	5f 91       	pop	r21
+ 1d2:	4f 91       	pop	r20
+ 1d4:	3f 91       	pop	r19
+ 1d6:	2f 91       	pop	r18
+ 1d8:	0f 90       	pop	r0
+ 1da:	0f be       	out	0x3f, r0	; 63
+ 1dc:	0f 90       	pop	r0
+ 1de:	1f 90       	pop	r1
+ 1e0:	18 95       	reti
+
+000001e2 <main>:
+
+int main(void)
+{
+	uint16_t lecture = 0;
+	
+	sei();
+ 1e2:	78 94       	sei
+	
+	TWIMaster_Init();
+ 1e4:	0e 94 6a 01 	call	0x2d4	; 0x2d4 <TWIMaster_Init>
+	
+	MCP_INIT(/*0x00*/);
+ 1e8:	0e 94 07 01 	call	0x20e	; 0x20e <MCP_INIT>
+	
+	UART_Init();
+ 1ec:	0e 94 53 00 	call	0xa6	; 0xa6 <UART_Init>
+	
+	MCP_GPIOA(0xFF);
+ 1f0:	8f ef       	ldi	r24, 0xFF	; 255
+ 1f2:	0e 94 15 01 	call	0x22a	; 0x22a <MCP_GPIOA>
+	MCP_GPIOB(0x00);
+ 1f6:	80 e0       	ldi	r24, 0x00	; 0
+ 1f8:	0e 94 22 01 	call	0x244	; 0x244 <MCP_GPIOB>
+	
+	MCP_OUT(0x5500);
+ 1fc:	80 e0       	ldi	r24, 0x00	; 0
+ 1fe:	95 e5       	ldi	r25, 0x55	; 85
+ 200:	0e 94 30 01 	call	0x260	; 0x260 <MCP_OUT>
+	
+	while (1)
+    {	
+		lecture = MCP_IN();
+ 204:	0e 94 4e 01 	call	0x29c	; 0x29c <MCP_IN>
+		
+		MCP_OUT(lecture);
+ 208:	0e 94 30 01 	call	0x260	; 0x260 <MCP_OUT>
+ 20c:	ff cf       	rjmp	.-2      	; 0x20c <main+0x2a>
+
+0000020e <MCP_INIT>:
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 20e:	8f e3       	ldi	r24, 0x3F	; 63
+ 210:	9c e9       	ldi	r25, 0x9C	; 156
+ 212:	01 97       	sbiw	r24, 0x01	; 1
+ 214:	f1 f7       	brne	.-4      	; 0x212 <MCP_INIT+0x4>
+ 216:	00 c0       	rjmp	.+0      	; 0x218 <MCP_INIT+0xa>
+ 218:	00 00       	nop
+{	
+	/*START-UP delay*/
+	_delay_ms(10);
+	
+	/*Slave address and bit write*/
+	MCP_Swisspi.S_MsgSplit.SlaveAdress = SLAVE_ADDR;
+ 21a:	e8 e9       	ldi	r30, 0x98	; 152
+ 21c:	f1 e0       	ldi	r31, 0x01	; 1
+ 21e:	80 81       	ld	r24, Z
+ 220:	81 70       	andi	r24, 0x01	; 1
+	MCP_Swisspi.S_MsgSplit.ReadWriteBit = TWI_WRITE;
+ 222:	80 64       	ori	r24, 0x40	; 64
+ 224:	8e 7f       	andi	r24, 0xFE	; 254
+ 226:	80 83       	st	Z, r24
+ 228:	08 95       	ret
+
+0000022a <MCP_GPIOA>:
+	while(TWI_isBusy());*/
+}
+
+void MCP_GPIOA(uint8_t IOA)
+{
+	MCP_Swisspi.S_MsgSplit.Message[0] =	IODIRA;
+ 22a:	e8 e9       	ldi	r30, 0x98	; 152
+ 22c:	f1 e0       	ldi	r31, 0x01	; 1
+ 22e:	11 82       	std	Z+1, r1	; 0x01
+	MCP_Swisspi.S_MsgSplit.Message[1] =	IOA;
+ 230:	82 83       	std	Z+2, r24	; 0x02
+	TWIMaster_SendMsg(MCP_Swisspi.MsgBuffer, 3);
+ 232:	63 e0       	ldi	r22, 0x03	; 3
+ 234:	cf 01       	movw	r24, r30
+ 236:	0e 94 7d 01 	call	0x2fa	; 0x2fa <TWIMaster_SendMsg>
+	while(TWI_isBusy());
+ 23a:	0e 94 9c 01 	call	0x338	; 0x338 <TWI_isBusy>
+ 23e:	81 11       	cpse	r24, r1
+ 240:	fc cf       	rjmp	.-8      	; 0x23a <MCP_GPIOA+0x10>
+}
+ 242:	08 95       	ret
+
+00000244 <MCP_GPIOB>:
+void MCP_GPIOB(uint8_t IOB)
+{
+	MCP_Swisspi.S_MsgSplit.Message[0] =	IODIRB;
+ 244:	e8 e9       	ldi	r30, 0x98	; 152
+ 246:	f1 e0       	ldi	r31, 0x01	; 1
+ 248:	91 e0       	ldi	r25, 0x01	; 1
+ 24a:	91 83       	std	Z+1, r25	; 0x01
+	MCP_Swisspi.S_MsgSplit.Message[1] =	IOB;
+ 24c:	82 83       	std	Z+2, r24	; 0x02
+	TWIMaster_SendMsg(MCP_Swisspi.MsgBuffer, 3);
+ 24e:	63 e0       	ldi	r22, 0x03	; 3
+ 250:	cf 01       	movw	r24, r30
+ 252:	0e 94 7d 01 	call	0x2fa	; 0x2fa <TWIMaster_SendMsg>
+	while(TWI_isBusy());
+ 256:	0e 94 9c 01 	call	0x338	; 0x338 <TWI_isBusy>
+ 25a:	81 11       	cpse	r24, r1
+ 25c:	fc cf       	rjmp	.-8      	; 0x256 <MCP_GPIOB+0x12>
+}
+ 25e:	08 95       	ret
+
+00000260 <MCP_OUT>:
+
+void MCP_OUT(uint16_t valueOut)
+{
+ 260:	cf 93       	push	r28
+ 262:	c9 2f       	mov	r28, r25
+	uint8_t high = (valueOut >> 8) & 0xFF;
+	uint8_t low = valueOut & 0xFF;
+	
+	MCP_Swisspi.S_MsgSplit.Message[0] =	GPIOA;
+ 264:	e8 e9       	ldi	r30, 0x98	; 152
+ 266:	f1 e0       	ldi	r31, 0x01	; 1
+ 268:	92 e1       	ldi	r25, 0x12	; 18
+ 26a:	91 83       	std	Z+1, r25	; 0x01
+	MCP_Swisspi.S_MsgSplit.Message[1] = low;
+ 26c:	82 83       	std	Z+2, r24	; 0x02
+	TWIMaster_SendMsg(MCP_Swisspi.MsgBuffer, 3);
+ 26e:	63 e0       	ldi	r22, 0x03	; 3
+ 270:	cf 01       	movw	r24, r30
+ 272:	0e 94 7d 01 	call	0x2fa	; 0x2fa <TWIMaster_SendMsg>
+	while(TWI_isBusy());
+ 276:	0e 94 9c 01 	call	0x338	; 0x338 <TWI_isBusy>
+ 27a:	81 11       	cpse	r24, r1
+ 27c:	fc cf       	rjmp	.-8      	; 0x276 <MCP_OUT+0x16>
+	
+	MCP_Swisspi.S_MsgSplit.Message[0] =	GPIOB;
+ 27e:	e8 e9       	ldi	r30, 0x98	; 152
+ 280:	f1 e0       	ldi	r31, 0x01	; 1
+ 282:	83 e1       	ldi	r24, 0x13	; 19
+ 284:	81 83       	std	Z+1, r24	; 0x01
+	MCP_Swisspi.S_MsgSplit.Message[1] =	high;
+ 286:	c2 83       	std	Z+2, r28	; 0x02
+	TWIMaster_SendMsg(MCP_Swisspi.MsgBuffer, 3);
+ 288:	63 e0       	ldi	r22, 0x03	; 3
+ 28a:	cf 01       	movw	r24, r30
+ 28c:	0e 94 7d 01 	call	0x2fa	; 0x2fa <TWIMaster_SendMsg>
+	while(TWI_isBusy());
+ 290:	0e 94 9c 01 	call	0x338	; 0x338 <TWI_isBusy>
+ 294:	81 11       	cpse	r24, r1
+ 296:	fc cf       	rjmp	.-8      	; 0x290 <MCP_OUT+0x30>
+}
+ 298:	cf 91       	pop	r28
+ 29a:	08 95       	ret
+
+0000029c <MCP_IN>:
+
+uint16_t MCP_IN(void)
+{	
+	MCP_Swisspi.S_MsgSplit.ReadWriteBit = TWI_READ;
+ 29c:	e8 e9       	ldi	r30, 0x98	; 152
+ 29e:	f1 e0       	ldi	r31, 0x01	; 1
+ 2a0:	80 81       	ld	r24, Z
+ 2a2:	81 60       	ori	r24, 0x01	; 1
+ 2a4:	80 83       	st	Z, r24
+	
+	MCP_Swisspi.S_MsgSplit.Message[0] =	GPIOA;
+ 2a6:	82 e1       	ldi	r24, 0x12	; 18
+ 2a8:	81 83       	std	Z+1, r24	; 0x01
+	TWIMaster_SendMsg(MCP_Swisspi.MsgBuffer, 3);
+ 2aa:	63 e0       	ldi	r22, 0x03	; 3
+ 2ac:	cf 01       	movw	r24, r30
+ 2ae:	0e 94 7d 01 	call	0x2fa	; 0x2fa <TWIMaster_SendMsg>
+	while(TWI_isBusy());
+ 2b2:	0e 94 9c 01 	call	0x338	; 0x338 <TWI_isBusy>
+ 2b6:	81 11       	cpse	r24, r1
+ 2b8:	fc cf       	rjmp	.-8      	; 0x2b2 <MCP_IN+0x16>
+	
+	TWI_GetData(MCP_Swisspi.MsgBuffer, 3);
+ 2ba:	63 e0       	ldi	r22, 0x03	; 3
+ 2bc:	88 e9       	ldi	r24, 0x98	; 152
+ 2be:	91 e0       	ldi	r25, 0x01	; 1
+ 2c0:	0e 94 a0 01 	call	0x340	; 0x340 <TWI_GetData>
+	
+	MCP_Swisspi.S_MsgSplit.ReadWriteBit = TWI_WRITE;
+ 2c4:	e8 e9       	ldi	r30, 0x98	; 152
+ 2c6:	f1 e0       	ldi	r31, 0x01	; 1
+ 2c8:	80 81       	ld	r24, Z
+ 2ca:	8e 7f       	andi	r24, 0xFE	; 254
+ 2cc:	80 83       	st	Z, r24
+	
+	return MCP_Swisspi.MsgBuffer[2];
+ 2ce:	82 81       	ldd	r24, Z+2	; 0x02
+ 2d0:	90 e0       	ldi	r25, 0x00	; 0
+ 2d2:	08 95       	ret
+
+000002d4 <TWIMaster_Init>:
+}
+
+U_TWI_Status TWI_GetTransmitStatus (void)
+{
+	return TWI_StatusTxRx;
+}
+ 2d4:	e9 eb       	ldi	r30, 0xB9	; 185
+ 2d6:	f0 e0       	ldi	r31, 0x00	; 0
+ 2d8:	80 81       	ld	r24, Z
+ 2da:	8c 7f       	andi	r24, 0xFC	; 252
+ 2dc:	80 83       	st	Z, r24
+ 2de:	80 81       	ld	r24, Z
+ 2e0:	80 83       	st	Z, r24
+ 2e2:	88 e4       	ldi	r24, 0x48	; 72
+ 2e4:	80 93 b8 00 	sts	0x00B8, r24	; 0x8000b8 <__TEXT_REGION_LENGTH__+0x7f80b8>
+ 2e8:	8f ef       	ldi	r24, 0xFF	; 255
+ 2ea:	80 93 bb 00 	sts	0x00BB, r24	; 0x8000bb <__TEXT_REGION_LENGTH__+0x7f80bb>
+ 2ee:	ec eb       	ldi	r30, 0xBC	; 188
+ 2f0:	f0 e0       	ldi	r31, 0x00	; 0
+ 2f2:	10 82       	st	Z, r1
+ 2f4:	84 e0       	ldi	r24, 0x04	; 4
+ 2f6:	80 83       	st	Z, r24
+ 2f8:	08 95       	ret
+
+000002fa <TWIMaster_SendMsg>:
+ 2fa:	fc 01       	movw	r30, r24
+ 2fc:	60 93 94 01 	sts	0x0194, r22	; 0x800194 <TWI_MsgSize>
+ 300:	80 81       	ld	r24, Z
+ 302:	80 93 95 01 	sts	0x0195, r24	; 0x800195 <TWI_BufferTxRx>
+ 306:	80 81       	ld	r24, Z
+ 308:	80 ff       	sbrs	r24, 0
+ 30a:	0d c0       	rjmp	.+26     	; 0x326 <TWIMaster_SendMsg+0x2c>
+ 30c:	0f c0       	rjmp	.+30     	; 0x32c <TWIMaster_SendMsg+0x32>
+ 30e:	29 2f       	mov	r18, r25
+ 310:	30 e0       	ldi	r19, 0x00	; 0
+ 312:	df 01       	movw	r26, r30
+ 314:	a2 0f       	add	r26, r18
+ 316:	b3 1f       	adc	r27, r19
+ 318:	8c 91       	ld	r24, X
+ 31a:	d9 01       	movw	r26, r18
+ 31c:	ab 56       	subi	r26, 0x6B	; 107
+ 31e:	be 4f       	sbci	r27, 0xFE	; 254
+ 320:	8c 93       	st	X, r24
+ 322:	9f 5f       	subi	r25, 0xFF	; 255
+ 324:	01 c0       	rjmp	.+2      	; 0x328 <TWIMaster_SendMsg+0x2e>
+ 326:	91 e0       	ldi	r25, 0x01	; 1
+ 328:	96 17       	cp	r25, r22
+ 32a:	88 f3       	brcs	.-30     	; 0x30e <TWIMaster_SendMsg+0x14>
+ 32c:	10 92 93 01 	sts	0x0193, r1	; 0x800193 <TWI_StatusTxRx>
+ 330:	85 ea       	ldi	r24, 0xA5	; 165
+ 332:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
+ 336:	08 95       	ret
+
+00000338 <TWI_isBusy>:
+ 338:	80 91 bc 00 	lds	r24, 0x00BC	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
+ 33c:	81 70       	andi	r24, 0x01	; 1
+ 33e:	08 95       	ret
+
+00000340 <TWI_GetData>:
+ 340:	0f 93       	push	r16
+ 342:	1f 93       	push	r17
+ 344:	cf 93       	push	r28
+ 346:	8c 01       	movw	r16, r24
+ 348:	c6 2f       	mov	r28, r22
+ 34a:	0e 94 9c 01 	call	0x338	; 0x338 <TWI_isBusy>
+ 34e:	81 11       	cpse	r24, r1
+ 350:	14 c0       	rjmp	.+40     	; 0x37a <TWI_GetData+0x3a>
+ 352:	80 91 93 01 	lds	r24, 0x0193	; 0x800193 <TWI_StatusTxRx>
+ 356:	80 fd       	sbrc	r24, 0
+ 358:	0d c0       	rjmp	.+26     	; 0x374 <TWI_GetData+0x34>
+ 35a:	0f c0       	rjmp	.+30     	; 0x37a <TWI_GetData+0x3a>
+ 35c:	82 2f       	mov	r24, r18
+ 35e:	90 e0       	ldi	r25, 0x00	; 0
+ 360:	f8 01       	movw	r30, r16
+ 362:	e8 0f       	add	r30, r24
+ 364:	f9 1f       	adc	r31, r25
+ 366:	dc 01       	movw	r26, r24
+ 368:	ab 56       	subi	r26, 0x6B	; 107
+ 36a:	be 4f       	sbci	r27, 0xFE	; 254
+ 36c:	8c 91       	ld	r24, X
+ 36e:	80 83       	st	Z, r24
+ 370:	2f 5f       	subi	r18, 0xFF	; 255
+ 372:	01 c0       	rjmp	.+2      	; 0x376 <TWI_GetData+0x36>
+ 374:	20 e0       	ldi	r18, 0x00	; 0
+ 376:	2c 17       	cp	r18, r28
+ 378:	88 f3       	brcs	.-30     	; 0x35c <TWI_GetData+0x1c>
+ 37a:	80 91 93 01 	lds	r24, 0x0193	; 0x800193 <TWI_StatusTxRx>
+ 37e:	cf 91       	pop	r28
+ 380:	1f 91       	pop	r17
+ 382:	0f 91       	pop	r16
+ 384:	08 95       	ret
+
+00000386 <__vector_24>:
+*	l'interruption envoie les données qui s'y trouvent. 
+*
+*/
+
+ISR(TWI_vect)
+{
+ 386:	1f 92       	push	r1
+ 388:	0f 92       	push	r0
+ 38a:	0f b6       	in	r0, 0x3f	; 63
+ 38c:	0f 92       	push	r0
+ 38e:	11 24       	eor	r1, r1
+ 390:	2f 93       	push	r18
+ 392:	3f 93       	push	r19
+ 394:	8f 93       	push	r24
+ 396:	9f 93       	push	r25
+ 398:	ef 93       	push	r30
+ 39a:	ff 93       	push	r31
+	static uint8_t MsgPtr = 0;		// Pointeur de message (Static = 
+								// valeur reste après l'interruption)
+								
+	switch (TWSR)
+ 39c:	80 91 b9 00 	lds	r24, 0x00B9	; 0x8000b9 <__TEXT_REGION_LENGTH__+0x7f80b9>
+ 3a0:	88 32       	cpi	r24, 0x28	; 40
+ 3a2:	a1 f0       	breq	.+40     	; 0x3cc <__vector_24+0x46>
+ 3a4:	40 f4       	brcc	.+16     	; 0x3b6 <__vector_24+0x30>
+ 3a6:	80 31       	cpi	r24, 0x10	; 16
+ 3a8:	79 f0       	breq	.+30     	; 0x3c8 <__vector_24+0x42>
+ 3aa:	88 31       	cpi	r24, 0x18	; 24
+ 3ac:	79 f0       	breq	.+30     	; 0x3cc <__vector_24+0x46>
+ 3ae:	88 30       	cpi	r24, 0x08	; 8
+ 3b0:	09 f0       	breq	.+2      	; 0x3b4 <__vector_24+0x2e>
+ 3b2:	58 c0       	rjmp	.+176    	; 0x464 <__EEPROM_REGION_LENGTH__+0x64>
+ 3b4:	09 c0       	rjmp	.+18     	; 0x3c8 <__vector_24+0x42>
+ 3b6:	80 35       	cpi	r24, 0x50	; 80
+ 3b8:	31 f1       	breq	.+76     	; 0x406 <__EEPROM_REGION_LENGTH__+0x6>
+ 3ba:	88 35       	cpi	r24, 0x58	; 88
+ 3bc:	09 f4       	brne	.+2      	; 0x3c0 <__vector_24+0x3a>
+ 3be:	41 c0       	rjmp	.+130    	; 0x442 <__EEPROM_REGION_LENGTH__+0x42>
+ 3c0:	80 34       	cpi	r24, 0x40	; 64
+ 3c2:	09 f0       	breq	.+2      	; 0x3c6 <__vector_24+0x40>
+ 3c4:	4f c0       	rjmp	.+158    	; 0x464 <__EEPROM_REGION_LENGTH__+0x64>
+ 3c6:	2b c0       	rjmp	.+86     	; 0x41e <__EEPROM_REGION_LENGTH__+0x1e>
+	{
+		case TWI_START:							// Si une condition de start ou de Repeated start
+		case TWI_REP_START:						// a été envoyé, remet le pointeur à "0" et charge 
+		MsgPtr = 0;								// l'adresse 
+ 3c8:	10 92 92 01 	sts	0x0192, r1	; 0x800192 <MsgPtr.1690>
+		case TWI_WR_ADR_ACK:					// Cette condition s'applique également si l'écriture
+		case TWI_WR_DATA_ACK:					// a été notifiée par un ACK 
+			if (MsgPtr < TWI_MsgSize)			// Si la totalité n'a pas été envoyée
+ 3cc:	e0 91 92 01 	lds	r30, 0x0192	; 0x800192 <MsgPtr.1690>
+ 3d0:	80 91 94 01 	lds	r24, 0x0194	; 0x800194 <TWI_MsgSize>
+ 3d4:	e8 17       	cp	r30, r24
+ 3d6:	70 f4       	brcc	.+28     	; 0x3f4 <__vector_24+0x6e>
+			{
+				TWDR = TWI_BufferTxRx[MsgPtr++];
+ 3d8:	81 e0       	ldi	r24, 0x01	; 1
+ 3da:	8e 0f       	add	r24, r30
+ 3dc:	80 93 92 01 	sts	0x0192, r24	; 0x800192 <MsgPtr.1690>
+ 3e0:	f0 e0       	ldi	r31, 0x00	; 0
+ 3e2:	eb 56       	subi	r30, 0x6B	; 107
+ 3e4:	fe 4f       	sbci	r31, 0xFE	; 254
+ 3e6:	80 81       	ld	r24, Z
+ 3e8:	80 93 bb 00 	sts	0x00BB, r24	; 0x8000bb <__TEXT_REGION_LENGTH__+0x7f80bb>
+				TWCR = (1<<TWEN)|                          // Active le périphérique TWI
+ 3ec:	85 e8       	ldi	r24, 0x85	; 133
+ 3ee:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
+ 3f2:	40 c0       	rjmp	.+128    	; 0x474 <__EEPROM_REGION_LENGTH__+0x74>
+				(0<<TWEA)|(0<<TWSTA)|(0<<TWSTO)|           //
+				(0<<TWWC);                                 //
+			}
+			else								// Si la totalité du message a été envoyée								
+			{
+				TWI_StatusTxRx.S_StatusBit.TransmitOk = 0x01;	// Règle le bit de status (TX OK) 
+ 3f4:	80 91 93 01 	lds	r24, 0x0193	; 0x800193 <TWI_StatusTxRx>
+ 3f8:	81 60       	ori	r24, 0x01	; 1
+ 3fa:	80 93 93 01 	sts	0x0193, r24	; 0x800193 <TWI_StatusTxRx>
+				TWCR = (1<<TWEN)|									// Active le périphérique TWI
+ 3fe:	84 e9       	ldi	r24, 0x94	; 148
+ 400:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
+ 404:	37 c0       	rjmp	.+110    	; 0x474 <__EEPROM_REGION_LENGTH__+0x74>
+				(0<<TWWC);											//
+			}
+		break;
+		
+    case TWI_RD_DATA_ACK:					// Si un byte a été reçu et ACK envoyé
+		TWI_BufferTxRx[MsgPtr++] = TWDR;
+ 406:	e0 91 92 01 	lds	r30, 0x0192	; 0x800192 <MsgPtr.1690>
+ 40a:	81 e0       	ldi	r24, 0x01	; 1
+ 40c:	8e 0f       	add	r24, r30
+ 40e:	80 93 92 01 	sts	0x0192, r24	; 0x800192 <MsgPtr.1690>
+ 412:	f0 e0       	ldi	r31, 0x00	; 0
+ 414:	80 91 bb 00 	lds	r24, 0x00BB	; 0x8000bb <__TEXT_REGION_LENGTH__+0x7f80bb>
+ 418:	eb 56       	subi	r30, 0x6B	; 107
+ 41a:	fe 4f       	sbci	r31, 0xFE	; 254
+ 41c:	80 83       	st	Z, r24
+		
+    case TWI_RD_ADR_ACK:					// L'adresse et la notification ont été reçu par le SLAVE
+    if (MsgPtr < (TWI_MsgSize-1) )          // Vérifie si il s'agit du dernier byte à lire 
+ 41e:	20 91 92 01 	lds	r18, 0x0192	; 0x800192 <MsgPtr.1690>
+ 422:	30 e0       	ldi	r19, 0x00	; 0
+ 424:	80 91 94 01 	lds	r24, 0x0194	; 0x800194 <TWI_MsgSize>
+ 428:	90 e0       	ldi	r25, 0x00	; 0
+ 42a:	01 97       	sbiw	r24, 0x01	; 1
+ 42c:	28 17       	cp	r18, r24
+ 42e:	39 07       	cpc	r19, r25
+ 430:	24 f4       	brge	.+8      	; 0x43a <__EEPROM_REGION_LENGTH__+0x3a>
+    {
+		// Si ce n'est pas le cas,
+	    TWCR = (1<<TWEN)|                   // Met à Jour le Registre TWCR 
+ 432:	85 ec       	ldi	r24, 0xC5	; 197
+ 434:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
+ 438:	1d c0       	rjmp	.+58     	; 0x474 <__EEPROM_REGION_LENGTH__+0x74>
+	    (0<<TWWC);                          
+    }
+	else									     
+    {
+		// Si tout les bytes ont étés lus
+	    TWCR = (1<<TWEN)|                          // Met à jour le TWCR
+ 43a:	85 e8       	ldi	r24, 0x85	; 133
+ 43c:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
+ 440:	19 c0       	rjmp	.+50     	; 0x474 <__EEPROM_REGION_LENGTH__+0x74>
+	    (0<<TWWC);                                 //
+    }
+    break;
+	
+    case TWI_RD_DATA_NACK:								// Le dernier byte à été reçu (nack envoyé)
+		TWI_BufferTxRx[MsgPtr] = TWDR;					// Sauve les données
+ 442:	e0 91 92 01 	lds	r30, 0x0192	; 0x800192 <MsgPtr.1690>
+ 446:	f0 e0       	ldi	r31, 0x00	; 0
+ 448:	80 91 bb 00 	lds	r24, 0x00BB	; 0x8000bb <__TEXT_REGION_LENGTH__+0x7f80bb>
+ 44c:	eb 56       	subi	r30, 0x6B	; 107
+ 44e:	fe 4f       	sbci	r31, 0xFE	; 254
+ 450:	80 83       	st	Z, r24
+		TWI_StatusTxRx.S_StatusBit.TransmitOk = 0x01;	// Flag de communication terminée correctement
+ 452:	80 91 93 01 	lds	r24, 0x0193	; 0x800193 <TWI_StatusTxRx>
+ 456:	81 60       	ori	r24, 0x01	; 1
+ 458:	80 93 93 01 	sts	0x0193, r24	; 0x800193 <TWI_StatusTxRx>
+		 
+		TWCR = (1<<TWEN)|                          // Met à jour le registre de configuration TWI
+ 45c:	84 e9       	ldi	r24, 0x94	; 148
+ 45e:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
+		(0<<TWIE)|(1<<TWINT)|                      // Désactive les interruptions et clear le Flag 
+		(0<<TWEA)|(0<<TWSTA)|(1<<TWSTO)|           // Envoie la condition de stop 
+		(0<<TWWC);                                 //
+    break;
+ 462:	08 c0       	rjmp	.+16     	; 0x474 <__EEPROM_REGION_LENGTH__+0x74>
+    case TWI_RD_ADR_NACK:		// Envoi de l'adresse + R, mais slave réponds avec NACK
+    case TWI_WR_DATA_NACK:		// Envoi d'un byte, mais slave réponds avec NACK 
+    case TWI_ERROR_BUS:			// Error sur le bus (Condition illegale (ex: Start-Stop)
+    default:
+		//TWI_state = TWSR;				// Sauve le registre de status et
+		TWI_StatusTxRx.S_StatusBit.TransmitOk = 0x00;	// Efface le FLag de validation
+ 464:	80 91 93 01 	lds	r24, 0x0193	; 0x800193 <TWI_StatusTxRx>
+ 468:	8e 7f       	andi	r24, 0xFE	; 254
+ 46a:	80 93 93 01 	sts	0x0193, r24	; 0x800193 <TWI_StatusTxRx>
+    
+		// Reset TWI Interface
+		TWCR = (1<<TWEN)|					// Mise à jour du registre de CONF
+ 46e:	84 e0       	ldi	r24, 0x04	; 4
+ 470:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
+		(0<<TWIE)|(0<<TWINT)|				// Désactive les interruptions
+		(0<<TWEA)|(0<<TWSTA)|(0<<TWSTO)|	// Stoppe la communication en cours
+		(0<<TWWC);							//		
+	}
+}
+ 474:	ff 91       	pop	r31
+ 476:	ef 91       	pop	r30
+ 478:	9f 91       	pop	r25
+ 47a:	8f 91       	pop	r24
+ 47c:	3f 91       	pop	r19
+ 47e:	2f 91       	pop	r18
+ 480:	0f 90       	pop	r0
+ 482:	0f be       	out	0x3f, r0	; 63
+ 484:	0f 90       	pop	r0
+ 486:	1f 90       	pop	r1
+ 488:	18 95       	reti
+
+0000048a <_exit>:
+ 48a:	f8 94       	cli
+
+0000048c <__stop_program>:
+ 48c:	ff cf       	rjmp	.-2      	; 0x48c <__stop_program>

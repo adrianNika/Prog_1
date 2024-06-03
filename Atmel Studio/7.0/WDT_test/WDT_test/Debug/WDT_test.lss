@@ -1,0 +1,172 @@
+
+WDT_test.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000000  00800100  00800100  0000012c  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000000d8  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .comment      00000030  00000000  00000000  0000012c  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  0000015c  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000020  00000000  00000000  00000198  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00000715  00000000  00000000  000001b8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00000676  00000000  00000000  000008cd  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000295  00000000  00000000  00000f43  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000024  00000000  00000000  000011d8  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000391  00000000  00000000  000011fc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    0000001f  00000000  00000000  0000158d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000010  00000000  00000000  000015ac  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 34 00 	jmp	0x68	; 0x68 <__ctors_end>
+   4:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+   8:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+   c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  10:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  14:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  18:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  1c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  20:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  24:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  28:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  2c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  30:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  34:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  38:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  3c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  40:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  44:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  48:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  4c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  50:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  54:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  58:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  5c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  60:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  64:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+
+00000068 <__ctors_end>:
+  68:	11 24       	eor	r1, r1
+  6a:	1f be       	out	0x3f, r1	; 63
+  6c:	cf ef       	ldi	r28, 0xFF	; 255
+  6e:	d8 e0       	ldi	r29, 0x08	; 8
+  70:	de bf       	out	0x3e, r29	; 62
+  72:	cd bf       	out	0x3d, r28	; 61
+  74:	0e 94 40 00 	call	0x80	; 0x80 <main>
+  78:	0c 94 6a 00 	jmp	0xd4	; 0xd4 <_exit>
+
+0000007c <__bad_interrupt>:
+  7c:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000080 <main>:
+
+int main(void)
+{
+	uint8_t flag = 0;
+	
+	DDRC = 0x0F;
+  80:	8f e0       	ldi	r24, 0x0F	; 15
+  82:	87 b9       	out	0x07, r24	; 7
+	
+	MCUSR = 0;
+  84:	14 be       	out	0x34, r1	; 52
+	
+	WDTCSR = 0;
+  86:	e0 e6       	ldi	r30, 0x60	; 96
+  88:	f0 e0       	ldi	r31, 0x00	; 0
+  8a:	10 82       	st	Z, r1
+	WDTCSR |= (1 << WDCE);
+  8c:	80 81       	ld	r24, Z
+  8e:	80 61       	ori	r24, 0x10	; 16
+  90:	80 83       	st	Z, r24
+	
+	WDTCSR &= ~(1 << WDE);
+  92:	80 81       	ld	r24, Z
+  94:	87 7f       	andi	r24, 0xF7	; 247
+  96:	80 83       	st	Z, r24
+	WDTCSR &= ~(1 << WDIE);
+  98:	80 81       	ld	r24, Z
+  9a:	8f 7b       	andi	r24, 0xBF	; 191
+  9c:	80 83       	st	Z, r24
+	
+	WDTCSR |= ((1 << WDP0) | (1 << WDP1) | (1 << WDP2));
+  9e:	80 81       	ld	r24, Z
+  a0:	87 60       	ori	r24, 0x07	; 7
+  a2:	80 83       	st	Z, r24
+	
+	WDTCSR &= ~(1 << WDCE);
+  a4:	80 81       	ld	r24, Z
+  a6:	8f 7e       	andi	r24, 0xEF	; 239
+  a8:	80 83       	st	Z, r24
+	
+	sei();
+  aa:	78 94       	sei
+#include <util/delay.h>
+
+
+int main(void)
+{
+	uint8_t flag = 0;
+  ac:	80 e0       	ldi	r24, 0x00	; 0
+  ae:	01 c0       	rjmp	.+2      	; 0xb2 <main+0x32>
+		{
+			PORTC ^= 0x0F;
+			_delay_ms(500);
+		}
+		
+		flag = 1;
+  b0:	81 e0       	ldi	r24, 0x01	; 1
+	sei();
+	
+    /* Replace with your application code */
+    while (1) 
+    {
+		if (flag == 0)
+  b2:	81 11       	cpse	r24, r1
+  b4:	fd cf       	rjmp	.-6      	; 0xb0 <main+0x30>
+		{
+			PORTC ^= 0x0F;
+  b6:	98 b1       	in	r25, 0x08	; 8
+  b8:	8f e0       	ldi	r24, 0x0F	; 15
+  ba:	89 27       	eor	r24, r25
+  bc:	88 b9       	out	0x08, r24	; 8
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  be:	2f ef       	ldi	r18, 0xFF	; 255
+  c0:	89 e6       	ldi	r24, 0x69	; 105
+  c2:	98 e1       	ldi	r25, 0x18	; 24
+  c4:	21 50       	subi	r18, 0x01	; 1
+  c6:	80 40       	sbci	r24, 0x00	; 0
+  c8:	90 40       	sbci	r25, 0x00	; 0
+  ca:	e1 f7       	brne	.-8      	; 0xc4 <main+0x44>
+  cc:	00 c0       	rjmp	.+0      	; 0xce <main+0x4e>
+  ce:	00 00       	nop
+			_delay_ms(500);
+		}
+		
+		flag = 1;
+  d0:	81 e0       	ldi	r24, 0x01	; 1
+  d2:	ef cf       	rjmp	.-34     	; 0xb2 <main+0x32>
+
+000000d4 <_exit>:
+  d4:	f8 94       	cli
+
+000000d6 <__stop_program>:
+  d6:	ff cf       	rjmp	.-2      	; 0xd6 <__stop_program>

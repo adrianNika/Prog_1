@@ -1,0 +1,52 @@
+
+
+#define LCD_DISPLAY_STATIC 0
+#define MAXCHAR 15
+#define BUFER_SIZE
+
+/*ligne du haut --> 0
+  ligne du bas  --> 1*/
+
+/*
+	LCD_putchar
+
+	1 - Selon la position du curseur
+		
+		Mode Statique 1 ligne :
+			- afficher sur une ligne (haut)
+			- remplire un buffer circulaire (utile apres pour les autre mode)
+			- incrémenter l'index Head (circular buffer)
+			- récuperer et afficher chaque nouvel data ajouter directement
+			- incrémenter l'index Tail (circular buffer)
+			- incrémenter une variable pour savoir la pose de 0 a 16 
+			  on arrête a 16 car une ligne contien 16 caractére
+		
+		
+		mode Statique 2 lgine (avec retour a la ligne) :
+			- idem que pour le mode statique 1 ligne 
+				- on affiche jusqu'a 32 caractére et pas 16
+				- a partire du 16 caractére on change de ligne
+				- et on affcihe jusqu'au 32 caractére
+		
+		Mode defilement 1 et 2 ligne :
+			- defilement quand la ligne 1 et remplie en mode une 1 lgine
+			- defilement quand les 1 et 2 sont remplie en mode 2 ligne
+			- activer le mode defilement grace a une variable
+			- le defilement se fera par un réaffichage du biffer qui et remplie
+			- donc la nouvel valeur dépassant l'affichage et se rajoute au début 
+			  du buffe circulaire en continuant d'inc index Head.
+			- pour le réafichage du buffer on le commence en debut d'affichage a la pos 0,0
+			- réafficher le buffer a partie de la valeur de la str_buffer_tail 
+			- incrmenter str_buffer_tail
+			- un delai pour la fluiditer et la visualisation du text	
+			
+			
+			-- gestion d'erreur :
+				- la fonction LCD_PutString a deja une gestion d'erreur quand le mode 
+				  défilement n'est pas activer et que le nombre de caractére d'UN string
+				  dépasse le max de la ligne ou des 2 ligne le text et trop grand donc error
+				- mais si il y plusieur string envoyer plus petit que la taille max il vont 
+				  aussi s'écrire donc le putchar a besoin d'une gestion d'erreur pour arreter
+				  l'envois si plusieur string plus petit que taille max envoyer pour bloquer 
+				  si taille max atteint --> error.
+*/
