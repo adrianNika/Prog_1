@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FpWF6P+Nf4WNFbS1cHXzXLSmLZqtUR9m4BVdVpmJtAJczqB924955S93ePsQuk+bN0kXsbJ/NImHL7gvRiIurQ==",
+  "dgSpecHash": "8x78xrhYkQA=",
   "success": true,
-  "projectFilePath": "C:\\Users\\adria\\Desktop\\Projet_GIT\\Prog\\dévloppement_WEB\\Pizza_Mama_V1\\pizza_mama\\pizza_mama\\pizza_mama.csproj",
+  "projectFilePath": "C:\\Users\\adria\\OneDrive\\Bureau\\git\\Prog_1\\dévloppement_WEB\\Pizza_Mama_V1\\pizza_mama\\pizza_mama\\pizza_mama.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\adria\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\adria\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

@@ -4,21 +4,38 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>chat</title>
-        <link rel="stylesheet" href="chat.css" />   
+        <link rel="stylesheet" href='chat.css' />   
     </head>
-    <body>
+
+    <header>
+        <button class="online-button" onclick="toggle();">
+            <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-three-bars Button-visual">
+                <path d="M1 2.75A.75.75 0 0 1 1.75 2h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 2.75Zm0 5A.75.75 0 0 1 1.75 7h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 7.75ZM1.75 12h12.5a.75.75 0 0 1 0 1.5H1.75a.75.75 0 0 1 0-1.5Z"></path>
+            </svg>
+        </button>
+
+        <h1>ATL | chat en ligne</h1>
+
         <div class="nav-barre">
             <h3><span id="usernameDisplay"></span></h3>
             <div class="profile">
                 <img src="https://a.storyblok.com/f/178900/960x540/7a0633d2a2/blue-exorcist.jpg" alt="Profil">
             </div>
         </div>
+    </header>
 
+    <body>
         <div class="container">
-            <div class="user-container">
-                <h2>Personnes sur le chat</h2>
-                <div class="user-list">
-                    <ul id="userList"></ul>
+
+            <div class="user">
+                <div id="listhide">
+                    <div class="user-container">
+                        <h2>En ligne</h2>
+                        <time></time>
+                        <div class="user-list">
+                            <ul id="userList"></ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         
@@ -34,89 +51,8 @@
             </div>
         </div>
         
-        <footer>
-        
-        </footer>
+        <footer></footer>
 
-        <script>
-            const chatForm = document.getElementById('chatForm');
-            const messageInput = document.getElementById('messageInput');
-            const chatBox = document.getElementById('chatBox');
-            const userList = document.getElementById('userList');
-            const usernameDisplay = document.getElementById('usernameDisplay');
-
-            const users = [];
-
-            chatForm.addEventListener('submit', function(event) 
-            {
-                event.preventDefault();
-                const message = messageInput.value.trim();
-                if (message) 
-                {
-                    sendMessage(message);
-                    messageInput.value = '';
-                }
-            });
-
-            function sendMessage(message) {
-                // Envoi du message à tous les utilisateurs connectés (simulé ici)
-                for (const user of users) {
-                    displayMessage(user, message);
-                }
-            }
-
-            function sendMessageJoinChat(message) 
-            {
-                // Envoi du message à tous les utilisateurs connectés (simulé ici)
-                for (const user of users) 
-                {
-                    displayMessageJoinChat(user, message, true);
-                }
-            }
-
-            function displayMessage(sender, message) 
-            {
-                const messageElement = document.createElement('p');
-                messageElement.textContent = `${sender}: ${message}`;
-                chatBox.appendChild(messageElement);
-                // Fait défiler vers le bas pour afficher les nouveaux messages
-                chatBox.scrollTop = chatBox.scrollHeight;
-            }
-
-            function displayMessageJoinChat(sender, message, isnotif = false) 
-            {
-                const messageElement = document.createElement('p');
-                messageElement.textContent = `${message}`;
-                if (isnotif) 
-                {
-                    messageElement.classList.add('notification');
-                }
-                chatBox.appendChild(messageElement);
-                // Fait défiler vers le bas pour afficher les nouveaux messages
-                chatBox.scrollTop = chatBox.scrollHeight;
-            }
-
-            // Fonction pour mettre à jour la liste des utilisateurs
-            function updateUserList() 
-            {
-                userList.innerHTML = '';
-                for (const user of users) 
-                {
-                    const listItem = document.createElement('li');
-                    listItem.textContent = user;
-                    userList.appendChild(listItem);
-                }
-            }
-
-            let username = '';
-            while (!username) 
-            {
-                username = prompt('Entrez votre nom d\'utilisateur:');
-            }
-            usernameDisplay.textContent = username;
-            users.push(username);
-            updateUserList();
-            sendMessageJoinChat(`${username} a rejoint le chat.`, true);
-        </script>
+        <script src="script.js"></script>
     </body>
 </html>
