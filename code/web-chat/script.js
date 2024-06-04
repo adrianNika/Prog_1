@@ -55,7 +55,7 @@ const users = [];
     }
 
     // Fonction pour mettre à jour la liste des utilisateurs
-    function updateUserList() 
+    /*function updateUserList() 
     {
         userList.innerHTML = '';
         for (const user of users) 
@@ -63,8 +63,20 @@ const users = [];
             const listItem = document.createElement('li');
             const listPointVert = document.createElement('span');
             const displayUsername = document.createElement('p');
+    
             displayUsername.innerHTML(user);
-            userList.appendChild(listPointVert);
+            listItem.appendChild(listPointVert);
+            listItem.appendChild(displayUsername);
+            userList.appendChild(listItem);
+        }
+    }*/
+
+    function updateUserList() 
+    {
+        userList.innerHTML = '';
+        for (const user of users) {
+            const listItem = document.createElement('li');
+            listItem.textContent = user;
             userList.appendChild(listItem);
         }
     }
