@@ -7,51 +7,46 @@
         <link rel="stylesheet" href='chat.css' />   
     </head>
 
-    <header>
-        <button class="online-button" onclick="toggle();">
-            <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-three-bars Button-visual">
-                <path d="M1 2.75A.75.75 0 0 1 1.75 2h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 2.75Zm0 5A.75.75 0 0 1 1.75 7h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 7.75ZM1.75 12h12.5a.75.75 0 0 1 0 1.5H1.75a.75.75 0 0 1 0-1.5Z"></path>
-            </svg>
-        </button>
-
-        <h1>ATL | chat en ligne</h1>
-
-        <div class="nav-barre">
-            <h3><span id="usernameDisplay"></span></h3>
-            <div class="profile">
-                <img src="https://a.storyblok.com/f/178900/960x540/7a0633d2a2/blue-exorcist.jpg" alt="Profil">
-            </div>
-        </div>
-    </header>
-
     <body>
+        <header>
+            <h1>ATL | chat en ligne</h1>
+    
+            <div class="nav-barre">
+                <h3><span id="usernameDisplay"></span></h3>
+                <div class="profile">
+                    <img src="https://a.storyblok.com/f/178900/960x540/7a0633d2a2/blue-exorcist.jpg" alt="Profil">
+                </div>
+            </div>
+        </header>
+
         <div class="container">
 
-            <div class="user">
-                <div id="listhide">
-                    <div class="user-container">
-                        <h2>En ligne</h2>
-                        <time></time>
-                        <div class="user-list">
-                            <ul id="userList"></ul>
+            <div class="second-container">
+
+                <button class="online-button" onclick="toggle();"></button>
+
+                <div class="user">
+                    <div id="listhide">
+                        <div class="user-container">
+                            <h2>En ligne</h2>
+                            <div class="user-list">
+                                <ul id="userList"></ul>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        
-            <div class="chat-container">
-                <div class="chat" id="chatBox"></div>
-        
-                <div class="chat-send">
-                    <form id="chatForm">
-                        <input type="text" id="messageInput" placeholder="Votre message" required>
-                        <input type="submit" value="Envoyer">
-                    </form>
+            
+                <div class="chat-container">
+                    <div class="chat" id="chatBox"></div>
+                    <div class="chat-send">
+                        <form id="chatForm">
+                            <input type="text" id="messageInput" placeholder="Votre message" required>
+                            <input type="submit" value="Envoyer">
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-        
-        <footer></footer>
 
         <script src="script.js"></script>
     </body>

@@ -1,27 +1,25 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 header
 {
-    position: relative;
-    bottom: 100%;
-    background: radial-gradient(circle at top left, #474747, #000000, #646464, #000000);
+    background-color: #141414;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
-    margin-top: -8px;
     height: 100px;
-    width: 101.05%;
+    width: 100%;
 }
 
 body 
 {
     font-family: Arial, sans-serif;
-    background: rgb(134, 111, 111);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border-radius: 8px;
+    background-color: #3b3b3b;
 }
 
 .nav-barre
@@ -77,55 +75,78 @@ h3
 
 .container
 {
+    height: calc(100vh - 100px);
+}
+.second-container
+{
+    height: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    width: 100%;
 }
 
 .user
 {
     display: flex;
     flex-direction: column;
-    margin-left: 10px;
+    background-color: #383838;
+    color: white;
 }
 
 .user-container 
 {
     display: flex;
-    background-color: #fff;
-    box-shadow: 2px 2px 4px #000000;
     padding: 20px;
-    border-radius: 8px;
     width: 200px;
+    height: 100%;
     flex-direction: column;
     align-items: center;
 }
 
 .chat-container 
 {
-    background-color: rgb(233, 233, 233);
-    border: 5px inset white;
-    box-shadow: 5px 5px 50px black;
-    padding: 10px;
-    border-radius: 2px;
-    margin-right: 100px;
+    background-color: #141414;
+    color: white;
     display: flex;
     flex-direction: column;
-    height: 500px;
+    height: 100%;
+    width: 100%;
 }
 
 .chat 
 {
-    padding: 10px;
-    height: 400px;
-    width: 500px;
-    margin-left: 20px;
+    height: 90%;
+    width: 100%;
+    margin-left: 50px;
     margin-right: 20px;
     margin-top: 1px;
     overflow-y: scroll;
     border-radius: 5px;
+}
+
+.chat::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  
+.chat::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
+  
+.chat::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.user-list::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  
+.user-list::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
+  
+.user-list::-webkit-scrollbar-track {
+    background: transparent;
 }
 
 .chat p 
@@ -141,7 +162,6 @@ h3
 
 .user-list 
 {
-    border: 1px solid #ccc;
     padding: 10px;
     border-radius: 5px;
     margin-top: 15px;
@@ -170,21 +190,9 @@ h3
 
 form 
 {
-    margin-top: 20px;
+    height: 10%;
 }
 
-footer
-{
-    background: radial-gradient(circle at top left, #000000, #4e4e4e, #000000, #595959);
-    display: flex;
-    flex-direction: row;
-    justify-content: right;
-    align-items: center;
-    margin-top: 10px;
-    margin-bottom: -8px;
-    height: 100px;
-    width: 101.05%;
-}
 
 span
 {
@@ -205,15 +213,17 @@ span:hover
 
 button
 {
+    margin-top: 5px;
     margin-left: 10px;
     height: 30px;
     width: 30px;
-    position:absolute;
-    left: 0;
 }
 
 .online-button
 {
+    position: absolute;
+    top: 110px;
+    left: 0;
     border-radius: 10px;
     background-color: rgb(98, 96, 96);
 }
@@ -223,21 +233,6 @@ button
     height: 31px;
     width: 31px;
     background-color: pink;
-}
-
-svg:not(:root) 
-{
-    overflow-clip-margin: content-box;
-    overflow: hidden;
-}
-
-.octicon 
-{
-    display: inline-block;
-    overflow: visible !important;
-    vertical-align: text-bottom;
-    fill: currentColor;
-    color: white;
 }
 
 input[type="text"], input[type="password"], input[type="submit"] 
@@ -254,57 +249,4 @@ input[type="submit"]
     background-color: #E91E63;
     color: white;
     cursor: pointer;
-}
-
-@media only screen and (max-Width: 768px)
-{
-    header
-    {
-        justify-content: left;
-    }
-
-    span:hover
-    {
-        color: red;
-        font-size: 18px;
-    }
-
-    .container
-    {
-        flex-direction: column;
-    }
-
-    .user-container
-    {
-        width: 200px;
-        font-size: 10pt;
-        margin-bottom: 10px;
-    }
-    .user-list
-    {
-        width: 200px;
-    }
-
-    .chat-container
-    {
-        width: 310px;
-        height: 400px;
-        margin-left: 10px;
-    }
-    .chat
-    {
-        width: 300px;
-        height: 300px;
-        font-size: 10pt;
-    }
-
-    .online-button
-    {
-        margin-bottom: 10px;
-    }
-
-    .user-container
-    {
-        margin-top: -10px;
-    }
 }

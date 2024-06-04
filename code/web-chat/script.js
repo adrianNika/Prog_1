@@ -61,7 +61,10 @@ const users = [];
         for (const user of users) 
         {
             const listItem = document.createElement('li');
-            listItem.textContent = user;
+            const listPointVert = document.createElement('span');
+            const displayUsername = document.createElement('p');
+            displayUsername.innerHTML(user);
+            userList.appendChild(listPointVert);
             userList.appendChild(listItem);
         }
     }
