@@ -118,7 +118,7 @@ h3
     width: 100%;
     margin-left: 50px;
     margin-right: 20px;
-    margin-top: 1px;
+    margin-top: 20px;
     overflow-y: scroll;
     border-radius: 5px;
 }
@@ -176,7 +176,7 @@ h3
 
 .user-list ul 
 {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
 }
 
@@ -186,12 +186,12 @@ form
 }
 
 
-span
+#usernameDisplay
 {
     color: white;
 }
 
-span:hover
+#usernameDisplay:hover
 {
     color: red;
     font-size: 24px;
@@ -226,6 +226,20 @@ button
     width: 31px;
     background-color: pink;
 }
+
+#userList li {
+    display: flex;
+    align-items: center;
+}
+
+#userList li span {
+    width: 8px;
+    height: 8px;
+    background-color: greenyellow;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
 
 input[type="text"], input[type="password"], input[type="submit"] 
 {

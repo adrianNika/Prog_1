@@ -55,38 +55,37 @@ const users = [];
     }
 
     // Fonction pour mettre à jour la liste des utilisateurs
+    function updateUserList() 
+    {
+        userList.innerHTML = '';
+        for (const user of users)
+        {
+            const listItem = document.createElement('li');
+            const listPointVert = document.createElement('span');
+            const displayUsername = document.createElement('p');
+            displayUsername.textContent = user;
+            listItem.appendChild(listPointVert);
+            listItem.appendChild(displayUsername);
+            userList.appendChild(listItem);
+        }
+    }
+
     /*function updateUserList() 
     {
         userList.innerHTML = '';
         for (const user of users) 
         {
             const listItem = document.createElement('li');
-            const listPointVert = document.createElement('span');
-            const displayUsername = document.createElement('p');
-    
-            displayUsername.innerHTML(user);
-            listItem.appendChild(listPointVert);
-            listItem.appendChild(displayUsername);
-            userList.appendChild(listItem);
-        }
-    }*/
-
-    function updateUserList() 
-    {
-        userList.innerHTML = '';
-        for (const user of users) {
-            const listItem = document.createElement('li');
             listItem.textContent = user;
             userList.appendChild(listItem);
         }
-    }
+    }*/
 
     let username = '';
     while (!username || username.length > 15 || username.length <= 3 || username.includes(' '))
     {
         username = prompt('Entrez votre nom d\'utilisateur : \n - Min 4 caractères\n - Max 15 caractères\n - Ne dois pas contenire d\'escpace');
     }
-
     usernameDisplay.textContent = username;
     users.push(username);
     updateUserList();
