@@ -3,6 +3,9 @@ const messageInput = document.getElementById('messageInput');
 const chatBox = document.getElementById('chatBox');
 const userList = document.getElementById('userList');
 const usernameDisplay = document.getElementById('usernameDisplay');
+const buttonListUser = document.querySelector('.online-button');
+let userDiv = document.querySelector('.user');
+let iconArrow = document.querySelector('.online-button i');
 const users = [];
 
     chatForm.addEventListener('submit', function(event) 
@@ -91,21 +94,16 @@ const users = [];
     updateUserList();
     sendMessageJoinChat(`${username} a rejoint le chat.`, true);
 
-
-    let toggle = () => 
-    {
-        let element = document.getElementById("listhide");
-        let hidden = element.getAttribute("hidden");
-        if (hidden) 
-        {
-            element.removeAttribute("hidden");
-        } 
-        else
-        {
-            element.setAttribute("hidden", "hidden");
+    
+    buttonListUser.addEventListener('click', () =>  {
+        if (userDiv.classList.contains("activeListUser")) { 
+            userDiv.classList.remove("activeListUser");
+            iconArrow.style.transform = "rotate(0deg)";
+        } else {
+            userDiv.classList.add("activeListUser");
+            iconArrow.style.transform = "rotate(-4500deg)";
         }
-    }
-
+    });          
 
     // JavaScript to handle the overlay behavior
     document.querySelector('.open-overlay').addEventListener('click', function() {
@@ -117,3 +115,4 @@ const users = [];
         document.querySelector('.overlay').style.display = 'none';
         document.querySelector('.overlay-background').style.display = 'none';
     });
+

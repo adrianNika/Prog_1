@@ -44,6 +44,11 @@ body
 h3
 {
     font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-top: 3px;
+}
+
+h3 span{
+    transition: 0.1s;
 }
 
 .profile 
@@ -76,7 +81,7 @@ h3
 
 .container
 {
-    height: calc(100vh - 100px);
+    height: calc(100vh - 130px);
 }
 
 .second-container
@@ -219,13 +224,21 @@ button
     left: 0;
     border-radius: 10px;
     background-color: rgb(98, 96, 96);
+    z-index: 10;
+    background: none;
+    border: none;
+}
+
+.online-button i {
+    color: white;
+    transition: 1s;
 }
 
 .online-button:hover
 {
     height: 31px;
     width: 31px;
-    background-color: pink;
+    border: 1px solid white;
 }
 
 #userList li {
@@ -258,6 +271,22 @@ input[type="submit"]
     cursor: pointer;
 }
 
+.activeListUser {
+    left: 0 !important;
+    width: 100%;
+    transition: 0.2s;
+}
+
+@media screen and (max-width: 600px){
+    .user {
+        position: absolute;
+        left: -1050px;
+        top: 0;
+        height: 100%;
+        transition: 0.2s;
+    }
+    
+}
 
 @media only screen and (max-width: 600px) 
 {
@@ -301,5 +330,15 @@ input[type="submit"]
     .second-container
     {
         flex-direction: column;
+    }
+
+    .user-container
+    {
+        width: 100%;
+    }
+
+    .user-list 
+    {
+        width: 100%;
     }
 }
