@@ -12,14 +12,14 @@ header
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    height: 100px;
+    height: 130px;
     width: 100%;
 }
 
 body 
 {
     font-family: Arial, sans-serif;
-    background-color: #3b3b3b;
+    background-color: #141414;
 }
 
 .nav-barre
@@ -27,17 +27,18 @@ body
     position: absolute;
     right: 0;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
 }
 
-h1
+.pagetitre h1
 {
     color: white;
-    text-shadow: 2px 2px 6px #690044;
-    display: inline-block;
+    text-shadow: 2px 2px 6px #003369;
+    display: flex;
     text-align: center;
     font-family: 'Audiowide';
+    justify-content: center;
 }
 
 h3
@@ -77,6 +78,7 @@ h3
 {
     height: calc(100vh - 100px);
 }
+
 .second-container
 {
     height: 100%;
@@ -110,17 +112,16 @@ h3
     flex-direction: column;
     height: 100%;
     width: 100%;
+    border-radius: 10px;
 }
 
 .chat 
 {
     height: 90%;
-    width: 100%;
     margin-left: 50px;
     margin-right: 20px;
     margin-top: 20px;
     overflow-y: scroll;
-    border-radius: 5px;
 }
 
 .chat::-webkit-scrollbar {
@@ -185,7 +186,6 @@ form
     height: 10%;
 }
 
-
 #usernameDisplay
 {
     color: white;
@@ -205,6 +205,7 @@ form
 
 button
 {
+    visibility: hidden;
     margin-top: 5px;
     margin-left: 10px;
     height: 30px;
@@ -255,4 +256,50 @@ input[type="submit"]
     background-color: #E91E63;
     color: white;
     cursor: pointer;
+}
+
+
+@media only screen and (max-width: 600px) 
+{
+    header
+    {   
+        flex-direction: column;
+    }
+
+    .nav-barre
+    {
+        display: flex;  
+        flex-direction: column;
+        left: 0;
+        right: inherit;
+    }
+    .profile
+    {
+        flex: 0 0 50px;
+        width: 50px;
+        height: 50px;
+    }   
+    
+    button
+    {
+        visibility: visible;
+    }
+
+    .online-button
+    {
+        position: absolute;
+        right: 10px;
+        top: 50px;
+        left: inherit;
+    }
+
+    .pagetitre h1
+    {
+        font-size: 18px;
+    }   
+
+    .second-container
+    {
+        flex-direction: column;
+    }
 }

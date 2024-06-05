@@ -105,3 +105,15 @@ const users = [];
             element.setAttribute("hidden", "hidden");
         }
     }
+
+
+    // JavaScript to handle the overlay behavior
+    document.querySelector('.open-overlay').addEventListener('click', function() {
+        document.querySelector('.overlay').style.display = 'block';
+        document.querySelector('.overlay-background').style.display = 'block';
+    });
+
+    document.querySelector('.close-overlay').addEventListener('click', function() {
+        document.querySelector('.overlay').style.display = 'none';
+        document.querySelector('.overlay-background').style.display = 'none';
+    });

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Div Overlay Example</title>
+    <style>
+        /* Style for the main content */
+        .main-content {
+            width: 100%;
+            height: 100vh;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Style for the overlay */
+        .overlay {
+            position: fixed; /* Positioned relative to the viewport */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 200px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 10;
+            display: none; /* Hidden by default */
+        }
+
+        /* Style for the overlay background */
+        .overlay-background {
+            position: fixed; /* Positioned relative to the viewport */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 9;
+            display: none; /* Hidden by default */
+        }
+
+        /* Button to trigger the overlay */
+        .open-overlay {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-content">
+        <button class="open-overlay">Open Overlay</button>
+    </div>
+    <div class="overlay-background"></div>
+    <div class="overlay">
+        <p>This is the overlay content.</p>
+        <button class="close-overlay">Close</button>
+    </div>
+
+    <script>
+        // JavaScript to handle the overlay behavior
+        document.querySelector('.open-overlay').addEventListener('click', function() {
+            document.querySelector('.overlay').style.display = 'block';
+            document.querySelector('.overlay-background').style.display = 'block';
+        });
+
+        document.querySelector('.close-overlay').addEventListener('click', function() {
+            document.querySelector('.overlay').style.display = 'none';
+            document.querySelector('.overlay-background').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
