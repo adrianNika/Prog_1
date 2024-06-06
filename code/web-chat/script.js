@@ -101,18 +101,6 @@ const users = [];
             iconArrow.style.transform = "rotate(0deg)";
         } else {
             userDiv.classList.add("activeListUser");
-            iconArrow.style.transform = "rotate(-4500deg)";
+            iconArrow.style.transform = "rotate(180deg)";
         }
-    });          
-
-    // JavaScript to handle the overlay behavior
-    document.querySelector('.open-overlay').addEventListener('click', function() {
-        document.querySelector('.overlay').style.display = 'block';
-        document.querySelector('.overlay-background').style.display = 'block';
     });
-
-    document.querySelector('.close-overlay').addEventListener('click', function() {
-        document.querySelector('.overlay').style.display = 'none';
-        document.querySelector('.overlay-background').style.display = 'none';
-    });
-
