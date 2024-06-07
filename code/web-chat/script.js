@@ -1,61 +1,40 @@
-const chatForm = document.getElementById('chatForm');
-const messageInput = document.getElementById('messageInput');
-const chatBox = document.getElementById('chatBox');
+const form = document.getElementById('chatForm');
+const input = document.getElementById('messageInput');
+const messages = document.getElementById('chatBox');
 const userList = document.getElementById('userList');
 const usernameDisplay = document.getElementById('usernameDisplay');
 const buttonListUser = document.querySelector('.online-button');
 let userDiv = document.querySelector('.user');
 let iconArrow = document.querySelector('.online-button i');
 const users = [];
+const socket = io();
 
-    chatForm.addEventListener('submit', function(event) 
-    {
-        event.preventDefault();
-        const message = messageInput.value.trim();
-        if (message) 
-        {
-            sendMessage(message);
-            messageInput.value = '';
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (input.value) {
+        socket.emit('chat message', input.value);
+        input.value = '';
         }
     });
 
-    function sendMessage(message) {
-        // Envoi du message à tous les utilisateurs connectés (simulé ici)
-        for (const user of users) {
-            displayMessage(user, message);
-        }
-    }
+    socket.on('chat message', (msg) => {
+        const item = document.createElement('p');
+        item.textContent = `${users}: ${msg}`;
+        messages.appendChild(item);
+    });
 
-    function sendMessageJoinChat(message) 
-    {
-        // Envoi du message à tous les utilisateurs connectés (simulé ici)
-        for (const user of users) 
-        {
-            displayMessageJoinChat(user, message, true);
-        }
-    }
+    const toggleButton = document.getElementById('toggle-btn');
 
-    function displayMessage(sender, message) 
-    {
-        const messageElement = document.createElement('p');
-        messageElement.textContent = `${sender}: ${message}`;
-        chatBox.appendChild(messageElement);
-        // Fait défiler vers le bas pour afficher les nouveaux messages
-        chatBox.scrollTop = chatBox.scrollHeight;
-    }
-
-    function displayMessageJoinChat(sender, message, isnotif = false) 
-    {
-        const messageElement = document.createElement('h3');
-        messageElement.textContent = `${message}`;
-        if (isnotif) 
-        {
-            messageElement.classList.add('notification');
+    toggleButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (socket.connected) {
+        toggleButton.innerText = 'Connect';
+        socket.disconnect();
+        } else {
+        toggleButton.innerText = 'Disconnect';
+        socket.connect();
         }
-        chatBox.appendChild(messageElement);
-        // Fait défiler vers le bas pour afficher les nouveaux messages
-        chatBox.scrollTop = chatBox.scrollHeight;
-    }
+    });
 
     // Fonction pour mettre à jour la liste des utilisateurs
     function updateUserList() 
@@ -72,17 +51,6 @@ const users = [];
             userList.appendChild(listItem);
         }
     }
-
-    /*function updateUserList() 
-    {
-        userList.innerHTML = '';
-        for (const user of users) 
-        {
-            const listItem = document.createElement('li');
-            listItem.textContent = user;
-            userList.appendChild(listItem);
-        }
-    }*/
 
     let username = '';
     while (!username || username.length > 15 || username.length <= 3 || username.includes(' '))
@@ -104,3 +72,5 @@ const users = [];
             iconArrow.style.transform = "rotate(180deg)";
         }
     });
+
+    

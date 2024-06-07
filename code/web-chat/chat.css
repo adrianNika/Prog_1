@@ -210,17 +210,13 @@ form
     font-weight: bold;
 }
 
-button .online-button
+.online-button
 {
     visibility: hidden;
     margin-top: 5px;
     margin-left: 10px;
     height: 30px;
     width: 30px;
-}
-
-.online-button
-{
     position: absolute;
     top: 110px;
     left: 0;
@@ -276,6 +272,18 @@ input[type="text"], input[type="password"], input[type="submit"]
     font-size: 12pt;
 }
 
+.toggleBtn
+{
+    margin-left: 2px;
+    margin-right: 5px;
+    background-color: #E91E63;
+    color: white;
+    height: 35px;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 3px;
+}
+
 .sendButton
 {
     background-color: #E91E63;
@@ -311,7 +319,6 @@ input[type="text"], input[type="password"], input[type="submit"]
         height: 100%;
         transition: 0.2s;
     }
-    
 }
 
 @media only screen and (max-width: 600px) 
@@ -335,14 +342,10 @@ input[type="text"], input[type="password"], input[type="submit"]
         width: 50px;
         height: 50px;
     }   
-    
-    button
-    {
-        visibility: visible;
-    }
 
     .online-button
     {
+        visibility: visible;
         position: absolute;
         right: 10px;
         top: 50px;
