@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\adria\\OneDrive\\Bureau\\code\\projet_pizza_v2_5\\",
+  "WorkspaceRootPath": "C:\\Users\\adria\\OneDrive\\Bureau\\git\\Prog_1\\code\\projet_pizza_v2_5\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6C72C1F3-B0FC-474E-9097-D6061B8411AC}|projet_pizza\\projet_pizza.csproj|c:\\users\\adria\\onedrive\\bureau\\code\\projet_pizza_v2_5\\projet_pizza\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6C72C1F3-B0FC-474E-9097-D6061B8411AC}|projet_pizza\\projet_pizza.csproj|c:\\users\\adria\\onedrive\\bureau\\git\\prog_1\\code\\projet_pizza_v2_5\\projet_pizza\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6C72C1F3-B0FC-474E-9097-D6061B8411AC}|projet_pizza\\projet_pizza.csproj|solutionrelative:projet_pizza\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6C72C1F3-B0FC-474E-9097-D6061B8411AC}|projet_pizza\\projet_pizza.csproj|c:\\users\\adria\\onedrive\\bureau\\code\\projet_pizza_v2_5\\projet_pizza\\projet_pizza.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "AbsoluteMoniker": "D:0:0:{6C72C1F3-B0FC-474E-9097-D6061B8411AC}|projet_pizza\\projet_pizza.csproj|c:\\users\\adria\\onedrive\\bureau\\git\\prog_1\\code\\projet_pizza_v2_5\\projet_pizza\\projet_pizza.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
       "RelativeMoniker": "D:0:0:{6C72C1F3-B0FC-474E-9097-D6061B8411AC}|projet_pizza\\projet_pizza.csproj|solutionrelative:projet_pizza\\projet_pizza.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     }
   ],
@@ -24,9 +24,9 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "projet_pizza",
-              "DocumentMoniker": "C:\\Users\\adria\\OneDrive\\Bureau\\code\\projet_pizza_v2_5\\projet_pizza\\projet_pizza.csproj",
+              "DocumentMoniker": "C:\\Users\\adria\\OneDrive\\Bureau\\git\\Prog_1\\code\\projet_pizza_v2_5\\projet_pizza\\projet_pizza.csproj",
               "RelativeDocumentMoniker": "projet_pizza\\projet_pizza.csproj",
-              "ToolTip": "C:\\Users\\adria\\OneDrive\\Bureau\\code\\projet_pizza_v2_5\\projet_pizza\\projet_pizza.csproj",
+              "ToolTip": "C:\\Users\\adria\\OneDrive\\Bureau\\git\\Prog_1\\code\\projet_pizza_v2_5\\projet_pizza\\projet_pizza.csproj",
               "RelativeToolTip": "projet_pizza\\projet_pizza.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2024-05-30T11:48:36.428Z",
@@ -36,11 +36,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\adria\\OneDrive\\Bureau\\code\\projet_pizza_v2_5\\projet_pizza\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\adria\\OneDrive\\Bureau\\git\\Prog_1\\code\\projet_pizza_v2_5\\projet_pizza\\Program.cs",
               "RelativeDocumentMoniker": "projet_pizza\\Program.cs",
-              "ToolTip": "C:\\Users\\adria\\OneDrive\\Bureau\\code\\projet_pizza_v2_5\\projet_pizza\\Program.cs",
+              "ToolTip": "C:\\Users\\adria\\OneDrive\\Bureau\\git\\Prog_1\\code\\projet_pizza_v2_5\\projet_pizza\\Program.cs",
               "RelativeToolTip": "projet_pizza\\Program.cs",
-              "ViewState": "AQIAABwAAAAAAAAAAAAQwAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-30T11:44:27.598Z",
               "EditorCaption": ""
