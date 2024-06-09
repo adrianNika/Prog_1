@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <!--Voici la Tête-->
+    <head>
+        <title>Login/Inscription</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href='login.css' />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+    </head>
+    <!--Voici le corp-->
+
+    <body> 
+        <div class="container">
+            <div class="login">
+                <h1>login</h1>
+                <form action="">
+                    <input type="text" placeholder="nom d'utilisateur">
+                    <input type="password" placeholder="mot de passe">
+                </form>
+             </div>
+    
+             <div class="inscription">  
+                <h1>inscription</h1>
+                <form action="">
+                    <input type="text" placeholder="nom d'utilisateur">
+                    <input type="email" placeholder="Email">
+                    <input type="number" placeholder="téléphone">
+
+                    <div class="choix-sex">
+                        <p>Quel est votre sex ?</p>
+
+                        <label><input type="radio" id="sex" name="sex" value="Homme">Homme</label><br>
+
+                        
+                        <label><input type="radio" id="sex" name="sex" value="Femme">Femme</label><br>
+
+                        
+                        <label><input type="radio" id="sex" name="sex" value="Autre">Autre</label><br>
+
+                        
+                        <label><input type="radio" id="sex" name="sex" value="Personalisé">Personalisé <input class="choixPerso" type="text" placeholder="votre sex"> </label><br><br>
+                        
+                    </div>
+                    
+                    <input type="password" placeholder="mot de passe">
+                </form>
+             </div>
+    
+             <button class="btn-login" id="login-toggle">S'inscrire</button> 
+        </div>
+    </body>
+
+    <script src="script_login.js"></script>
+</html>
+    

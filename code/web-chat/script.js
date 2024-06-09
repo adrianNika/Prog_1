@@ -60,8 +60,7 @@ const socket = io();
     usernameDisplay.textContent = username;
     users.push(username);
     updateUserList();
-    sendMessageJoinChat(`${username} a rejoint le chat.`, true);
-
+    
     
     buttonListUser.addEventListener('click', () =>  {
         if (userDiv.classList.contains("activeListUser")) { 
