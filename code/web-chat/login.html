@@ -2,54 +2,92 @@
 <html lang="fr">
 
     <!--Voici la Tête-->
+
     <head>
         <title>Login/Inscription</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href='login.css' />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
     </head>
+
     <!--Voici le corp-->
 
     <body> 
         <div class="container">
-            <div class="login">
-                <h1>login</h1>
-                <form action="">
-                    <input type="text" placeholder="nom d'utilisateur">
-                    <input type="password" placeholder="mot de passe">
-                </form>
-             </div>
-    
-             <div class="inscription">  
-                <h1>inscription</h1>
-                <form action="">
-                    <input type="text" placeholder="nom d'utilisateur">
-                    <input type="email" placeholder="Email">
-                    <input type="number" placeholder="téléphone">
+            <div class="login-register-box">
 
-                    <div class="choix-sex">
-                        <p>Quel est votre sex ?</p>
+        <!-----------Connexion----------->
 
-                        <label><input type="radio" id="sex" name="sex" value="Homme">Homme</label><br>
+                <div class="login">
+                    <h1>login</h1>
+                    <form action="">
+                        <label for="user" class="label">Username</label>
+                        <input type="text" placeholder="Nom d'utilisateur" class="input-field">
 
-                        
-                        <label><input type="radio" id="sex" name="sex" value="Femme">Femme</label><br>
+                        <div class="pass_word">
+                            <div class="inputPassword">
+                                <label for="user" class="label">Password</label>
+                                <input type="password" placeholder="Mot de passe" class="input-field" id="input-type1">
+                            </div>
 
-                        
-                        <label><input type="radio" id="sex" name="sex" value="Autre">Autre</label><br>
+                <!--ici-->  <a type="button" class="bp-visible" id="btnVisible"><i class="fa-solid fa-eye"></i></a>
+                        </div>
+                    </form>
 
-                        
-                        <label><input type="radio" id="sex" name="sex" value="Personalisé">Personalisé <input class="choixPerso" type="text" placeholder="votre sex"> </label><br><br>
-                        
+                    <div class="remember-forgot">
+                        <div class="remember-me">
+                            <input type="checkbox" id="remember">
+                            <label for="remember">Se souvenir</label>
+                        </div>
+                        <div class="eye-mdp">
+                            <a href="">Mot de passe oublié ?</a>
+                        </div>
                     </div>
-                    
-                    <input type="password" placeholder="mot de passe">
-                </form>
-             </div>
-    
-             <button class="btn-login" id="login-toggle">S'inscrire</button> 
+                </div>
+
+        <!-----------Inscription----------->
+        
+                <div class="inscription">  
+                    <h1>Inscription</h1>
+                    <form action="">
+                        <label for="user" class="label">Username</label>
+                        <input type="text" placeholder="nom d'utilisateur" class="input-field">
+
+                        <label for="user" class="label">Email</label>
+                        <input type="email" placeholder="Email" class="input-field">
+
+                        <label for="user" class="label">Téléphone</label>
+                        <input type="tel" placeholder="téléphone" class="input-field" id="tel">
+
+                        <div class="choix-sex">
+                            <p>Quel est votre sex ?</p>
+                            <label><input type="radio" name="sex" value="Homme" class="input-field">Homme</label><br>
+                            <label><input type="radio" name="sex" value="Femme" class="input-field">Femme</label><br>
+                            <label><input type="radio" name="sex" value="Autre" class="input-field">Autre</label><br>
+                            <label><input type="radio" name="sex" value="Personalisé" class="input-field">Personalisé <input class="choixPerso" type="text" placeholder="votre sex"> </label><br><br>
+                        </div>
+                        
+                        <div class="pass_word">
+                            <div class="inputPassword">
+                                <label for="user" class="label">Password</label>
+                                <input type="password" placeholder="Mot de passe" class="input-field" id="input-type2">
+                            </div>
+
+                <!--ici-->  <a type="button" class="bp-visible" id="btnVisible"><i class="fa-solid fa-eye"></i></a>
+                        </div>
+                    </form>
+                </div>
+
+                <button type="submit" class="input-submit"><h2 id="submit-input">Se connecter</h2></button> 
+        
+                <div class="change">
+                    <span id="msg-account">Vous n'avez pas de compte ?</span>
+                    <button class="btn-login" id="login-toggle">S'inscrire</button> 
+                </div>
+            </div>
         </div>
     </body>
+
 
     <script src="script_login.js"></script>
 </html>

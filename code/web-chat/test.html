@@ -1,51 +1,53 @@
 <!DOCTYPE html>
-<html lang="fr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Socket.IO chat</title>
-    <style>
-      body { margin: 0; padding-bottom: 3rem; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Modern Login Form | CodingStella </title>
+  <link rel='stylesheet' href='test.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Poppins&amp;display=swap'><link rel="stylesheet" href="./style.css">
 
-      #form { background: rgba(0, 0, 0, 0.15); padding: 0.25rem; position: fixed; bottom: 0; left: 0; right: 0; display: flex; height: 3rem; box-sizing: border-box;}
-      #input { border: none; padding: 0 1rem; flex-grow: 1; border-radius: 2rem; margin: 0.25rem; }
-      #input:focus { outline: none; }
-      #form > button { background: #333; border: none; padding: 0 1rem; margin: 0.25rem; border-radius: 3px; outline: none; color: #fff; }
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="wrapper">
+  <div class="login_box">
+    <div class="login-header">
+      <span>Login</span>
+    </div>
 
-      #messages { list-style-type: none; margin: 0; padding: 0; }
-      #messages > li { padding: 0.5rem 1rem; }
-      #messages > li:nth-child(odd) { background: #efefef; }
-    </style>
-  </head>
+    <div class="input_box">
+      <input type="text" id="user" class="input-field" required>
+      <label for="user" class="label">Username</label>
+      <i class="bx bx-user icon"></i>
+    </div>
 
-  <body>
-    <ul id="messages"></ul>
-    <form id="form" action="">
-      <input id="input" autocomplete="off" /><button>Send</button>
-    </form>
+    <div class="input_box">
+      <input type="password" id="pass" class="input-field" required>
+      <label for="pass" class="label">Password</label>
+      <i class="bx bx-lock-alt icon"></i>
+    </div>
 
-    <script src="/socket.io/socket.io.js"></script>
-    <script>
-        const socket = io();
+    <div class="remember-forgot">
+      <div class="remember-me">
+        <input type="checkbox" id="remember">
+        <label for="remember">Remember me</label>
+      </div>
 
-        const form = document.getElementById('form');
-        const input = document.getElementById('input');
-        const messages = document.getElementById('messages');
+      <div class="forgot">
+        <a href="#">Forgot password?</a>
+      </div>
+    </div>
 
-        form.addEventListener('submit', (e) => {
-          e.preventDefault();
-          if (input.value) {
-            socket.emit('chat message', input.value);
-            input.value = '';
-          }
-        });
+    <div class="input_box">
+      <input type="submit" class="input-submit" value="Login">
+    </div>
 
-        socket.on('chat message', (msg) => {
-          const item = document.createElement('li');
-          item.textContent = msg;
-          messages.appendChild(item);
-          window.scrollTo(0, document.body.scrollHeight);
-        });
-    </script>
-  </body>
+    <div class="register">
+      <span>Don't have an account? <a href="#">Register</a></span>
+    </div>
+  </div>
+</div>
+<!-- partial -->
+  
+</body>
 </html>

@@ -7,20 +7,46 @@
 
 body
 {
-    background-color: darkgrey;
-    display: flex;
-    justify-content: center;
+    background-image: url('font.jpg.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 h1
 {
     margin-bottom: 20px;
+    background-color: white;
+    color: black;
+    padding: 5px 15px 5px 15px;
+    border-radius: 4px;
 }
 
 .container
 {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.login-register-box 
+{
+    display: flex;
     flex-direction: column;
+    position: relative;
+    width: 350px;
+    border: 2px solid white;
+    border-radius: 15px;
+    padding: 0px 20px 20px 20px;
+    color: var(--second-color);
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+    color: white;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 0px 100px black;
 }
 
 .login
@@ -28,6 +54,7 @@ h1
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: 0.5s;
 }
 
 .inscription
@@ -35,19 +62,59 @@ h1
     display: none;
     flex-direction: column;
     align-items: center;
+    transition: 0.5s;
+}
+
+.hidden 
+{
+    opacity: 0;
+    visibility: hidden;
 }
 
 form
 {
     display: flex;
     flex-direction: column;
+    width: 250px;
+} 
 
+label
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
-form input
+.label
 {
-    margin-bottom: 3px;
-    border-radius: 3px;
+    width: 80px;
+    height: 15px;
+    position: relative;
+    top: 7px;
+    left: 20px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 0px 4px 0px 4px;
+    color: black;
+    text-align: center;
+}
+
+.input-field
+{
+    width: 100%;
+    font-size: 12px;
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 20px;
+    outline: none;
+    padding: 8px;
+}
+
+.input-field:hover
+{
+    border: 2px solid black;
 }
 
 .choix-sex
@@ -55,19 +122,130 @@ form input
     display: flex;
     flex-direction: column;
     align-items: start;
+    margin-top: 10px;
+    margin-bottom: -20px;
 }
 
-label
+.choix-sex label
+{
+    margin-top: -20px;
+}
+
+.choix-sex p
+{
+    margin-bottom: 30px;
+}
+
+.choixPerso
+{
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 4px;
+    margin-left: 5px;
+}
+
+.btn-login
+{
+    width: 100px;
+    height: 20px;
+    border-radius: 10px;
+    text-align: center;
+    border: 2px solid white;
+    margin-left: 5px;
+}
+
+.btn-login:hover
+{
+    border: 2px solid darkred;
+}
+
+.change
 {
     display: flex;
     align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 40px;
 }
 
-#sex
+.input-submit
 {
-    margin-right: 5px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: 290px;
+    height: 50px;
+    background-color: darkred;
+    color: white;
+    border: 2px solid white;
+    border-radius: 8px;
+    margin-top: 20px;
 }
-.choixPerso
+
+h2
 {
-    margin-left: 5px;
+    font-size: 40px;
+}
+
+.input-submit:hover
+{
+    border: 2px solid darkred;
+}
+
+.remember-forgot 
+{
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.eye-mdp a:visited
+{
+    color: white;
+}
+
+.eye-mdp a:hover
+{
+    color: red;
+}
+ 
+.remember-me
+{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-right: 70px;
+}
+#remember
+{
+    margin-right: 4px;
+    width: 13px;
+}
+
+.pass_word
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 107.5%;
+}
+
+.bp-visible
+{
+    position: relative;
+    top: 8.5px;
+    right: 25px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: transparent;
+    color: white;
+}
+
+.inputPassword
+{
+    width: 100%;    
 }
