@@ -7,8 +7,7 @@ let msgAccount = document.getElementById('msg-account');
 
 let buttonVisibleMdp = document.getElementById('btnVisible');
 let iconMdp = document.querySelector('.bp-visible i');
-let inputPassword1 = document.getElementById('input-type1');
-let inputPassword2 = document.getElementById('input-type2');
+let inputPassword = document.getElementById('input-type');
 
     toggleButton.addEventListener('click', () => {
         if (getComputedStyle(classLogin).display == 'none' || classLogin.style.display == 'none') 
@@ -34,13 +33,11 @@ let inputPassword2 = document.getElementById('input-type2');
         if  (iconMdp.className == 'fa-solid fa-eye-slash')
         {
             iconMdp.className = 'fa-solid fa-eye';
-            inputPassword1.type = 'password';
-            inputPassword2.type = 'password';
+            inputPassword.type = 'password';
         }
         else
         {
             iconMdp.className = 'fa-solid fa-eye-slash';
-            inputPassword1.type = 'text';
-            inputPassword2.type = 'password';
+            inputPassword.type = 'text';
         }
     });
