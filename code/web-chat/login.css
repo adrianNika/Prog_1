@@ -147,6 +147,11 @@ label
     padding: 1px;
 }
 
+.choixPerso:hover
+{
+    border: 2px solid black;
+}
+
 .btn-login
 {
     width: 100px;
@@ -160,6 +165,11 @@ label
 .btn-login:hover
 {
     border: 2px solid darkred;
+}
+
+.btn-login:active
+{
+    background-color: gray;
 }
 
 .change
@@ -185,14 +195,20 @@ label
     margin-top: 40px;
 }
 
-h2
-{
-    font-size: 40px;
-}
-
 .input-submit:hover
 {
     border: 2px solid darkred;
+}
+
+.input-submit:active
+{
+    background-color: white;
+    color: darkred;
+}
+
+h2
+{
+    font-size: 40px;
 }
 
 .remember-forgot 

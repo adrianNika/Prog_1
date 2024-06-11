@@ -1,3 +1,5 @@
+
+
 import express from 'express';
 import { createServer } from 'node:http';
 import { fileURLToPath } from 'node:url';
@@ -22,7 +24,6 @@ app.get('/', (req, res) => {
 io.on('connection', (socket) => {
   socket.on('chat message', (msg) => {
     io.emit('chat message', msg);
-    //console.log('message: ' + msg);
   });
 });
 

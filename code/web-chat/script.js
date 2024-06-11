@@ -12,27 +12,30 @@ const socket = io();
     form.addEventListener('submit', (e) => {
         e.preventDefault();
         if (input.value) {
-        socket.emit('chat message', input.value);
+        socket.emit('chat message', users + ': ' + input.value);
         input.value = '';
         }
     });
 
     socket.on('chat message', (msg) => {
         const item = document.createElement('p');
-        item.textContent = `${users}: ${msg}`;
+        item.textContent = msg;
         messages.appendChild(item);
+        window.scrollTo(0, document.body.scrollHeight);
     });
 
     const toggleButton = document.getElementById('toggle-btn');
 
     toggleButton.addEventListener('click', (e) => {
         e.preventDefault();
-        if (socket.connected) {
-        toggleButton.innerText = 'Connect';
-        socket.disconnect();
-        } else {
-        toggleButton.innerText = 'Disconnect';
-        socket.connect();
+        if (socket.connected) 
+        {
+            toggleButton.innerText = 'Connect';
+            socket.disconnect();    
+        } else 
+        {
+            toggleButton.innerText = 'Disconnect';
+            socket.connect();   
         }
     });
 
