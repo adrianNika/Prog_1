@@ -19,7 +19,7 @@
         <!-----------Connexion----------->
 
                 <div class="login">
-                    <h1>login</h1>
+                    <h1 class="loginTitle">login</h1>
                     <form action="">
                         <label for="user" class="label">Username</label>
                         <input type="text" placeholder="Nom d'utilisateur" class="input-field">
@@ -39,7 +39,7 @@
                             <input type="checkbox" id="remember">
                             <label for="remember">Se souvenir</label>
                         </div>
-                        <div class="eye-mdp">
+                        <div class="forgetMdp">
                             <a href="">Mot de passe oublié ?</a>
                         </div>
                     </div>
@@ -48,7 +48,7 @@
         <!-----------Inscription----------->
         
                 <div class="inscription">  
-                    <h1>Inscription</h1>
+                    <h1 class="inscriptionTitle">Inscription</h1>
                     <form action="">
                         <label for="user" class="label">Username</label>
                         <input type="text" placeholder="nom d'utilisateur" class="input-field">
@@ -61,10 +61,12 @@
 
                         <div class="choix-sex">
                             <p>Quel est votre sex ?</p>
-                            <label><input type="radio" name="sex" value="Homme" class="input-field">Homme</label><br>
-                            <label><input type="radio" name="sex" value="Femme" class="input-field">Femme</label><br>
-                            <label><input type="radio" name="sex" value="Autre" class="input-field">Autre</label><br>
-                            <label><input type="radio" name="sex" value="Personalisé" class="input-field">Personalisé<input class="choixPerso" type="text" placeholder="votre sex"> </label><br><br>
+                            <div class="choix-sex-label">
+                                <label><input type="radio" name="sex" value="Homme" class="input-field">Homme</label><br>
+                                <label><input type="radio" name="sex" value="Femme" class="input-field">Femme</label><br>
+                                <label><input type="radio" name="sex" value="Autre" class="input-field">Autre</label><br>
+                                <label><input type="radio" name="sex" value="Personalisé" class="input-field">Personalisé<input class="choixPerso" type="text" placeholder="votre sex"> </label><br><br>
+                            </div>
                         </div>
                         
                         <div class="pass_word">
@@ -87,7 +89,6 @@
             </div>
         </div>
     </body>
-
 
     <script src="script_login.js"></script>
 </html>
