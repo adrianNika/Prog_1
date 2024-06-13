@@ -9,6 +9,11 @@ let buttonVisibleMdp = document.getElementById('btnVisible');
 let iconMdp = document.querySelector('.bp-visible i');
 let inputPassword = document.getElementById('input-type');
 
+let buttonVisibleMdp2 = document.getElementById('btnVisible2');
+let iconMdp2 = document.querySelector('.bp-visible2 i');
+let inputPassword2 = document.getElementById('input-type2');
+
+
     toggleButton.addEventListener('click', () => {
         if (getComputedStyle(classLogin).display == 'none' || classLogin.style.display == 'none') 
         {
@@ -39,5 +44,18 @@ let inputPassword = document.getElementById('input-type');
         {
             iconMdp.className = 'fa-solid fa-eye-slash';
             inputPassword.type = 'text';
+        }
+    });
+
+    buttonVisibleMdp2.addEventListener('click', () => {
+        if  (iconMdp2.className == 'fa-solid fa-eye-slash')
+        {
+            iconMdp2.className = 'fa-solid fa-eye';
+            inputPassword2.type = 'password';
+        }
+        else
+        {
+            iconMdp2.className = 'fa-solid fa-eye-slash';
+            inputPassword2.type = 'text';
         }
     });

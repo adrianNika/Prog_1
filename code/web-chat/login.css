@@ -67,7 +67,7 @@ h1
     content: "";
     position: absolute;
     top: 0;
-    left: 53px;
+    left: 52.2px;
     width: 30px;
     height: 30px;
     border-top-right-radius: 50%;
@@ -89,14 +89,12 @@ h1
     display: flex;
     flex-direction: column;
     position: relative;
+    align-items: center;
     width: 350px;
     border: 2px solid white;
     border-radius: 15px;
     padding: 0px 20px 20px 20px;
-    color: var(--second-color);
-    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
     color: white;
-    align-items: center;
     backdrop-filter: blur(10px);
     box-shadow: 0px 0px 100px black;
 }
@@ -118,7 +116,8 @@ h1
 .hidden 
 {
     opacity: 0;
-    visibility: hidden;
+    transform: scale(0.50);
+    pointer-events: none;
 }
 
 form
@@ -309,7 +308,7 @@ h2
     width: 109.1%;
 }
 
-.bp-visible
+.bp-visible, .bp-visible2
 {
     position: relative;
     top: 10.5px;
@@ -347,22 +346,12 @@ h2
         font-size: 19px;
     }
 
-    .input-field
-    {
-        font-size: 20px;
-    }
-    
     h1 
     {
         font-size: 45px;
     }
 
-    .choix-sex
-    {
-        font-size: 20px;
-    }
-
-    .change
+    .choix-sex, .change, .input-field
     {
         font-size: 20px;
     }
@@ -372,9 +361,9 @@ h2
         width: 106%;
     }
 
-    .bp-visible
+    .bp-visible, .bp-visible2
     {
-        top: 14.5px;
+        top: 14px;
     }
 
     .remember-forgot
@@ -388,7 +377,7 @@ h2
         margin-left: 30px;
     }
 
-    .loginTitle::after
+    .loginTitle::after, .loginTitle::before
     {
         right: 156px;
     }

@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.div1 {
+    transition: opacity 0.5s, transform 0.5s;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+}
+
+
+.div2 {
+    transition: opacity 0.5s, transform 0.5s;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+}
+
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.div1 {
+    background-color: #f0f0f0;
+}
+
+.div2 {
+    background-color: #d0d0d0;
+}
