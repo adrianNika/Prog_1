@@ -28,8 +28,8 @@ let inputPassword2 = document.getElementById('input-type2');
             toggleButton.innerText = 'Se connecter';
             submitInput.innerText = 'S\'inscrire';
             msgAccount.innerText = 'Vous avez déjà un compte ?';
-            classLogin.style.display = 'none';
             classInscription.style.display = 'flex';
+            classLogin.style.display = 'none';
         }
     });
 

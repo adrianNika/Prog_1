@@ -15,10 +15,9 @@
     <body> 
         <div class="container">
             <div class="login-register-box">
-
+                
         <!-----------Connexion----------->
-
-                <div class="login">
+                <div class="login" id="login">
                     <h1 class="loginTitle">login</h1>
                     <form action="">
                         <label for="user" class="label">Username</label>
@@ -46,8 +45,7 @@
                 </div>
 
         <!-----------Inscription----------->
-        
-                <div class="inscription">  
+                <div class="inscription" id="inscription">  
                     <h1 class="inscriptionTitle">Inscription</h1>
                     <form action="">
                         <label for="user" class="label">Username</label>
@@ -80,7 +78,7 @@
                     </form>
                 </div>
 
-                <button type="submit" class="input-submit"><h2 id="submit-input">Se connecter</h2></button> 
+                <button type="submit" class="input-submit" onclick="window.location.href='http://localhost:3000';"><h2 id="submit-input">Se connecter</h2></button> 
         
                 <div class="change">
                     <span id="msg-account">Vous n'avez pas de compte ?</span>

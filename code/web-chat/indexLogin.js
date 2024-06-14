@@ -22,4 +22,5 @@ async function run() {
     console.error('Erreur de connexion à MongoDB:', err);
   }
 }
+
 run().catch(console.dir);
