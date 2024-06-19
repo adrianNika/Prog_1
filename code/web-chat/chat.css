@@ -14,6 +14,9 @@ header
     justify-content: center;
     height: 130px;
     width: 100%;
+    border-style: groove;
+    border-color: gray;
+    border-width: 0px 0px 1px 0px;
 }
 
 body 
@@ -65,7 +68,7 @@ h3 span{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #fff;
+    background-color: darkred;
 }
 
 #usernameDisplay
@@ -73,7 +76,7 @@ h3 span{
     text-shadow: 3px 1px 6px pink;
 }
 
-.profile img 
+#pp 
 {
     width: 100%;
     height: 100%;
@@ -98,6 +101,9 @@ h3 span{
     flex-direction: column;
     background-color: #141414;
     color: white;
+    border-style: groove;
+    border-color: gray;
+    border-width: 1px 2px 2px 0px;
 }
 
 .user-container 
@@ -112,13 +118,15 @@ h3 span{
 
 .chat-container 
 {
-    background-color: #353535;
+    background-color: #202020;
     color: white;
     display: flex;
     flex-direction: column;
     height: 100%;
     width: 100%;
-    border-radius: 10px;
+    border-style: groove;
+    border-color: gray;
+    border-width: 1px 0px 2px 1px;
 }
 
 .chat 
@@ -160,6 +168,36 @@ h3 span{
 .chat p 
 {
     margin: 5px 0;
+}
+
+#itemSend
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#itemPP
+{
+    border: 1px solid white;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    margin-right: 5px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-color: aqua;
+}
+
+#itemUser
+{
+    font-size: 18px;
+}
+#itemContent
+{
+    color: whitesmoke;
 }
 
 .chat-send
@@ -211,7 +249,7 @@ form
 
 .notification 
 {
-    color: #E91E63;
+    color: #c50000;
     font-weight: bold;
 }
 
@@ -281,7 +319,7 @@ input[type="text"], input[type="password"], input[type="submit"]
 {
     margin-left: 2px;
     margin-right: 5px;
-    background-color: #E91E63;
+    background-color: #c50000;
     color: white;
     height: 35px;
     border: 2px solid black;
@@ -303,7 +341,7 @@ input[type="text"], input[type="password"], input[type="submit"]
 
 .sendButton
 {
-    background-color: #E91E63;
+    background-color: #c50000;
     color: white;
     cursor: pointer;
     width: 35px;

@@ -338,6 +338,40 @@ h2
     color: white;
 }
 
+.profile-container 
+{
+    text-align: center;
+}
+
+.profile-pic 
+{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #ddd;
+    background-size: cover;
+    background-position: center;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+input[type="file"] 
+{
+    display: none;
+}
+
+.upload-label 
+{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: darkcyan;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid white;
+    margin-bottom: 15px;
+}
+
 
 @media only screen and (max-width: 600px) 
 {

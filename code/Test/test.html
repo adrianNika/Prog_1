@@ -3,18 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animation entre deux divs</title>
-    <link rel="stylesheet" href="test.css">
+    <link rel="stylesheet" href='test.css' />
+    <title>Ajouter une Photo de Profil</title>
 </head>
 <body>
-    <button id="toggleButton">Toggle Divs</button>
-    <div id="div1" class="div1">
-        Contenu de la première div
-    </div>
-    <div id="div2" class="div2 hidden">
-        Contenu de la deuxième div
+    <div class="profile-container">
+        <div class="profile-pic" id="profilePic"></div>
+        <label for="fileUpload" class="upload-label">Ajouter une photo de profil</label>
+        <input type="file" id="fileUpload" accept="image/*">
     </div>
 
-    <script src="test.js"></script>
+    <script>
+        const fileUpload = document.getElementById('fileUpload');
+        const profilePic = document.getElementById('profilePic');
+
+        fileUpload.addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    profilePic.style.backgroundImage = `url(${e.target.result})`;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
 </body>
 </html>

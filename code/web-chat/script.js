@@ -6,22 +6,52 @@ const usernameDisplay = document.getElementById('usernameDisplay');
 const buttonListUser = document.querySelector('.online-button');
 let userDiv = document.querySelector('.user');
 let iconArrow = document.querySelector('.online-button i');
+const imgPP = document.getElementById('pp');
 const users = [];
 const socket = io();
 
+let incr = 0;
+    
+
     form.addEventListener('submit', (e) => {
         e.preventDefault();
-        if (input.value) {
-        socket.emit('chat message', users + ': ' + input.value);
-        input.value = '';
+        if (input.value) 
+        {
+            socket.emit('chat message', {sender: users, message: input.value});
+            input.value = '';
         }
     });
 
-    socket.on('chat message', (msg) => {
-        const item = document.createElement('p');
-        item.textContent = msg;
+    socket.on('chat message', (data) => 
+    {
+        const item = document.createElement('div');
+        item.id = 'itemSend';
+
+        const itemPP = document.createElement('div');
+        itemPP.id = 'itemPP';
+
+        const itemMsg = document.createElement('div');
+        itemMsg.id = 'itemMsg';
+
+        const pp = document.createElement('img');
+        pp.id = 'pp';
+        pp.src = '/image/font.jpg';
+        itemPP.appendChild(pp);
+
+        const itemUser = document.createElement('p');
+        itemUser.id = 'itemUser';
+        itemUser.textContent = data.sender;
+
+        const itemContent = document.createElement('p');
+        itemContent.id = 'itemContent';
+        itemContent.textContent = data.message;
+
+        itemMsg.appendChild(itemUser);
+        itemMsg.appendChild(itemContent);
+
+        item.appendChild(itemPP);
+        item.appendChild(itemMsg);
         messages.appendChild(item);
-        window.scrollTo(0, document.body.scrollHeight);
     });
 
     const toggleButton = document.getElementById('toggle-btn');

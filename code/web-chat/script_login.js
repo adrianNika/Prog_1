@@ -13,6 +13,9 @@ let buttonVisibleMdp2 = document.getElementById('btnVisible2');
 let iconMdp2 = document.querySelector('.bp-visible2 i');
 let inputPassword2 = document.getElementById('input-type2');
 
+const fileUpload = document.getElementById('fileUpload');
+const profilePic = document.getElementById('profilePic');
+
 
     toggleButton.addEventListener('click', () => {
         if (getComputedStyle(classLogin).display == 'none' || classLogin.style.display == 'none') 
@@ -57,5 +60,16 @@ let inputPassword2 = document.getElementById('input-type2');
         {
             iconMdp2.className = 'fa-solid fa-eye-slash';
             inputPassword2.type = 'text';
+        }
+    });
+
+    fileUpload.addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                profilePic.style.backgroundImage = `url(${e.target.result})`;
+            };
+            reader.readAsDataURL(file);
         }
     });
