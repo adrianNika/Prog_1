@@ -5,13 +5,11 @@ let classInscription = document.querySelector('.inscription');
 let submitInput = document.getElementById('submit-input');
 let msgAccount = document.getElementById('msg-account');
 
-let buttonVisibleMdp = document.getElementById('btnVisible');
-let iconMdp = document.querySelector('.bp-visible i');
-let inputPassword = document.getElementById('input-type');
+let buttonVisibleMdp = document.querySelectorAll('.bp-visible');
+let iconMdp = document.querySelectorAll('.bp-visible i');
+let inputPassword = document.querySelectorAll('.inputMdp');
 
-let buttonVisibleMdp2 = document.getElementById('btnVisible2');
-let iconMdp2 = document.querySelector('.bp-visible2 i');
-let inputPassword2 = document.getElementById('input-type2');
+let submitRegister = document.getElementById('submit-input-register');
 
 const fileUpload = document.getElementById('fileUpload');
 const profilePic = document.getElementById('profilePic');
@@ -20,48 +18,33 @@ const profilePic = document.getElementById('profilePic');
     toggleButton.addEventListener('click', () => {
         if (getComputedStyle(classLogin).display == 'none' || classLogin.style.display == 'none') 
         {
-            toggleButton.innerText = 'S\'inscrire';
-            submitInput.innerText = 'Se connecter';
             msgAccount.innerText = 'Vous n\'avez pas de compte ?';
             classInscription.style.display = 'none';
             classLogin.style.display = 'flex';
         } 
         else
         {
-            toggleButton.innerText = 'Se connecter';
-            submitInput.innerText = 'S\'inscrire';
             msgAccount.innerText = 'Vous avez déjà un compte ?';
             classInscription.style.display = 'flex';
             classLogin.style.display = 'none';
         }
     });
 
-
-    buttonVisibleMdp.addEventListener('click', () => {
-        if  (iconMdp.className == 'fa-solid fa-eye-slash')
-        {
-            iconMdp.className = 'fa-solid fa-eye';
-            inputPassword.type = 'password';
-        }
-        else
-        {
-            iconMdp.className = 'fa-solid fa-eye-slash';
-            inputPassword.type = 'text';
-        }
-    });
-
-    buttonVisibleMdp2.addEventListener('click', () => {
-        if  (iconMdp2.className == 'fa-solid fa-eye-slash')
-        {
-            iconMdp2.className = 'fa-solid fa-eye';
-            inputPassword2.type = 'password';
-        }
-        else
-        {
-            iconMdp2.className = 'fa-solid fa-eye-slash';
-            inputPassword2.type = 'text';
-        }
-    });
+    for (let i = 0; i < buttonVisibleMdp.length; i++) {
+        
+        buttonVisibleMdp[i].addEventListener('click', () => {
+            if  (iconMdp[i].className == 'fa-solid fa-eye-slash')
+            {
+                iconMdp[i].className = 'fa-solid fa-eye';
+                inputPassword[i].type = 'password';
+            }
+            else
+            {
+                iconMdp[i].className = 'fa-solid fa-eye-slash';
+                inputPassword[i].type = 'text';
+            }
+        });
+    }
 
     fileUpload.addEventListener('change', function(event) {
         const file = event.target.files[0];
@@ -73,3 +56,11 @@ const profilePic = document.getElementById('profilePic');
             reader.readAsDataURL(file);
         }
     });
+
+
+    submitInput.addEventListener('submit', (teazix_NTM_EVENT) => {
+        teazix_NTM_EVENT.preventDefault();
+    });
+
+
+
