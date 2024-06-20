@@ -3,30 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href='test.css' />
-    <title>Ajouter une Photo de Profil</title>
+    <title>Custom Checkbox</title>
+    <link rel="stylesheet" href="test.css">
 </head>
 <body>
-    <div class="profile-container">
-        <div class="profile-pic" id="profilePic"></div>
-        <label for="fileUpload" class="upload-label">Ajouter une photo de profil</label>
-        <input type="file" id="fileUpload" accept="image/*">
-    </div>
-
-    <script>
-        const fileUpload = document.getElementById('fileUpload');
-        const profilePic = document.getElementById('profilePic');
-
-        fileUpload.addEventListener('change', function(event) {
-            const file = event.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    profilePic.style.backgroundImage = `url(${e.target.result})`;
-                };
-                reader.readAsDataURL(file);
-            }
-        });
-    </script>
+    <label class="custom-checkbox">
+        <input type="checkbox" />
+        <span class="checkmark"></span>
+        Label de la checkbox
+    </label>
 </body>
 </html>

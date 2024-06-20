@@ -43,10 +43,10 @@ async function run() {
     const userCollections = db.collection('users');
 
     app.post('/register', async (req, res) => { 
-      const {username, email, telephone, sex, password} = req.body;
+      const {username, email, telephone, password} = req.body;
       const hashedPassword = await bcrypt.hash(password, 10);
 
-      const userData = {username, email, telephone, sex, password : hashedPassword};
+      const userData = {username, email, telephone, password : hashedPassword};
       try {
         const result = await userCollections.insertOne(userData);
         res.status(201).send('Inscription réussie ma poule');
@@ -65,13 +65,14 @@ async function run() {
   }
 }
 
-run().catch(err => {
-  console.error('Échec de la connexion à MongoDB:', err);
-  process.exit(1); // Quitter le processus en cas d'échec de connexion
-});
 
 io.on('connection', (socket) => {
   socket.on('chat message', (msg) => {
     io.emit('chat message', msg);
   });
+});
+
+run().catch(err => {
+  console.error('Échec de la connexion à MongoDB:', err);
+  process.exit(1); // Quitter le processus en cas d'échec de connexion
 });

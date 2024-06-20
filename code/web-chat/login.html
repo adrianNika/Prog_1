@@ -35,20 +35,23 @@
 
                     <div class="remember-forgot">
                         <div class="remember-me">
-                            <input type="checkbox" id="remember">
-                            <label for="remember">Se souvenir</label>
+                            <label class="custom-checkbox">
+                                <input type="checkbox" class="checkbox">
+                                <span class="checkmark"></span>
+                                Se souvenir
+                            </label>
                         </div>
                         <div class="forgetMdp">
-                            <a href="">Mot de passe oublié ?</a>
+                            <a>Mot de passe oublié ?</a>
                         </div>
                     </div>
 
-                    <button type="submit" class="input-submit" id="submit-input-login"><h2>Se connecter</h2></button> 
+                    <a type="submit" class="input-submit" id="submit-input-login"><h2>Connexion</h2></a> 
                 </div>
 
         <!-----------Inscription----------->
                 <div class="inscription" id="inscription">  
-                    <h1 class="inscriptionTitle">Inscription</h1>
+                    <h1 class="inscriptionTitle">Crée un compte</h1>
                     <form action="">
                         <div class="profile-container">
                             <div class="profile-pic" id="profilePic"></div>
@@ -64,16 +67,6 @@
 
                         <label for="user" class="label">Téléphone</label>
                         <input type="tel" placeholder="téléphone" class="input-field" id="tel">
-
-                        <div class="choix-sex">
-                            <p>Quel est votre sex ?</p>
-                            <div class="choix-sex-label">
-                                <label><input type="radio" name="sex" value="Homme" class="input-field">Homme</label><br>
-                                <label><input type="radio" name="sex" value="Femme" class="input-field">Femme</label><br>
-                                <label><input type="radio" name="sex" value="Autre" class="input-field">Autre</label><br>
-                                <label><input type="radio" name="sex" value="Personalisé" class="input-field">Personalisé<input class="choixPerso" type="text" placeholder="votre sex"> </label><br><br>
-                            </div>
-                        </div>
                         
                         <div class="pass_word">
                             <div class="inputPassword">
@@ -84,13 +77,13 @@
                             <a type="button" class="bp-visible" id="btnVisible2"><i class="fa-solid fa-eye"></i></a>
                         </div>
 
-                        <button type="submit" class="input-submit" id="submit-input-register"><h2>S'inscrire</h2></button> 
+                        <a type="submit" class="input-submit" id="submit-input-register"><h2>S'inscrire</h2></a> 
                     </form>
                 </div>
         
                 <div class="change">
                     <span id="msg-account">Vous n'avez pas de compte ?</span>
-                    <button class="btn-login" id="login-toggle">S'inscrire</button>
+                    <a class="btn-login" id="login-toggle">S'inscrire</a>
                 </div>
             </div>
         </div>

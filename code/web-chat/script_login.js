@@ -10,6 +10,7 @@ let iconMdp = document.querySelectorAll('.bp-visible i');
 let inputPassword = document.querySelectorAll('.inputMdp');
 
 let submitRegister = document.getElementById('submit-input-register');
+let loginToggle = document.getElementById('login-toggle');
 
 const fileUpload = document.getElementById('fileUpload');
 const profilePic = document.getElementById('profilePic');
@@ -18,12 +19,14 @@ const profilePic = document.getElementById('profilePic');
     toggleButton.addEventListener('click', () => {
         if (getComputedStyle(classLogin).display == 'none' || classLogin.style.display == 'none') 
         {
+            loginToggle.innerHTML = 'S\'inscrire';
             msgAccount.innerText = 'Vous n\'avez pas de compte ?';
             classInscription.style.display = 'none';
             classLogin.style.display = 'flex';
         } 
         else
         {
+            loginToggle.innerHTML = 'Se connecter';
             msgAccount.innerText = 'Vous avez déjà un compte ?';
             classInscription.style.display = 'flex';
             classLogin.style.display = 'none';

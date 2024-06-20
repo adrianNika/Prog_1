@@ -1,32 +1,50 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
-}
-.profile-container {
-    text-align: center;
-}
-.profile-pic {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    background-color: #ddd;
-    background-size: cover;
-    background-position: center;
-    display: inline-block;
-    margin-bottom: 10px;
-}
-input[type="file"] {
+/* Cache la checkbox par défaut */
+.custom-checkbox input[type="checkbox"] {
     display: none;
 }
-.upload-label {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border-radius: 5px;
+
+/* Style pour le container de la checkbox */
+.custom-checkbox {
+    display: inline-flex;
+    align-items: center;
     cursor: pointer;
+    user-select: none;
+}
+
+/* Style pour la fausse checkbox */
+.custom-checkbox .checkmark {
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    margin-right: 8px;
+    position: relative;
+}
+
+/* Style pour l'état de la checkbox cochée */
+.custom-checkbox input[type="checkbox"]:checked + .checkmark {
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+}
+
+/* Ajout d'un symbole "tick" pour la checkbox cochée */
+.custom-checkbox .checkmark::after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.custom-checkbox input[type="checkbox"]:checked + .checkmark::after {
+    display: block;
+}
+
+.custom-checkbox .checkmark::after {
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
 }

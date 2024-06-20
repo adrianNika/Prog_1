@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 *
 {
     padding: 0;
@@ -7,7 +9,8 @@
 
 body
 {
-    background-image: url('image/font.jpg');
+    font-family : 'Roboto';
+    background-image: url('image/font-purple.jpeg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -16,63 +19,9 @@ body
 
 h1
 {
-    margin-bottom: 20px;
-    background-color: white;
-    color: black;
+    margin-bottom: 5px;
+    color: whitesmoke;
     padding: 5px 15px 5px 15px;
-    border-radius: 4px;
-}
-
-.loginTitle::after
-{
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 95px;
-    width: 30px;
-    height: 30px;
-    border-top-left-radius: 50%;
-    background: transparent;
-    box-shadow: -15px 0 0 0 white;
-}
-
-.loginTitle::before
-{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 95px;
-    width: 30px;
-    height: 30px;
-    border-top-right-radius: 50%;
-    background: transparent;
-    box-shadow: 15px 0 0 0 white;
-}
-
-.inscriptionTitle::after
-{
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 53px;
-    width: 30px;
-    height: 30px;
-    border-top-left-radius: 50%;
-    background: transparent;
-    box-shadow: -15px 0 0 0 white;
-}
-
-.inscriptionTitle::before
-{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 52.2px;
-    width: 30px;
-    height: 30px;
-    border-top-right-radius: 50%;
-    background: transparent;
-    box-shadow: 15px 0 0 0 white;
 }
 
 .container
@@ -88,8 +37,13 @@ h1
 {
     display: flex;
     flex-direction: column;
-    position: relative;
     align-items: center;
+    width: 350px;
+    border-radius: 5px;
+    padding: 0px 20px 20px 20px;
+    color: white;
+    background-color: rgb(44, 44, 44);
+    border: 1px groove rgb(83, 83, 83);
 }
 
 .login
@@ -97,14 +51,6 @@ h1
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
-    width: 350px;
-    border: 2px solid white;
-    border-radius: 15px;
-    padding: 0px 20px 20px 20px;
-    color: white;
-    backdrop-filter: blur(10px);
-    box-shadow: 0px 0px 100px black;
 }
 
 .inscription
@@ -112,14 +58,6 @@ h1
     display: none;
     flex-direction: column;
     align-items: center;
-    position: relative;
-    width: 350px;
-    border: 2px solid white;
-    border-radius: 15px;
-    padding: 0px 20px 20px 20px;
-    color: white;
-    backdrop-filter: blur(10px);
-    box-shadow: 0px 0px 100px black;
 }
 
 .hidden 
@@ -145,15 +83,11 @@ label
 
 .label
 {
+    margin-top: 20px;
     width: min-content;
     height: 15px;
-    position: relative;
-    top: 7px;
-    left: 20px;
-    background-color: white;
-    border-radius: 8px;
     padding: 0px 6px 0px 6px;
-    color: black;
+    color: white;
     text-align: center;
 }
 
@@ -163,87 +97,34 @@ label
     font-size: 12px;
     background: transparent;
     color: white;
-    border: 2px solid white;
-    border-radius: 20px;
+    border-width: 0px 0px 2px 0px;
+    border-color: white;
+    border-radius: 10%;
     outline: none;
     padding: 8px;
 }
-
-.input-field:hover
-{
-    border: 2px solid black;
-}
-
-.choix-sex
-{
-    display: flex;
-    flex-direction: column;
-    margin-top: 25px;
-    margin-bottom: -20px;
-}
-
-.choix-sex-label
-{
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    margin-left: 20px;
-}
-
-.choix-sex label
-{
-    margin-top: -20px;
-}
-
-.choix-sex p
-{
-    margin-bottom: 30px;
-}
-
-.choixPerso
-{
-    background: transparent;
-    color: white;
-    border: 2px solid white;
-    border-radius: 4px;
-    margin-left: 5px;
-    width: 120px;
-    padding: 1px;
-    text-align: center;
-}
-
-.choixPerso:hover
-{
-    border: 2px solid black;
-}
-
-.btn-login
-{
-    width: 100px;
-    height: 20px;
-    border-radius: 10px;
-    text-align: center;
-    border: 2px solid white;
-    margin-left: 5px;
-}
-
-.btn-login:hover
-{
-    border: 2px solid darkred;
-}
-
-.btn-login:active
-{
-    background-color: gray;
-}
-
 .change
 {
     display: flex;
     align-items: center;
     flex-direction: row;
     justify-content: center;
+    text-align: center;
     margin-top: 40px;
+}
+
+.btn-login
+{
+    width: 100px;
+    height: 20px;
+    text-align: center;
+    margin-left: 2px;
+    color: rgb(0, 162, 255);
+}
+
+.btn-login:hover
+{
+    text-decoration-line: underline;
 }
 
 .input-submit
@@ -251,48 +132,56 @@ label
     display: flex;
     text-align: center;
     justify-content: center;
-    width: 290px;
+    align-items: center;
+    width: 100%;
     height: 50px;
-    background-color: darkred;
+    background-color: rgb(77, 77, 255);
     color: white;
-    border: 2px solid white;
-    border-radius: 8px;
-    margin-top: 40px;
+    border-radius: 3px;
+    margin-top: 20px;
+    transition: 0.2s;
 }
 
 .input-submit:hover
 {
-    border: 2px solid darkred;
+    transition: 0.2s;
+    background-color: rgb(64, 64, 255);
 }
 
 .input-submit:active
 {
-    background-color: white;
-    color: darkred;
+    transition: 0.1s;
+    background-color: rgb(44, 44, 252);
 }
 
 h2
 {
-    font-size: 40px;
+    font-size: 20px;
 }
 
 .remember-forgot 
 {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     font-size: 15px;
-    align-items: center;
     margin-top: 30px;
+    margin-left: -80px;
 }
 
-.forgetMdp a:visited
+.forgetMdp
 {
-    color: white;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.forgetMdp a
+{
+    color: rgb(0, 162, 255);
 }
 
 .forgetMdp a:hover
 {
-    color: red;
+    text-decoration-line: underline;
 }
  
 .remember-me
@@ -302,10 +191,10 @@ h2
     flex-direction: row;
     margin-right: 70px;
 }
-#remember
+
+.remember-me input 
 {
-    margin-right: 4px;
-    width: 13px;
+    margin-right: 10px;
 }
 
 .pass_word
@@ -316,10 +205,10 @@ h2
     width: 109.1%;
 }
 
-.bp-visible, .bp-visible2
+.bp-visible
 {
     position: relative;
-    top: 10.5px;
+    top: 20px;
     right: 25px;
     width: 25px;
     height: 25px;
@@ -345,14 +234,15 @@ h2
 
 .profile-pic 
 {
-    width: 120px;
-    height: 120px;
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
     background-color: #ddd;
     background-size: cover;
     background-position: center;
     display: inline-block;
     margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 input[type="file"] 
@@ -363,84 +253,89 @@ input[type="file"]
 .upload-label 
 {
     display: inline-block;
-    padding: 10px 20px;
-    background-color: darkcyan;
+    padding: 5px 10px;
+    background-color: rgb(172, 84, 2);
     color: white;
     border-radius: 5px;
     cursor: pointer;
-    border: 1px solid white;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    transition: 0.2s;
 }
 
-
-@media only screen and (max-width: 600px) 
+.upload-label:hover
 {
-    .login-register-box
-    {
-        width: 500px;
-    }
-
-    form
-    {
-        width: 400px;
-    }
-
-    .label
-    {
-        width: 100px;
-        height: 20px;
-        border-radius: 15px;
-        font-size: 19px;
-    }
-
-    h1 
-    {
-        font-size: 45px;
-    }
-
-    .choix-sex, .change, .input-field
-    {
-        font-size: 20px;
-    }
-
-    .pass_word
-    {
-        width: 106%;
-    }
-
-    .bp-visible, .bp-visible2
-    {
-        top: 14px;
-    }
-
-    .remember-forgot
-    {
-        font-size: 20px;
-        margin-top: 30px;
-    }
-
-    .forgetMdp
-    {
-        margin-left: 30px;
-    }
-
-    .loginTitle::after, .loginTitle::before
-    {
-        right: 156px;
-    }
-
-    .loginTitle::before
-    {
-        left: 156px;
-    }
-
-    .inscriptionTitle::after
-    {
-        right: 97px;
-    }
-
-    .inscriptionTitle::before
-    {
-        left: 97px;
-    }
+    transition: 0.2s;
+    background-color: rgb(133, 64, 0);
 }
+
+.upload-label:active
+{
+    transition: 0.1s;
+    background-color: rgb(97, 49, 4);
+}
+
+.custom-checkbox input[type="checkbox"] 
+{
+    display: none;
+}
+
+.custom-checkbox 
+{
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.custom-checkbox .checkmark 
+{
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 4px;
+    margin-right: 8px;
+    position: relative;
+}
+
+.custom-checkbox .checkmark:hover
+{
+    background-color: rgb(63, 63, 63);
+    opacity: 0.8;
+}
+
+.custom-checkbox input[type="checkbox"]:checked + .checkmark 
+{
+    background-color: #347c81;
+    border-color: #347c81;
+}
+
+.custom-checkbox .checkmark::after 
+{
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.custom-checkbox input[type="checkbox"]:checked + .checkmark::after 
+{
+    display: block;
+}
+
+.custom-checkbox .checkmark::after 
+{
+    left: 5px;
+    top: 1px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+
+
+/*@media only screen and (max-width: 600px) 
+{
+    
+}*/
