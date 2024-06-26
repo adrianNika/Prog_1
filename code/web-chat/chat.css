@@ -236,6 +236,53 @@ form
     width: 100%;
 }
 
+.sender
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #313131;
+    padding: 5px 5px 5px 10px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+input[type="text"], input[type="password"], input[type="submit"] 
+{
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 11pt;
+    color: white;
+    background-color: #313131;
+}
+
+.sendButton
+{
+    background-color: rgb(67, 67, 255);
+    color: white;
+    cursor: pointer;
+    height: 35px;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(67, 67, 255);
+    transition: 0.2s;
+}
+
+.sendButton:hover
+{
+    transition: 0.2s;
+    background-color: rgb(34, 34, 255);
+    border: 1px solid rgb(34, 34, 255);
+}
+
+.sendButton:active
+{
+    transition: 0.2s;
+    background-color: rgb(101, 101, 255);
+    border: 1px solid rgb(101, 101, 255);
+}
+
 #usernameDisplay
 {
     color: white;
@@ -293,71 +340,6 @@ form
     background-color: greenyellow;
     border-radius: 50%;
     margin-right: 8px;
-}
-
-.sender
-{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    padding: 5px;
-    border-radius: 20px;
-    width: 100%;
-}
-
-input[type="text"], input[type="password"], input[type="submit"] 
-{
-    width: 100%;
-    border: none;
-    outline: none;
-    font-size: 12pt;
-}
-
-.toggleBtn
-{
-    margin-left: 2px;
-    margin-right: 5px;
-    background-color: #c50000;
-    color: white;
-    height: 35px;
-    border: 2px solid black;
-    border-radius: 5px;
-    padding: 3px;
-    width: 100px;
-}
-
-.toggleBtn:active
-{
-    background-color: white;
-    color: black;
-}
-
-.toggleBtn:hover
-{
-    font-weight: bold;
-}
-
-.sendButton
-{
-    background-color: #c50000;
-    color: white;
-    cursor: pointer;
-    width: 35px;
-    height: 35px;
-    border-radius: 45%;
-    border: 2px solid black;
-}
-
-.sendButton:active
-{
-    background-color: white;
-    color: black;
-}
-.sendButton:hover
-{
-   font-size: 24px;
 }
 
 .activeListUser {

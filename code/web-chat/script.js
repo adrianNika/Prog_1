@@ -54,21 +54,6 @@ let incr = 0;
         messages.appendChild(item);
     });
 
-    const toggleButton = document.getElementById('toggle-btn');
-
-    toggleButton.addEventListener('click', (e) => {
-        e.preventDefault();
-        if (socket.connected) 
-        {
-            toggleButton.innerText = 'Connect';
-            socket.disconnect();    
-        } else 
-        {
-            toggleButton.innerText = 'Disconnect';
-            socket.connect();   
-        }
-    });
-
     // Fonction pour mettre à jour la liste des utilisateurs
     function updateUserList() 
     {
