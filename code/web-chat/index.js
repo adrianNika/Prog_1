@@ -8,7 +8,7 @@ import bcrypt from 'bcrypt';
 
 
 const app = express();
-const port = 3000;
+const port = 3001;
 const server = createServer(app);
 const io = new Server(server);
 
@@ -21,9 +21,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(join(__dirname, '')));
 
 app.get('/', (req, res) => {
-  res.sendFile(join(__dirname, 'chat.html'));
+  res.sendFile(join(__dirname, 'login.html'));
 });
-
 
 const uri = "mongodb+srv://Boa:12345@cluster0.jl9sfks.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
@@ -47,14 +46,38 @@ async function run() {
     app.post('/register', async (req, res) => { 
       const {username, email, telephone, password} = req.body;
       const hashedPassword = await bcrypt.hash(password, 10);
-
       const userData = {username, email, telephone, password : hashedPassword};
-      try {
+
+      try 
+      {
         const result = await userCollections.insertOne(userData);
         res.status(201).send('Inscription réussie ma poule');
-      } catch (error) {
+      } catch (error) 
+      {
         res.status(500).send('Inscription non réussie ma poule');
       }
+    });
+
+    app.post('/login', async (req, res) => { 
+      const {username, password} = req.body;
+
+      try
+      {
+        user = userCollections.findOne( { username } );
+        if(user.password === password)
+        {
+            res.status(201).send('connexion réussie ma poule');
+        }
+        else
+        {
+            res.status(400).send('MDP incorrect');
+        }
+      }
+      catch (error) 
+      {
+        res.status(400).send('connexion échoué ma poule');
+      }
+
     });
 
     server.listen(3001, () => {

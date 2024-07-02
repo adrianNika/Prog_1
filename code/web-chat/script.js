@@ -12,7 +12,6 @@ const socket = io();
 
 let incr = 0;
     
-
     form.addEventListener('submit', (e) => {
         e.preventDefault();
         if (input.value) 
