@@ -63,26 +63,36 @@ const profilePic = document.getElementById('profilePic');
 
 
     submitInputLogin.addEventListener('click', async (teazix_NTM_EVENT) => {
-        const usernameLogin = document.getElementById('username-login').value;
-        const passwordLogin = document.getElementById('password-login').value;
+        const username = document.getElementById('username-login').value;
+        const password = document.getElementById('password-login').value;
 
-        const response = await fetch('http://localhost:3001/register', { //Appel de la route qui se situe dans le script serveur
-            method: 'POST', // Méthode POST pour envoie de donnée | GET pour la récupération de donner
-            headers: 
+        try
+        {
+            const response = await fetch('http://localhost:3001/login', { //Appel de la route qui se situe dans le script serveur
+                method: 'POST', // Méthode POST pour envoie de donnée | GET pour la récupération de donner
+                headers: 
+                {
+                    'Content-Type': 'application/json' // type de donnée récupèrer, don du JSON
+                },
+                body: JSON.stringify({ username, password }) // Les données envoyer dans le corps de la requête
+            });   
+            
+            if(response.ok)
             {
-                'Content-Type': 'application/json' // type de donnée récupèrer, don du JSON
-            },
-            body: JSON.stringify({ usernameLogin, passwordLogin }) // Les données envoyer dans le corps de la requête
-        });
+                const user = await response.json();
+                alert("Connexion réussi");
 
-        if(response.ok)
-        {
-            window.location.href = '/chat.html';
-            alert("Connexion réussi");
+                window.location.href = '/chat.html';
+            }
+            else
+            {
+                const error = await response.text();
+                alert(`Erreur : ${error}`);
+            }
         }
-        else
+        catch(error)
         {
-            alert("Connexion échoué");
+            console.error(`Erreur lors de la tentative de connexion:`, error);
         }
     });
 
@@ -90,10 +100,10 @@ const profilePic = document.getElementById('profilePic');
     submitInputRegister.addEventListener('click', async (teazix_NTM_EVENT) => {
         teazix_NTM_EVENT.preventDefault();
 
-        const usernameRegister = document.getElementById('username').value;
-        const emailRegister = document.getElementById('email').value;
-        const telephoneRegister = document.getElementById('tel').value;
-        const passwordRegister = document.getElementById('password').value;
+        const username = document.getElementById('username').value;
+        const email = document.getElementById('email').value;
+        const telephone = document.getElementById('tel').value;
+        const password = document.getElementById('password').value;
 
         const response = await fetch('http://localhost:3001/register', { //Appel de la route qui se situe dans le script serveur
             method: 'POST', // Méthode POST pour envoie de donnée | GET pour la récupération de donner
@@ -101,7 +111,7 @@ const profilePic = document.getElementById('profilePic');
             {
                 'Content-Type': 'application/json' // type de donnée récupèrer, don du JSON
             },
-            body: JSON.stringify({ usernameRegister, emailRegister, telephoneRegister, passwordRegister }) // Les données envoyer dans le corps de la requête
+            body: JSON.stringify({ username, email, telephone, password }) // Les données envoyer dans le corps de la requête
         });
 
         if(response.ok)
@@ -113,7 +123,6 @@ const profilePic = document.getElementById('profilePic');
         {
             alert("inscription échoué");
         }
-        
     });
 
 

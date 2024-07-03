@@ -8,7 +8,7 @@ import bcrypt from 'bcrypt';
 
 
 const app = express();
-const port = 3001;
+const port = 3000;
 const server = createServer(app);
 const io = new Server(server);
 
@@ -60,24 +60,30 @@ async function run() {
 
     app.post('/login', async (req, res) => { 
       const {username, password} = req.body;
+      const hashedPassword = await bcrypt.hash(password, 10);
 
       try
       {
-        user = userCollections.findOne( { username } );
-        if(user.password === password)
-        {
-            res.status(201).send('connexion réussie ma poule');
-        }
-        else
-        {
-            res.status(400).send('MDP incorrect');
-        }
+          const user = await userCollections.findOne({username})
+          if (!user) 
+          {
+              return res.status(400).send('Le username est faux ou le compte n\'existe pas');
+          }
+          else
+          {
+              const isPasswordValid = await bcrypt.compare(password, user.password);
+    
+              if (!isPasswordValid) {
+                return res.status(400).send('Mot de passe incorrect');
+              }
+            
+            res.status(200).json(user);
+          } 
       }
       catch (error) 
       {
-        res.status(400).send('connexion échoué ma poule');
+          res.status(400).send('connexion échoué ma poule');
       }
-
     });
 
     server.listen(3001, () => {
