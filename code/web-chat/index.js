@@ -97,9 +97,17 @@ async function run() {
 }
 
 
+let users = [];
+
 io.on('connection', (socket) => {
   socket.on('chat message', (msg) => {
     io.emit('chat message', msg);
+  });
+
+  socket.on('register', (data) => {
+    socket.username = data.userUsername;
+    users.push(socket.username);
+    io.emit('update list', users);
   });
 });
 

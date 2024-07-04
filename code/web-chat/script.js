@@ -1,13 +1,14 @@
 const form = document.getElementById('chatForm');
 const input = document.getElementById('messageInput');
 const messages = document.getElementById('chatBox');
-const userList = document.getElementById('userList');
 const usernameDisplay = document.getElementById('usernameDisplay');
 const buttonListUser = document.querySelector('.online-button');
 let userDiv = document.querySelector('.user');
 let iconArrow = document.querySelector('.online-button i');
 const imgPP = document.getElementById('pp');
-const users = [];
+const storedUser = JSON.parse(localStorage.getItem('user'));
+const userUsername = storedUser.username;
+usernameDisplay.textContent = storedUser.username;
 const socket = io();
 
 let incr = 0;
@@ -16,13 +17,12 @@ let incr = 0;
         e.preventDefault();
         if (input.value) 
         {
-            socket.emit('chat message', {sender: users, message: input.value});
+            socket.emit('chat message', {sender: userUsername, message: input.value});
             input.value = '';
         }
     });
 
-    socket.on('chat message', (data) => 
-    {
+    socket.on('chat message', (data) => {
         const item = document.createElement('div');
         item.id = 'itemSend';
 
@@ -53,30 +53,28 @@ let incr = 0;
         messages.appendChild(item);
     });
 
+    socket.emit('register', {userUsername});
+
     // Fonction pour mettre à jour la liste des utilisateurs
-    function updateUserList() 
-    {
-        userList.innerHTML = '';
-        for (const user of users)
-        {
-            const listItem = document.createElement('li');
-            const listPointVert = document.createElement('span');
-            const displayUsername = document.createElement('p');
-            displayUsername.textContent = user;
-            listItem.appendChild(listPointVert);
-            listItem.appendChild(displayUsername);
-            userList.appendChild(listItem);
-        }
+
+    function updateUserList(user) {
+        const listItem = document.createElement('li');
+        const listPointVert = document.createElement('span');
+        const displayUsername = document.createElement('p');
+        displayUsername.textContent = user;
+        listItem.appendChild(listPointVert);
+        listItem.appendChild(displayUsername);
+        userList.appendChild(listItem);
     }
 
-    let username = '';
-    while (!username || username.length > 15 || username.length <= 3 || username.includes(' '))
-    {
-        username = prompt('Entrez votre nom d\'utilisateur : \n - Min 4 caractères\n - Max 15 caractères\n - Ne dois pas contenire d\'escpace');
-    }
-    usernameDisplay.textContent = username;
-    users.push(username);
-    updateUserList();
+
+    socket.on('update list', function(users) {
+        let userList = document.getElementById('userList');
+        userList.innerHTML = '';
+        users.forEach(user => {
+            updateUserList(user);
+        });
+    });
     
     
     buttonListUser.addEventListener('click', () =>  {
@@ -88,5 +86,3 @@ let incr = 0;
             iconArrow.style.transform = "rotate(180deg)";
         }
     });
-
-    

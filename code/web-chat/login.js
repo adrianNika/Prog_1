@@ -80,7 +80,8 @@ const profilePic = document.getElementById('profilePic');
             if(response.ok)
             {
                 const user = await response.json();
-                alert("Connexion réussi");
+
+                localStorage.setItem('user', JSON.stringify(user));
 
                 window.location.href = '/chat.html';
             }
