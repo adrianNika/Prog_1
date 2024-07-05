@@ -61,7 +61,7 @@ const profilePic = document.getElementById('profilePic');
         }
     });
 
-
+    //login
     submitInputLogin.addEventListener('click', async (teazix_NTM_EVENT) => {
         const username = document.getElementById('username-login').value;
         const password = document.getElementById('password-login').value;
@@ -97,7 +97,7 @@ const profilePic = document.getElementById('profilePic');
         }
     });
 
-
+    //register
     submitInputRegister.addEventListener('click', async (teazix_NTM_EVENT) => {
         teazix_NTM_EVENT.preventDefault();
 
@@ -117,7 +117,7 @@ const profilePic = document.getElementById('profilePic');
 
         if(response.ok)
         {
-            window.location.href = '/chat.html';
+            window.location.href = '/login.html';
             alert("inscription réussi");
         }
         else
